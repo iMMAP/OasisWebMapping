@@ -17,7 +17,7 @@ MAP
 	IMAGECOLOR 193 225 243
 	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
 	WEB
-		IMAGEPATH "/mnt"
+		IMAGEPATH "/mnt/"
 		IMAGEURL "/ms_tmp/"
 
 
