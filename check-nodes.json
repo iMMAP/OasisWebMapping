@@ -4,32 +4,7 @@
     "cls": "folder",
     "qtip": "Administrative Boundaries layers",
     "expanded": false,
-    "children": [{
-        "text": "Districts Boundary [PCO]",
-        "qtip": "District in Pakistan:PCO",
-        "layer": "Districts",
-        "layertype": "polygon",
-        "sourceformat": "shapefile",
-        "data":"District_Boundary.shp",
-        "classitem":"",
-        "category":{			
-			    "0":{
-			    	"style":[{
-						    	"symbolname":"circle",
-						    	"size":1,
-						    	"outlinecolor":{
-						    		"R":150,
-						    		"G":150,
-						    		"B":150
-						    	}		    		
-
-			    	}],
-			    	"name":"District Boundary"
-			    }
- 		}, 
-        "leaf": true,
-        "checked": false
-    }]
+    "children": []
 },{
     "text": "Transportation", 
     "group": "Base Layers",
@@ -49,7 +24,7 @@
         "layer": "Test123",
         "layertype": "polygon",
         "sourceformat": "sqlsrvdbpak",
-        "data":"wkb from testspatial as geom USING UNIQUE guid1 USING SRID=4326",
+        "data":"wkb from testspatial USING UNIQUE guid1 USING SRID=4326",
         "classitem":"",
 		"category":{			
 			    "0":{
