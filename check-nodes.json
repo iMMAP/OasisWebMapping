@@ -24,7 +24,7 @@
         "layer": "Test123",
         "layertype": "polygon",
         "sourceformat": "sqlsrvdbpak",
-        "data":"wkb as geom from testdbspatial.dbo.testspatial USING UNIQUE guid1 USING SRID=4326",
+        "data":"wkb as geom from testspatial USING UNIQUE guid1 USING SRID=4326",
         "classitem":"",
 		"category":{			
 			    "0":{
