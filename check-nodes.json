@@ -23,7 +23,7 @@
         "qtip": "Test",
         "layer": "Test123",
         "layertype": "polygon",
-        "sourceformat": "sqlsrvdbpak",
+        "sourceformat": "MSSQLServerConn",
         "data":"geom from dbo.AdminLevel0 USING UNIQUE [ID] USING SRID=4326",
         "classitem":"",
 		"category":{			
