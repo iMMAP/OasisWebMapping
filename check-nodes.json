@@ -49,7 +49,7 @@
         "layer": "Test123",
         "layertype": "polygon",
         "sourceformat": "sqlsrvdbpak",
-        "data":"wkb from testspatial as geom USING UNIQUE ID USING SRID=4326",
+        "data":"wkb from testspatial as geom USING UNIQUE guid1 USING SRID=4326",
         "classitem":"",
 		"category":{			
 			    "0":{
