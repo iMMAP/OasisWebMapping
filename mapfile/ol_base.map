@@ -1,0 +1,51 @@
+MAP
+	NAME "OASIS_Base"
+	STATUS ON
+	SIZE 256 256
+	IMAGETYPE PNG
+	FONTSET "fonts/fonts.list"
+	SYMBOLSET "symbols/symbols.sym"
+	EXTENT -180 -90 180 90
+	UNITS DD
+	MAXSIZE 2400
+	PROJECTION
+		'proj=longlat'
+		'ellps=WGS84'
+		'datum=WGS84'
+		'no_defs'
+	END #PROJECTION
+	IMAGECOLOR 193 225 243
+	CONFIG "MS_ERRORFILE" "/ms4w/tmp/ms_error.txt"
+	WEB
+		IMAGEPATH "c:/ms4w/tmp/ms_tmp/"
+		IMAGEURL "/ms_tmp/"
+
+
+		  METADATA
+		    "wms_title"           "WMS Oasis Base layers"
+		    "wms_onlineresource"  "http://oasispakistan.pk/php/getmap.php?"
+		    "wms_srs"             "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
+			"ows_enable_request"   "*"
+		  END
+
+	END #WEB
+ 
+
+
+  
+
+  
+# LEGEND object
+LEGEND
+  STATUS ON
+  KEYSIZE 18 12
+  TRANSPARENT ON
+  LABEL
+    TYPE BITMAP
+    SIZE MEDIUM
+    COLOR 0 0 89
+  END
+  TEMPLATE "legend.html"  
+END
+
+END #MAP

@@ -1,0 +1,159 @@
+[{
+    "text": "Administrative Boundaries", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "Administrative Boundaries layers",
+    "expanded": false,
+    "children": [{
+        "text": "Districts Boundary [PCO]",
+        "qtip": "District in Pakistan:PCO",
+        "layer": "Districts",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"District_Boundary.shp",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"size":1,
+						    	"outlinecolor":{
+						    		"R":150,
+						    		"G":150,
+						    		"B":150
+						    	}		    		
+
+			    	}],
+			    	"name":"District Boundary"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    }]
+},{
+    "text": "Transportation", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "transportation layers",
+    "expanded": false,
+    "children": []
+},{
+    "text": "Public Facilities", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "public facilities layers",
+    "expanded": false,
+    "children": [{
+        "text": "Test",
+        "qtip": "Test",
+        "layer": "Test123",
+        "layertype": "polygon",
+        "sourceformat": "sqlsrvdbpak",
+        "data":"geom from testspatial USING UNIQUE ID USING SRID=4326",
+        "classitem":"",
+		"category":{			
+			    "0":{
+			    	"symbolname":"circle",
+			    	"outlinecolor":{
+						    		"R":153,
+						    		"G":179,
+						    		"B":204
+						    	}
+			    }
+ 		},        
+        "leaf": true,
+        "checked": false
+    }]
+},{
+    "text": "Others", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "unspecified group",
+    "expanded": false,
+    "children": []
+},{
+    "text": "My Layers", 
+    "group": "Private Layers",    
+    "qtip": "Right click to activate menu for this layer",
+    "cls": "folder",
+    "expanded": true,
+    "children": []
+    
+},{
+    "text": "Flood", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "floods layers",
+    "expanded": false,
+    "children": [] 
+},{
+    "text": "FOG", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "fogs layers",
+    "expanded": false,   
+    "children": []
+     
+     
+},{
+    "text": "Gridded Population of the World v3", 
+    "group": "WMS",    
+    "qtip": "Gridded Population of the World v3",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "Population Density 1990",
+        "qtip": "Population Density 1990 : sedac",
+        "layer": "gpw-v3-population-density_1990",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Population Density 1995",
+        "qtip": "Population Density 1995 : sedac",
+        "layer": "gpw-v3-population-density_1995",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Population Density 2000",
+        "qtip": "Population Density 2000 : sedac",
+        "layer": "gpw-v3-population-density_2000",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Population Density Future Estimates 2005",
+        "qtip": "Population Density Future Estimates 2005 : sedac",
+        "layer": "gpw-v3-population-density-future-estimates_2005",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Population Density Future Estimates 2010",
+        "qtip": "Population Density Future Estimates 2010 : sedac",
+        "layer": "gpw-v3-population-density-future-estimates_2010",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Population Density Future Estimates 2015",
+        "qtip": "Population Density Future Estimates 2015 : sedac",
+        "layer": "gpw-v3-population-density-future-estimates_2015",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "leaf": true,
+        "checked":false
+    }]    
+}]

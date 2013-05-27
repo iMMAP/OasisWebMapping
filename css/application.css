@@ -1,0 +1,12 @@
+#legend{
+    position:absolute; 
+    right:10px; 
+    bottom:10px; 
+    z-index:10000; 
+}
+
+.legendRow {
+	background-image:url(../lib/ext-4.0.7-gpl/resources/themes/images/gray/tree/s.gif) !important;
+	
+}
+

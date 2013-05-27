@@ -1,0 +1,340 @@
+#banner { 
+height : 60px; 
+/*width : 1366px; */
+background-image : url("../image/background.png"); 
+background-repeat:repeat;
+}
+
+.blank{display:none}
+
+.my-accordion .x-panel-header
+{
+    padding: 1px 5px;
+}
+
+.iconAirports{
+	width:15px; 
+	height:15px; 
+	background-image:url('../image/Airports.png')!important;
+}
+
+.iconFilter{
+	background-size: 100%;
+	background-image:url('../image/filter2.png')!important;
+}
+.iconNext{
+	background-size: 100%;
+	background-image:url('../image/next.png')!important;
+}
+.iconPrev{
+	background-size: 100%;
+	background-image:url('../image/prev.png')!important;
+}
+
+
+.iconSearch{
+	background-size: 100%; 
+	background-image:url('../image/SearchSymbol.png')!important;
+}
+
+.iconPrint{
+	background-size: 100%; 
+	background-image:url('../image/pdf_icon.png')!important;
+}
+
+.iconClear{
+	background-size: 100%; 
+	background-image:url('../image/clear-icon.png')!important;
+}
+
+.iconShare{
+	background-size: 100%; 
+	background-image:url('../image/people.png')!important;
+}
+
+.iconEdit{
+	background-size: 100%; 
+	background-image:url('../image/edit.png')!important;
+}
+
+.iconDelete{
+	background-size: 100%; 
+	background-image:url('../image/delete.png')!important;
+}
+
+.iconAddNew{
+	width:25px; 
+	height:25px; 
+	background-image:url('../image/add-icon.png')!important;
+}
+
+.iconProperties{
+/*	width:25px; 
+	height:25px; */
+	background-size: 100%;
+	background-image:url('../image/properties.png')!important;
+}
+
+.iconAdd{
+/*	width:25px; 
+	height:25px; */
+	background-size: 100%;
+	background-image:url('../image/add-icon.png')!important;
+}
+
+.iconUpload{
+/*	width:25px; 
+	height:25px; */
+	background-size: 100%;
+	background-image:url('../image/database_upload.png')!important;
+}
+
+.iconColorPicker{
+/*	width:25px; 
+	height:25px; */
+	background-size: 100%;
+	background-image:url('../image/gtk_color_picker.png')!important;
+}
+
+.refresh{
+	background-size: 100%;
+	background-image:url('../image/arrow_refresh.png')!important;
+}
+
+#form {
+	left:50%;
+	width:27em;
+	height: 21.75em;
+	margin:0px auto;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	text-align:center;
+	border:1px dashed #333;
+	background-color:#eee;
+}
+
+
+#loading {
+	position: absolute;
+	left: 45%;
+	top: 40%;
+	padding: 2px;
+	z-index: 20001;
+	height: auto;
+	width: 9em;
+	border: 1px solid #ccc;
+}
+
+#loading a {
+	color: #225588;
+}
+#loading {
+	background: white;
+	color: #444;
+	font: bold 13px tahoma, arial, helvetica;
+	padding: 10px;
+	margin: 0;
+	height: auto;
+}
+#loading-indicator {
+	background: white;
+	color: #444;
+	font: bold 13px tahoma, arial, helvetica;
+	padding: 10px;
+	margin: 0;
+	height: auto;
+}
+#loading-msg {
+	font: normal 10px arial, tahoma, sans-serif;
+}
+#mapLoad{
+	position: absolute;
+	right: 0.25em;
+	bottom: 3.5em;
+	z-index: 20002;
+}
+#xyInfoDiv{
+	position: absolute;
+	font: bold 0.65em verdana, arial, helvetica;  
+    background-color:  #DFE8F6;
+    border: 1px solid #99BBE8;
+    right: 0.25em;
+	bottom: 0.25em;
+    padding: 0.25em;
+    z-index: 20002;
+}
+
+#editControl{
+	position: absolute;
+	font: bold 0.65em verdana, arial, helvetica;  
+/*    background-color:  #DFE8F6;*/
+/*    border: 1px solid #99BBE8;*/
+    right: 0.25em;
+	top: 0.25em;
+    padding: 0.25em;
+    z-index: 1900;
+}
+
+#scaleDiv{
+	position: absolute;
+	font: bold 0.56em verdana, arial, helvetica;  
+    background-color:  #DFE8F6;
+    border: 1px solid #99BBE8;
+    left: 0.25em;
+	bottom: 0.25em;
+    padding: 0.25em;
+    z-index: 20002;
+}
+
+#legendDiv{
+	position: absolute;
+	font: bold 0.56em verdana, arial, helvetica;  
+/*    background-color:  #DFE8F6;
+    border: 1px solid #99BBE8;*/
+    right: 0.25em;
+	top: 4.0em;
+    padding: 0.25em;
+    z-index: 20002;
+}
+
+#immaplogo{
+	position: absolute;
+    right: 0.25em;
+	bottom: 2.75em;
+    padding: 0.25em;
+    z-index: 20002;
+}
+
+.olControlPermalink {
+	bottom:3em;
+	display:block;
+	font-size:smaller;
+	right:0.25em;
+}
+
+#logo{position:absolute;left:1.5em;top:0em;height: 50;}
+#title{
+	position:absolute;
+	top:.3em;
+	left:5em;
+	letter-spacing: -1px;
+	color: #444;
+/*	font-weight:bold;*/
+	font-size:28px;
+	font-family:times, Times New Roman, times-roman, georgia, serif;
+	font-style:normal;
+	line-height:.75em;
+	align:left;
+}
+#subtitle{
+	position:absolute;
+	top:2.5em;
+	left:13.1em;
+	height:20px;
+	font-family:times, Times New Roman, times-roman, georgia, serif;
+	font-style:italic;
+	align:left;
+	letter-spacing: -1px;
+}
+.info_menu{
+/*	font-weight:bold;*/
+	font-size:.90em;
+	font-family: Courier New, Courier, monospace;;
+	font-style:normal;
+	bottom:0.2em;
+/*	font-style:italic;*/
+	letter-spacing: -1px;
+}
+#info_panel{
+	position:absolute; 
+	height:100%;
+	width: 20.5em;
+	top:2.3em;
+	right:0.1em;
+}
+#search_panel{
+	font-size:.90em;
+	font-family: Courier New, Courier, monospace;
+	font-style:italic;	
+	
+	position:absolute; 
+	height:100%;
+	width: 22em;
+	top:1.0em;
+	right:5.9em;
+}
+#version{font-weight:normal;font-size:0.5em;font-style:italic;}
+
+
+#phones {
+    background-color: #fff;
+    text-shadow: #fff 0 1px 0;
+    position: relative;
+    display: block;
+    height: auto;
+}
+
+#phones div.phone img {
+    margin-bottom: 1px;
+}
+
+#phones div.phone {
+    float: left;
+    padding: 8px 17px;
+    margin: 5px;
+/*    margin: 10px 0 0 25px;*/
+    text-align: center;
+    line-height: 14px;
+    color: #333;
+    font-size: 10px;
+    font-family: "Helvetica Neue",sans-serif;
+    height: 80px;
+    width: 90px;
+    overflow: hidden;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.x-ie6 #phones div.phone,
+.x-ie7 #phones div.phone,
+.x-ie8 #phones div.phone {
+    border-top: none;
+    padding: 3px 2px;
+    margin: 2px;
+}
+
+#phones div.phone-hover {
+    background-color: #eee;
+}
+
+#phones .x-item-selected {
+    background-color: #D3E1F1 !important;
+}
+
+#phones div.phone strong {
+    color: #000;
+    display: block;
+}
+
+#phones div.phone span {
+    color: #999;
+}
+
+/********************Error Display Begin*****************************/
+
+
+.error, .notice, .success {
+	padding:.8em;
+	margin:1em 0;
+	border:2px solid #ddd;
+	text-align:left;
+	font-size:10px;
+}
+.error {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.success {background:#E6EFC2;color:#0083B9;border-color:#C6D880; font-weight:bold;}
+.error a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+
+/********************Error Display End*****************************/
