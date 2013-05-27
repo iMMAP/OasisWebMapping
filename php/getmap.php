@@ -1,7 +1,7 @@
 <?php
 include 'dbconnect.php';
 include 'includes/gisEngineFunction.php';
-$GLOBALS['map_path']="c:/ms4w/apache/htdocs/oasisweb/mapfile/";
+
 prepare();
 loadParams();
 
