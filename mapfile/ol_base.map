@@ -15,9 +15,9 @@ MAP
 		'no_defs'
 	END #PROJECTION
 	IMAGECOLOR 193 225 243
-	CONFIG "MS_ERRORFILE" "/ms4w/tmp/ms_error.txt"
+	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
 	WEB
-		IMAGEPATH "c:/ms4w/tmp/ms_tmp/"
+		IMAGEPATH "/mnt"
 		IMAGEURL "/ms_tmp/"
 
 
