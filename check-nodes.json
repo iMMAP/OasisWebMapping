@@ -15,18 +15,16 @@
         "category":{			
 			    "0":{
 			    	"style":[{
-						    	"symbolname":"circle",
-						    	"size":1,
-						    	"outlinecolor":{
-						    		"R":150,
-						    		"G":150,
-						    		"B":150
-						    	}		    		
+						    	"color":{
+						    		"R":153,
+						    		"G":179,
+						    		"B":204
+						    	}			    		
 
 			    	}],
-			    	"name":"District Boundary"
+			    	"name":"ADMIN"
 			    }
- 		}, 
+ 		},         
         "leaf": true,
         "checked": false
     }]
