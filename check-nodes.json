@@ -28,7 +28,7 @@
         "classitem":"ISO2DIGIT",
 		"category":{			
 			    "PK":{
-			    	"NAME" : "Pakistan"
+			    	"name" : "Pakistan"
 			    	"color":{
 						    		"R":153,
 						    		"G":0,
