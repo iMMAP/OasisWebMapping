@@ -198,7 +198,8 @@ function defineCosmeticsLayer(){
 	$new_layer[$layerName]->setMetaData('wfs_enable_request', '*');		
 	$new_layer[$layerName]->setMetaData('gml_featureid', 'Location_ID');
 	$new_layer[$layerName]->setMetaData('gml_include_items', 'all');	
-	$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
+	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
+	$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "/usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so");
 	$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
 	$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);	
 	$new_layer[$layerName]->set("data", "geom from (select 1 as Location_ID, geometry::STGeomFromText('".$_REQUEST['filterShape']."', 4326) as geom) as new_table USING UNIQUE Location_ID USING SRID=4326");	
@@ -258,6 +259,7 @@ function generateBaselayers ($sentparams){
 				} else if ($objret['sourceformat']=="sqlsrvdbpak"){
 					$new_layer[$layerName]->set("data", $objret['data']);
 					//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
+					$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "/usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so");
 					$new_layer[$layerName]->setConnectionType(MS_OGR);
 					$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
 					$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);		
@@ -435,7 +437,8 @@ function generateUserlayers (){
 				$new_layer[$layerName]->set("data", "shapefiles/".$objret->data);
 			} else if ($objret->sourceformat=="sqlsrvdbpak"){
 				$new_layer[$layerName]->set("data", $objret->data);
-				$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
+				//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
+				$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "/usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so");
 				$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
 				$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);		
 			}
