@@ -16,7 +16,7 @@ MAP
 	END #PROJECTION
 	IMAGECOLOR 193 225 243
 	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
-	CONFIG GDAL_DATA "/usr/share/gdal"
+	CONFIG GDAL_DATA "/usr/share/gdal/1.9/"
 	WEB
 		IMAGEPATH "/mnt/"
 		IMAGEURL "/ms_tmp/"
