@@ -47,7 +47,7 @@
         "layer": "Test123",
         "layertype": "point",
         "sourceformat": "sqlsrvdbpak",
-        "data":"geom from camps1 using unique idprimary using srid=4326",
+        "data":"geom from testdbspatial.dbo.adminlevel0 using unique idprimary using srid=4326",
         "classitem":"",
         "category":{			
 			    "0":{
