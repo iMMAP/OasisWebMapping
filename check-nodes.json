@@ -25,17 +25,20 @@
         "layertype": "polygon",
         "sourceformat": "MSSQLServerConn",
         "data":"geom from AdminLevel0 USING UNIQUE ID USING SRID=4326",
-        "classitem":"ISO2DIGIT",
-		"category":{			
-			    "PK":{
-			    	"name" : "Pakistan",
-			    	"color":{
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"outlinecolor":{
 						    		"R":153,
-						    		"G":0,
-						    		"B":0
-						    	}
+						    		"G":179,
+						    		"B":204
+						    	}			    		
+
+			    	}],
+			    	"name":"ADMIN"
 			    }
- 		},        
+ 		},         
         "leaf": true,
         "checked": false
     }]
