@@ -24,7 +24,7 @@
         "layer": "Test123",
         "layertype": "polygon",
         "sourceformat": "MSSQLServerConn",
-        "data":"[geom] from [dminLevel0] USING UNIQUE [ID] USING SRID=4326",
+        "data":"[geom] from [AdminLevel0] USING UNIQUE [ID] USING SRID=4326",
         "classitem":"",
 		"category":{			
 			    "0":{
