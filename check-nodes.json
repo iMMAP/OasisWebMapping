@@ -46,7 +46,7 @@
         "qtip": "Test",
         "layer": "Test123",
         "layertype": "polygon",
-        "sourceformat": "MSSQLServerConn",
+        "sourceformat": "sqlsrvdbpak",
         "data":"geom from [AdminLevel0] USING UNIQUE idprimary USING SRID=4326",
         "classitem":"",
         "category":{			
