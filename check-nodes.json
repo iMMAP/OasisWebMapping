@@ -24,15 +24,14 @@
         "layer": "Test123",
         "layertype": "polygon",
         "sourceformat": "MSSQLServerConn",
-        "data":"[geom] from ]AdminLevel0] USING UNIQUE [ID] USING SRID=4326",
+        "data":"[geom] from [dminLevel0] USING UNIQUE [ID] USING SRID=4326",
         "classitem":"",
 		"category":{			
 			    "0":{
-			    	"symbolname":"circle",
-			    	"outlinecolor":{
+			    	"color":{
 						    		"R":153,
-						    		"G":179,
-						    		"B":204
+						    		"G":0,
+						    		"B":0
 						    	}
 			    }
  		},        
