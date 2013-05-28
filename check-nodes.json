@@ -25,9 +25,9 @@
         "layertype": "polygon",
         "sourceformat": "MSSQLServerConn",
         "data":"geom from AdminLevel0 USING UNIQUE ID USING SRID=4326",
-        "classitem":"",
+        "classitem":"ISO2DIGIT",
 		"category":{			
-			    "0":{
+			    "GY":{
 			    	"color":{
 						    		"R":153,
 						    		"G":0,
