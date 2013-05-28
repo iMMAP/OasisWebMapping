@@ -47,7 +47,7 @@
         "layer": "Test123",
         "layertype": "polygon",
         "sourceformat": "MSSQLServerConn",
-        "data":"geom from AdminLevel0 USING UNIQUE idprimary USING SRID=-1",
+        "data":"geom from AdminLevel0 USING UNIQUE idprimary USING SRID=4326",
         "classitem":"",
         "category":{			
 			    "0":{
