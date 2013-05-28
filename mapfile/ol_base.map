@@ -18,8 +18,8 @@ MAP
 	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
 	CONFIG GDAL_DATA "/usr/share/gdal/1.9/"
 	WEB
-		IMAGEPATH "/var/www/oasiswebmapping/syria/imagetemp/"
-		IMAGEURL "/imagetemp/"
+		IMAGEPATH "/var/www/oasiswebmapping/syria/image/"
+		IMAGEURL "/image/"
 
 
 		  METADATA
