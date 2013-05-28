@@ -27,7 +27,7 @@
         "data":"geom from AdminLevel0 USING UNIQUE ID USING SRID=4326",
         "classitem":"ISO2DIGIT",
 		"category":{			
-			    "GY":{
+			    "PK":{
 			    	"color":{
 						    		"R":153,
 						    		"G":0,
