@@ -18,13 +18,13 @@ MAP
 	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
 	CONFIG GDAL_DATA "/usr/share/gdal/1.9/"
 	WEB
-		IMAGEPATH "/mnt/imagetemp/"
-		IMAGEURL "/mnt/imagetemp/"
+		IMAGEPATH "/var/www/oasiswebmapping/syria/imagetemp/"
+		IMAGEURL "/imagetemp/"
 
 
 		  METADATA
 		    "wms_title"           "WMS Oasis Base layers"
-		    "wms_onlineresource"  "http://oasispakistan.pk/php/getmap.php?"
+		    "wms_onlineresource"  "http://maps.oasiswebservice.org/syria/php/getmap.php?"
 		    "wms_srs"             "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
 			"ows_enable_request"   "*"
 		  END
