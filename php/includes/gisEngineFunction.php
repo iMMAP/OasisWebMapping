@@ -53,6 +53,7 @@ function defineLayer(){
 	$new_layer[$layerName]->setMetaData('wms_include_items', 'all');
 	$new_layer[$layerName]->setMetaData('wfs_enable_request', '*');		
 	$new_layer[$layerName]->setMetaData('gml_featureid', 'Location_ID');
+	$new_layer[$layerName]->setMetaData('CONNECTIONTYPE', 'ORG');
 	$new_layer[$layerName]->setMetaData('gml_include_items', 'all');	
 	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
 	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "FreeTDS");
