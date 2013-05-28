@@ -18,8 +18,8 @@ MAP
 	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
 	CONFIG "GDAL_DATA" "/usr/share/gdal/1.9"
 	WEB
-		IMAGEPATH "/mnt/"
-		IMAGEURL "/ms_tmp/"
+		IMAGEPATH "/mnt/imagetemp/"
+		IMAGEURL "/mnt/imagetemp/"
 
 
 		  METADATA
