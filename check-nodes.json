@@ -44,7 +44,7 @@
     "children": [{  	
         "text": "Test",
         "qtip": "Test",
-        "layer": "Test123",
+        "layer": "mssql:AdminLevel0",
         "layertype": "WMS",
         "sourceformat": "WMS",
         "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
