@@ -58,7 +58,7 @@ Restart apache
 
     sudo service apache2 restart
     
-<b>------ MSSQL COMPATIBILITY ------</b>   
+<b>------ MSSQL COMPATIBILITY (CURRENTLY NOT SUPPORTED IN MAPSERVER UBUNTU) ------</b>   
 
 If you have issues with connecting to MSSQL check out these links:
 - http://davejamesmiller.com/blog/connecting-php-to-microsoft-sql-server-on-debianubuntu
