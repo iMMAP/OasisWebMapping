@@ -35,6 +35,7 @@ APP = function() {
 		hilites : null,
 		wfs_url : null,
 		wmsUrl: "php/getmap.php?",
+		wmsUrls : ["php/getmap.php?","http://windows.oasiswebservice.org:8899/geoserver/mssql/ows?"],
 		popup : null,
 		featureInfo: null, //for WMSgetFeatureInfo
 		tempLayer : null,
