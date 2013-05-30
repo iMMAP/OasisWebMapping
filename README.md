@@ -93,5 +93,7 @@ change apache httpd.conf:
           Order allow,deny
           Allow from all
     </Directory>
+    
+also add the servername:port to allowedHosts in /usr/lib/cgi-bin/proxy.cgi
 
 <b>------ Enjoy :) ------</b>   
