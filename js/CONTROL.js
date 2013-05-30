@@ -287,7 +287,8 @@ CONTROL = function() {
 		},		
 		addWMSGetFeatureInfo : function (url) {
 			this.featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
-				url: url,
+				//url: url,
+				layerUrls : url,
 				title: 'Identify features by clicking',
 				layers: APP.map.layers,//wmsLayers
 				vendorParams: {
