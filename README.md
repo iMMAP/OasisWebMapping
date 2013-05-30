@@ -96,4 +96,9 @@ change apache httpd.conf:
     
 also add the servername:port to allowedHosts in /usr/lib/cgi-bin/proxy.cgi
 
+for the moment you need to modify the following to your custom WMS:
+https://github.com/iMMAP/OasisWebMapping/commit/044f1a8665587f240d6750eea7932b909d4b90f8
+
+we will be adding support for multiple sources later
+
 <b>------ Enjoy :) ------</b>   
