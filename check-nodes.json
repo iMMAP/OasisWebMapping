@@ -42,9 +42,72 @@
     "qtip": "public facilities layers",
     "expanded": false,
     "children": [{  	
-        "text": "Test",
-        "qtip": "Test",
-        "layer": "mssql:AdminLevel0",
+        "text": "dd_3WOrg_qryOfficeLocations",
+        "qtip": "dd_3WOrg_qryOfficeLocations",
+        "layer": "mssql:dd_3WOrg_qryOfficeLocations",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_3WOrg_qryOperationalLocations",
+        "qtip": "dd_3WOrg_qryOperationalLocations",
+        "layer": "mssql:dd_3WOrg_qryOperationalLocations",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_3WOrg_qryTeamHouses",
+        "qtip": "dd_3WOrg_qryTeamHouses",
+        "layer": "mssql:dd_3WOrg_qryTeamHouses",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_3WOrg_qryWarehouseLocations",
+        "qtip": "dd_3WOrg_qryWarehouseLocations",
+        "layer": "mssql:dd_3WOrg_qryWarehouseLocations",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_Logistics_qryAirfields",
+        "qtip": "dd_Logistics_qryAirfields",
+        "layer": "mssql:dd_Logistics_qryAirfields",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_Military_qryAssets",
+        "qtip": "dd_Military_qryAssets",
+        "layer": "mssql:dd_Military_qryAssets",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_Refugee_qryBorderCrossing",
+        "qtip": "dd_Refugee_qryBorderCrossing",
+        "layer": "mssql:dd_Refugee_qryBorderCrossing",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+        "leaf": true,
+        "checked":false
+    },{  	
+        "text": "dd_Refugee_qryCamp",
+        "qtip": "dd_Refugee_qryCamp",
+        "layer": "mssql:dd_Refugee_qryCamp",
         "layertype": "WMS",
         "sourceformat": "WMS",
         "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
