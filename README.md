@@ -82,4 +82,16 @@ finally, to test try:
     ogrinfo -al "MSSQL:driver=FreeTDS;server=SERVERIP,PORT;
     database=DBNAME;uid=UID;pwd=PWD;tables=TABLENAME(SPATIAL_COLUMNNAME)" TABLENAME
 
+<b>------ CONNECTING TO EXTERNAL WMS ------</b>   
+
+change apache httpd.conf:
+
+    ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+    <Directory "/usr/lib/cgi-bin/">
+          AllowOverride None
+          Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+          Order allow,deny
+          Allow from all
+    </Directory>
+
 <b>------ Enjoy :) ------</b>   
