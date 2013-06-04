@@ -274,6 +274,16 @@ function generateBaselayers ($sentparams){
 					$passwd = $GLOBALS['password'];
 					$port = $GLOBALS['port'];
 					$new_layer[$layerName]->set("connection", "host=$hostUrl user=$userName password=$passwd dbname=$dbName port=$port");		
+				} else if ($objret['sourceformat']=="postgis2"){
+					$new_layer[$layerName]->setConnectionType(MS_POSTGIS);
+					$new_layer[$layerName]->set("data", $objret['data']);
+					$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
+					$hostUrl = $GLOBALS['serverUrl2'];
+					$dbName = $GLOBALS['dbname2'];
+					$userName = $GLOBALS['username2'];
+					$passwd = $GLOBALS['password2'];
+					$port = $GLOBALS['port2'];
+					$new_layer[$layerName]->set("connection", "host=$hostUrl user=$userName password=$passwd dbname=$dbName port=$port");		
 				}
 				$new_layer[$layerName]->set("status", MS_ON);	
 				$new_layer[$layerName]->set("dump", true);
