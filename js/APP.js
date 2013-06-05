@@ -1198,7 +1198,7 @@ APP = function() {
 			
 			var initCenter = new OpenLayers.LonLat(78.88, 30.64);
 			initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
-			this.map.setCenter(initCenter, 5);	
+			this.map.setCenter(initCenter, 9);	
 			
 			this.map.events.register('click', this.map, function(ev){
 				FINDER.polygonLayer.destroyFeatures();
