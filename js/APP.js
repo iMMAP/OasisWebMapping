@@ -1196,16 +1196,10 @@ APP = function() {
 			this.navHistory = new OpenLayers.Control.NavigationHistory();
 			this.map.addControl(this.navHistory);
 			
-			// this.map.addControl(selectfire24);
-			// this.map.addControl(selectfire48);
-// 			
-			// selectfire24.activate();
-			// selectfire48.activate();
-			//this.map.zoomTo(3);
-			this.map.setCenter(new OpenLayers.LonLat(8780881, 3586084), 5);
-			// var x = new OpenLayers.LonLat(78.88, 30.64);
-			// x.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
-			// console.log(x);
+			var initCenter = new OpenLayers.LonLat(78.88, 30.64);
+			initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+			this.map.setCenter(initCenter, 5);	
+			
 			this.map.events.register('click', this.map, function(ev){
 				FINDER.polygonLayer.destroyFeatures();
 				if (FINDER.radiusTool) {
