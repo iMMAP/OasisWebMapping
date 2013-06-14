@@ -4,7 +4,7 @@
 //$HTTP_POST_FILES['ufile']['name']; = upload file name
 //for example upload file name cartoon.gif . $path will be upload/cartoon.gif
 
-$path= "upload/".$HTTP_POST_FILES['ufile']['name'];
+$path= $HTTP_POST_FILES['ufile']['name'];
 if($ufile !=none)
 {
 if(copy($HTTP_POST_FILES['ufile']['tmp_name'], $path))
