@@ -14,8 +14,13 @@ $query = "SELECT * FROM OASIS_v3_2.dbo.Members WHERE email = '".$email."'";
 $num = 0;
 $dbinfo = getDB();
 $result = sqlsrv_query( $dbinfo, $query);
-while($obj = sqlsrv_fetch_object($result))
-	$num++;
+
+if ($result) {
+	$rows = sqlsrv_has_rows( $result );
+	if ($rows === true)
+		$num = 1;
+}
+
 
 echo $num;
 

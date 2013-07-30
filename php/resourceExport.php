@@ -25,7 +25,7 @@ $filter = urlencode($filter);
 	<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
-		<link rel="stylesheet" type="text/css" href="../css/pdfreport.css">
+		<link rel="stylesheet" type="text/css" href="../css/rfinder.css">
 	  </head>
 	  <body>
 	  <script type="text/php">
@@ -62,13 +62,26 @@ $filter = urlencode($filter);
 		}
 		</script>';
 		
-		$html .='<table class="detail" style="border-top: 1px; margin: 0px 0px 1.5em 0px;">
-		<tr>
-		<td class="label" style="width: 8.25%">Layer:</td>
-		<td class="field" style="width: 16.5%">Population Estimates</td>
-		</tr>
+		$html .= '<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+		  <tr>
+			<td style="padding-left:5%">
+				<img src="../image/logo_usaid_pdf.png" width="180px"/>
+			</td>
+			<td align="right" style="padding-left:5%">
+				<img src="../image/logo.gif" width="180px"/>
+			</td>
+		  </tr>	  
+		 </table>';
+		 
+		$html .= '<table class="tabHeader">
+		  <tr>
+			<td>
+				<span>1. Population Estimates</span>
+			</td>
+		  </tr>	  
+		 </table>';		 
 		
-		</table>';		
+		// $html .='<h1>Population Estimates</h1>';		
 
 $html .=
 	'<table class="detail" style="margin: 0px; border-top: none;">';
@@ -82,30 +95,31 @@ foreach ($popPart as $popDesc) {
 	$html .=
 	'<tr>
 	<td class="label">'.$popDet[0].'</td>
-	<td class="field">'.$popDet[1].'</td>
+	<td align="right" class="field">'.$popDet[1].'</td>
 	</tr>';
 }
 
 
 $html .= '</table><br><br>';
 $pertama = true;
+$no = 2;
 if ($activelayer != ''){
 	foreach ($arr_actLayer as $layer) {
 		$url = "$baseUrl/php/getmap.php?LAYERS=$layer->name&TYPENAME=$layer->name&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&SRS=EPSG%3A900913&EXCEPTIONS=application%2Fvnd.ogc.se_xml&INFO_FORMAT=text%2Fplain&QUERY_LAYERS=$layer->name&FEATURE_COUNT=10&FILTER=$filter&userid=$userid&GEORSSURL=".$_REQUEST['georssUrl']."&KMLURL=".$_REQUEST['kmlUrl'];
 		if (!$pertama){
 			$html .='<div style="page-break-before: always;"></div>';
 		}
-		$html .='<table class="detail" style="border-top: none; margin: 0px 0px 1.5em 0px;">
-		<tr>
-		<td class="label" style="width: 8.25%">Layer:</td>
-		<td class="field" style="width: 16.5%">'.$layer->text.'</td>
-		</tr>
 		
-		</table>';
-
+		$html .= '<table class="tabHeader">
+		  <tr>
+			<td>
+				<span>'.$no.'. '.$layer->text.'</span>
+			</td>
+		  </tr>	  
+		 </table>';	
 
 		$html .='
-		<table class="list" style="width: 99%; margin-top: 1em;">
+		<table class="list" style="width: 99%;">
 		
 		<tr class="head">';
 		
@@ -159,7 +173,7 @@ if ($activelayer != ''){
 		
 		</table>';
 		$pertama = false;
-		
+		$no++;
 	}
 }		
 

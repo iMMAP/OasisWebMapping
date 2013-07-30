@@ -23,12 +23,12 @@ $smtpinfo["password"] = "1234_qwer";
 foreach($users as $idx => $user){
 	$to      = $user->id; 
 	// var_dump($user->id);
-	$query = "insert into \"Administration\".layerconf select '$layerid', conf, '$user->name'
-	from \"Administration\".layerconf
+	$query = "insert into OASIS_v3_2.dbo.layerconf select '$layerid', conf, '$user->id'
+	from OASIS_v3_2.dbo.layerconf
 	where id = '$layerid' and userid='$userid'";
 	$dbinfo = getDB();
-	$result = pg_query( $dbinfo, $query);
-	pg_close( $dbinfo );
+	$result = sqlsrv_query( $dbinfo, $query);
+	sqlsrv_close( $dbinfo );
 	
 	$headers = array ('From' => $from,'To' => $to,'Subject' => $subject);  
 	$smtp = &Mail::factory('smtp', $smtpinfo );  

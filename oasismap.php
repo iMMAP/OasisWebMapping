@@ -9,7 +9,9 @@ if(!isset($_SESSION['user'])){
 <html>
 	<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"  />
-<title>Development Page</title>
+  <meta name="description" content="OASISWeb brings together live information feeds for earthquakes, fires, precipitation, wind speed, temperature, lightning and cloud cover. Combined with this there are historical datasets for floods, and arange of public data sources for Pakistan." />
+  <meta name="keywords" content="immap information management platform, flood, mapping, GIS, remote sensing, Information management tools, weather, forecast, disaster, emergency, oasisweb, oasis, oasis web, pakistan map, pakistan flood, pakistan"/>
+<title>Oasis Web</title>
 <!-- Loading Ext and Application CSS
 <style type="text/css" media="all">
 	@import "css/application.css";
@@ -46,9 +48,12 @@ if(!isset($_SESSION['user'])){
 <script type="text/javascript" src="./lib/ext-4.0.7-gpl/ext-all-debug.js"></script>
 <!-- Loading OpenLayers ver 2.11 Library -->
 <script src="./lib/OpenLayers-2.11/OpenLayers.js" type="text/javascript"></script>
+<script src="./lib/proj4js-combined.js" type="text/javascript" charset="utf-8"></script>
+<script src="./lib/OWM.OpenLayers.1.3.4.js" ></script>
 <link href='./lib/OpenLayers-2.11/theme/default/style.css' rel='stylesheet' type='text/css' />
 
 <script src="./lib/ext-4.0.7-gpl/ux/Animated.js" type="text/javascript"></script> 
+<script src="./lib/ext-4.0.7-gpl/ext.imageviewer.js" type="text/javascript"></script> 
 
 <!-- Loading GeoExt Library -->
 <!-- <script src="./lib/GeoExt/PrintPageField.js" type="text/javascript"></script> 
@@ -58,7 +63,8 @@ if(!isset($_SESSION['user'])){
 <!-- <script src="./lib/GeoExt/LayerNode.js" type="text/javascript"></script>  -->
 <script src="./lib/GeoExt/Popup.js" type="text/javascript"></script>
 <script src="./lib/GeoExt/Action.js" type="text/javascript"></script>
-
+<script src="./lib/FeaturePopups.js" type="text/javascript"></script>
+<!-- <script src="./lib/patches_OL-popup-autosize.js" type="text/javascript"></script> -->
 
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyCmhrZ4JzlFowNGz6hrT3eqEojeSV-ZWvk" type="text/javascript"></script> 
 
@@ -111,6 +117,13 @@ Ext.require([
     'Ext.container.ButtonGroup',
     'Ext.ux.DataView.Animated' 
 ]);
+var incidentFlag = 0;
+<?php 
+if ($_SESSION['id']=='1') {
+	 echo 'incidentFlag = 1;';
+}
+?>
+
  Ext.onReady(APP.init, APP);
 //Ext.onReady(init, this);
 </script>
@@ -127,8 +140,9 @@ Ext.require([
 			<div id="centerDiv">
 				<div id="mapDiv">
 					<div id="legendDiv"><!-- <img src="mapfile/legend/legend-MPE.png" /> --></div>
+					<div id="legendDiv2"><!-- <img style="height: 60px;" src="http://trmm.gsfc.nasa.gov/trmm_rain/Events/tafd_3hr_rain_dump_google_wedge.png" /> --></div>
 					<div id="immaplogo"><!-- <img src="image/iMMAP_small.png" /> --></div>
-					<div id="editControl" <?php if ($_SESSION['id']!='1') { echo ' style="display: none"';}?>></div>
+					<div id="editControl" <?php if ($_SESSION['id']!='1') { echo ' style="display: none"';} else {echo ' style="display: none"';}?>></div>
 					<div id="xyInfoDiv"></div>
 					<div id="scaleDiv"></div>
 				</div>	

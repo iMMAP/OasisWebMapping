@@ -34,7 +34,7 @@ RSS = function() {
                     }
                 },
                 listeners: {
-
+					
                 }
             });
             
@@ -83,11 +83,19 @@ RSS = function() {
 							selectOnFocus: true,
 							listeners: {
 								select: function(){
-									UTILS.showHelpTip('GeoRSS Feed', 'Click row on the grid to move to selected object or click object on the map to display the information.', 7200);
-									RSS.rssStore.proxy.extraParams = {url:this.value};
-									RSS.rssStore.load();
+									if (this.value != 'null'){
+										UTILS.showHelpTip('GeoRSS Feed', 'Click row on the grid to move to selected object or click object on the map to display the information.', 7200);
+										RSS.rssStore.proxy.extraParams = {url:this.value};
+										RSS.rssStore.load();
+										// console.log(this.value);
+									} else {
+										UTILS.showHelpTip('GeoRSS Feed', 'Disabled.', 4200);
+										RSS.rssStore.removeAll();
+										// console.log(this.value);
+									}	
 									PRINT.georssUrl = this.value;
 									PRINT.georsstext= this.rawValue;
+									
 									var tempUrl = null;
 									// console.log(this.rawValue);
 									if (this.rawValue=='World News'){
@@ -102,8 +110,8 @@ RSS = function() {
 												rendererOptions: { zIndexing: true }
 											});	
 											APP.map.addLayers([APP.grss]);	
-											// APP.grss.setZIndex( 1000 );
-											// APP.markers.setZIndex(1001);								
+											APP.grss.setZIndex( 1000 );
+											APP.markers.setZIndex(1001);								
 										} else {
 											APP.map.removeLayer(APP.map.getLayersByClass("OpenLayers.Layer.GeoRSS")[0]);
 											APP.grss = new OpenLayers.Layer.GeoRSS("GeoRSS",tempUrl, {
@@ -111,8 +119,8 @@ RSS = function() {
 												rendererOptions: { zIndexing: true }
 											});		
 											APP.map.addLayers([APP.grss]);	
-											// APP.grss.setZIndex( 1000 );
-											// APP.markers.setZIndex(1001);								
+											APP.grss.setZIndex( 1000 );
+											APP.markers.setZIndex(1001);								
 										}
 									} else {
 										if (APP.map.getLayersByClass("OpenLayers.Layer.GeoRSS").length > 0) 
@@ -120,6 +128,7 @@ RSS = function() {
 										APP.grss=null;
 										APP.markers.clearMarkers();
 									}
+
 								}
 							}
 						})]
@@ -168,9 +177,12 @@ RSS = function() {
 				listeners: {
 					'expand': function(a, b){
 						UTILS.showHelpTip('GeoRSS Feed', 'Choose the GeoRSS feed service from RSS combobox.', 7200);
+						APP.weatherSelectControl.deactivate(); 
+						APP.fpControl.deactivate(); 
 					},
 					'collapse': function(a, b){
-
+						APP.weatherSelectControl.activate(); 
+						APP.fpControl.activate();
 					}
 				}
 			});	

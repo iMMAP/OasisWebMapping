@@ -15,16 +15,15 @@ MAP
 		'no_defs'
 	END #PROJECTION
 	IMAGECOLOR 193 225 243
-	CONFIG "MS_ERRORFILE" "/var/log/ms_error.txt"
-	CONFIG GDAL_DATA "/usr/share/gdal/1.9/"
+	CONFIG "MS_ERRORFILE" "/ms4w/tmp/ms_error.txt"
 	WEB
-		IMAGEPATH "/var/www/oasiswebmapping/syria/image/"
-		IMAGEURL "/image/"
+		IMAGEPATH "c:/ms4w/tmp/ms_tmp/"
+		IMAGEURL "/ms_tmp/"
 
 
 		  METADATA
 		    "wms_title"           "WMS Oasis Base layers"
-		    "wms_onlineresource"  "http://maps.oasiswebservice.org/syria/php/getmap.php?"
+		    "wms_onlineresource"  "http://oasispakistan.pk/php/getmap.php?"
 		    "wms_srs"             "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
 			"ows_enable_request"   "*"
 		  END
@@ -32,6 +31,210 @@ MAP
 	END #WEB
  
 
+
+
+
+
+LAYER
+	NAME 'Admin'
+	TYPE POLYGON
+	TOLERANCE 10
+	OPACITY 50
+	TOLERANCEUNITS pixels
+	DUMP true
+	CONNECTIONTYPE PLUGIN
+	PLUGIN "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll"
+	DATA "geom from xx_SRF_unionLocation USING UNIQUE child USING SRID=4326"
+	CONNECTION "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false"       
+	PROCESSING "CLOSE_CONNECTION=DEFER"
+	LABELITEM "name"
+	TEMPLATE "blank"
+	METADATA
+		wms_title 'Provinces'
+		WMS_SRS "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
+		wms_enable_request "*"
+		gml_include_items "all"
+		gml_geom_type 'polygon'
+		gml_geometries 'geom'
+	END #End Metadata
+		
+	STATUS ON
+	PROJECTION
+		'proj=longlat'
+		'ellps=WGS84'
+		'datum=WGS84'
+		'no_defs'
+	END	  
+	CLASS
+		#OVERLAYSYMBOL "circle"
+		NAME 'Tehsil'
+		#MAXSCALEDENOM 2000000
+		EXPRESSION ( [level] = 3)
+		STYLE
+			SIZE 0.4
+			SYMBOL 'circle'
+			OUTLINECOLOR 101 0 0
+		END
+		STYLE
+			SIZE 0.15
+			SYMBOL 'circle'
+			OUTLINECOLOR 254 254 254
+		END
+		STYLE
+			COLOR 241 235 183
+		END		
+	END # end of class	
+	CLASS
+		#OVERLAYSYMBOL "circle"
+		#MAXSCALEDENOM 800000
+		NAME 'Union Council'
+		EXPRESSION ( [level] = 3)
+		STYLE
+			SIZE 0.1
+			SYMBOL 'circle'
+			OUTLINECOLOR 101 0 0
+		END
+		STYLE
+			SIZE 0.01
+			SYMBOL 'circle'
+			OUTLINECOLOR 254 254 254
+		END
+		STYLE
+			COLOR 241 199 105
+		END		
+	END # end of class
+
+	CLASS
+		NAME 'District'
+		#OVERLAYSYMBOL "circle"
+		EXPRESSION ( [level] = 2)
+		STYLE
+			SIZE 1
+			SYMBOL 'circle'
+			OUTLINECOLOR 101 101 101
+		END
+		STYLE
+			SIZE 0.5
+			SYMBOL 'circle'
+			OUTLINECOLOR 254 254 254
+		END
+	END # end of class
+	
+	CLASS
+		NAME 'Provinces'
+		EXPRESSION ( [level] = 1)
+		OVERLAYSYMBOL "circle"
+		STYLE
+			SIZE 3
+			SYMBOL 'circle'
+			OUTLINECOLOR 3 170 213
+		END
+		STYLE
+			SIZE 2
+			SYMBOL 'circle'
+			OUTLINECOLOR 254 254 254
+		END
+		LABEL
+			FONT "arial-bold"
+			TYPE truetype
+			SIZE 7
+			POSITION CC
+			PARTIALS FALSE
+			COLOR 254 254 254
+			OUTLINECOLOR 101 101 101
+		END # LABEL			
+	END # end of class
+
+END # end of layer
+
+LAYER
+	NAME 'District'
+	TYPE POLYGON
+	TOLERANCE 10
+	TOLERANCEUNITS pixels
+	DUMP true
+	CONNECTIONTYPE PLUGIN
+	PLUGIN "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll"
+	DATA "geom from xx_SRF_unionLocation USING UNIQUE child USING SRID=4326"
+	CONNECTION "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false"       
+	PROCESSING "CLOSE_CONNECTION=DEFER"
+	LABELITEM "name"
+	TEMPLATE "blank"
+	METADATA
+		wms_title 'Provinces'
+		WMS_SRS "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
+		wms_enable_request "*"
+		gml_include_items "all"
+		gml_geom_type 'polygon'
+		gml_geometries 'geom'
+	END #End Metadata
+		
+	STATUS ON
+	PROJECTION
+		'proj=longlat'
+		'ellps=WGS84'
+		'datum=WGS84'
+		'no_defs'
+	END	  
+	CLASS
+		EXPRESSION ( [level] = 2)
+		STYLE
+			SIZE 1
+			SYMBOL 'circle'
+			OUTLINECOLOR 101 101 101
+		END
+		STYLE
+			SIZE 0.5
+			SYMBOL 'circle'
+			OUTLINECOLOR 254 254 254
+		END
+	END # end of class
+END # end of layer
+
+LAYER
+	NAME 'Province'
+	TYPE POLYGON
+	TOLERANCE 10
+	TOLERANCEUNITS pixels
+	DUMP true
+	CONNECTIONTYPE PLUGIN
+	PLUGIN "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll"
+	DATA "geom from xx_SRF_unionLocation USING UNIQUE child USING SRID=4326"
+	CONNECTION "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false"       
+	PROCESSING "CLOSE_CONNECTION=DEFER"
+	LABELITEM "name"
+	TEMPLATE "blank"
+	METADATA
+		wms_title 'Provinces'
+		WMS_SRS "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
+		wms_enable_request "*"
+		gml_include_items "all"
+		gml_geom_type 'polygon'
+		gml_geometries 'geom'
+	END #End Metadata		
+	STATUS ON
+	PROJECTION
+		'proj=longlat'
+		'ellps=WGS84'
+		'datum=WGS84'
+		'no_defs'
+	END	  
+	CLASS
+		EXPRESSION ( [level] = 1)
+		OVERLAYSYMBOL "circle"
+		STYLE
+			SIZE 3
+			SYMBOL 'circle'
+			OUTLINECOLOR 3 170 213
+		END
+		STYLE
+			SIZE 2
+			SYMBOL 'circle'
+			OUTLINECOLOR 254 254 254
+		END
+	END # end of class
+
+END # end of layer
 
   
 

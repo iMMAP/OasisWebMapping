@@ -3,11 +3,11 @@ session_start();
 $userid = $_SESSION['user'];
 	
 	include 'dbconnect.php';	
-	$query = "Select * from \"Administration\".layerconf where userid = '$userid'";
+	$query = "Select * from OASIS_v3_2.dbo.layerconf where userid = '$userid'";
 	$dbinfo = getDB();
-	$result = pg_query( $dbinfo, $query);
+	$result = sqlsrv_query( $dbinfo, $query);
 	
-	while ($obj = pg_fetch_array( $result)){
+	while ($obj = sqlsrv_fetch_array( $result)){
 		$res[] = $obj['conf']; 
 	}
 	

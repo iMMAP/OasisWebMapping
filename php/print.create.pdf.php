@@ -24,7 +24,11 @@ if ($map_type=='Physical' ||$map_type=='Street'||$map_type=='Terrain'||$map_type
 	$base_map_source = 'Google '.$map_type;
 } else if ($map_type=='OpenStreetMap'){
 	$base_map_source = $map_type;
-} 
+} else if ($map_type=='naqsha'){
+	$base_map_source = 'Naqsha.net';
+} else {
+	$base_map_source = 'ArcGIS data';
+}
 
 $bbox_array = explode(',', $bbox);
 $bbox =  $bbox_array[0]." ".$bbox_array[1].",".$bbox_array[2]." ".$bbox_array[3];
@@ -100,7 +104,7 @@ $bbox =  $bbox_array[0]." ".$bbox_array[1].",".$bbox_array[2]." ".$bbox_array[3]
 	
 	$comments = str_replace('%u200B','',urldecode($_REQUEST['comments']));
 	if ($orientation=='A4 Portrait'){
-		$html .= '<div id="right" style="position: absolute; left: 572px; top:3; width: 200px;">';
+		$html .= '<div id="right" style="position: absolute; left: 412px; top:3; width: 200px;">';
 		$html_Add = '<div id="north" style="position: absolute;left: 10px;top: 955px;">
 		<table width="100px" border="0" cellspacing="0" class="northTable">
 		<tr><td align="center"><img src="../image/NorthNavigator.gif" width="100" height="100"/></td></tr>
@@ -109,7 +113,7 @@ $bbox =  $bbox_array[0]." ".$bbox_array[1].",".$bbox_array[2]." ".$bbox_array[3]
 		<table width="400px" border="0" cellspacing="0" class="commentTable">
 		<tr><td align="left"><b>Comments : </b><br>'.$comments.'</td></tr>';
 	} else if ($orientation=='A4 Landscape'){
-		$html .= '<div id="right" style="position: absolute; left: 899px; top:3; width: 200px;">';
+		$html .= '<div id="right" style="position: absolute; left: 739px; top:3; width: 200px;">';
 		$html_Add = '<div id="north" style="position: absolute;left: 10px;top: 628px;">
 		<table width="100px" border="0" cellspacing="0" class="northTable">
 		<tr><td align="center"><img src="../image/NorthNavigator.gif" width="100" height="100"/></td></tr>
@@ -118,7 +122,7 @@ $bbox =  $bbox_array[0]." ".$bbox_array[1].",".$bbox_array[2]." ".$bbox_array[3]
 		<table width="400px" border="0" cellspacing="0" class="commentTable">
 		<tr><td align="left"><b>Comments : </b><br>'.$comments.'</td></tr>';		
 	} else if ($orientation=='A3 Portrait'){
-		$html .= '<div id="right" style="position: absolute; left: 899px; top:3; width: 200px;">';
+		$html .= '<div id="right" style="position: absolute; left: 739px; top:3; width: 200px;">';
 		$html_Add = '<div id="north" style="position: absolute;left: 10px;top: 1420px;">
 		<table width="100px" border="0" cellspacing="0" class="northTable" width="100px">
 		<tr><td align="center"><img src="../image/NorthNavigator.gif" width="100" height="100"/></td></tr>
@@ -127,7 +131,7 @@ $bbox =  $bbox_array[0]." ".$bbox_array[1].",".$bbox_array[2]." ".$bbox_array[3]
 		<table width="400px" border="0" cellspacing="0" class="commentTable">
 		<tr><td align="left"><b>Comments : </b><br>'.$comments.'</td></tr>';	
 	} else if ($orientation=='A3 Landscape'){
-		$html .= '<div id="right" style="position: absolute; left: 1363.5px; top:3; width: 200px;">';
+		$html .= '<div id="right" style="position: absolute; left: 1204px; top:3; width: 200px;">';
 		$html_Add = '<div id="north" style="position: absolute;left: 10px;top: 955px;">
 		<table width="100px" border="0" cellspacing="0" class="northTable" width="100px">
 		<tr><td align="center"><img src="../image/NorthNavigator.gif" width="100" height="100"/></td></tr>
@@ -138,23 +142,50 @@ $bbox =  $bbox_array[0]." ".$bbox_array[1].",".$bbox_array[2]." ".$bbox_array[3]
 	}   
 		
 
-	$html .= '<table width="200px" border="0" cellspacing="0" class="mapDataTable">';
+	$html .= '<table width="360px" border="0" cellspacing="0" class="mapDataTable">';
 	$html .= '<tr><td colspan="6"><img src="../image/logo.png" height="60"></td></tr>';	
 	
 	// if ($activelayer != ''){ $html .= '<tr><td colspan="6"><h2>Legend</h2></td></tr>';}
 	foreach ($arr_actLayer as $layer){
 		$selLayer = $layer->name;
+		$addUrls = $layer->url;
 		if (substr($selLayer, 0, 17)=='gpw-v3-population'){
 			$legendurl = "http://sedac.ciesin.columbia.edu/geoserver/wms?width=15&height=15&legend_options=border:false;mx:0.05;my:0.02;dx:0.2;dy:0.07;fontSize:11;bandInfo:false;&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=$selLayer&LAYERS=$selLayer";
+		} else if ($selLayer=='clouds'){
+			$legendurl = "http://openweathermap.org/img/a/NT.png"; 	
+		} else if ($selLayer=='precipitation'){
+			$legendurl = "http://openweathermap.org/img/a/PR.png";
+		} else if ($selLayer=='pressure'){
+			$legendurl = "http://openweathermap.org/img/a/PN.png";	
+		} else if ($selLayer=='wind'){
+			$legendurl = "http://openweathermap.org/img/a/UV.png";			
+		} else if ($selLayer=='temp'){
+			$legendurl = "http://openweathermap.org/img/a/TT.png";	
+		} else if ($selLayer=='snow'){
+			$legendurl = "http://openweathermap.org/img/a/SN.png";	
 		} else {
-			$legendurl = "$baseUrl/php/getmap.php?FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=$selLayer&LAYERS=$selLayer&userid=$userid";
+			if ($addUrls == ''){
+				$legendurl = "$baseUrl/php/getmap.php?FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=$selLayer&LAYERS=$selLayer&userid=$userid";
+			} else {
+				if (strpos($layer->url,'?')){
+					$legendurl = "$addUrls&request=GetLegend&layer=$selLayer&layers=$selLayer";
+				} else {
+					$legendurl = "$addUrls?width=15&height=15&legend_options=border:false;mx:0.05;my:0.02;dx:0.2;dy:0.07;fontSize:11;bandInfo:false;&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=$selLayer&LAYERS=$selLayer";
+				}	
+			}	
 		}
 		// $legendurl = "http://localhost/oasisweb/php/getmap.php?FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYERS=$layer&userid=$userid";
 		if ($selLayer!='dataLayer') {
-			$legendurl .=  "&LAYER=$selLayer";
-			if ($selLayer!='flood2'){
+			if ($selLayer!='clouds' && $selLayer!='precipitation' && $selLayer!='pressure' && $selLayer!='wind' && $selLayer!='temp' && $selLayer!='snow')	{
+				$legendurl .=  "&LAYER=$selLayer";
+				if ($layer->sld != '') $legendurl .= "&SLD=".$layer->sld;
+			}
+			
+			if ($selLayer!='flood2' && $selLayer!='3hrainfallleft' && $selLayer!='3hrainfallright' ){
 				$html .= "<tr><td colspan='6'>$layer->text</td></tr>";
 				$html .= "<tr><td colspan='6' valign='top' align='left'><img src='$legendurl'></td></tr>";
+			} else if ($selLayer=='3hrainfallleft' || $selLayer=='3hrainfallright'){
+				$html .= "<tr><td colspan='6' valign='top' align='left'><img src='http://trmm.gsfc.nasa.gov/trmm_rain/Events/tafd_3hr_rain_dump_google_wedge.png' height=60px></td></tr>";
 			} else {
 				$html .= "<tr><td colspan='6' valign='top' align='left'><img src='../mapfile/legend/legend-MPE.png' width=193px></td></tr>";	
 			}	
@@ -181,7 +212,7 @@ if ($unsdit_data!=''){
 }
 if ($wfp_data!=''){$data_source_label .= ', '.$wfp_data;} 
 
-$html_Add .= '<tr><td align="left"><font size="1">Data Sources :</font></td></tr>
+$html_Add .= '<tr><td align="left"><font size="1">Background image :</font></td></tr>
 		<tr><td align="left"><font size="1">'.$data_source_label.'</font></td></tr>	
 		<tr><td align="right"><font size="1">'.date("F j, Y").'</font></td></tr>						
 		</table></div>';

@@ -1,4 +1,787 @@
 [{
+    "text": "DFID Projects", 
+    "group": "Editable Layers",
+    "cls": "folder",
+    "qtip": "DFID Projects",
+    "expanded": false,
+    "children": [{
+    	"text": "Schools progress status",
+        "qtip": "Schools progress status",
+        "layer": "schoolsprogress",
+        "tableitem" : "v_schools",
+        "layertype": "point",
+        "sourceformat": "devdata",
+        "data":"the_geom from v_schools USING UNIQUE uuid USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"progstat",
+        "category":{			
+			    "Planing":{
+			    	"symbolname":"planning.png",
+			    	"name":"Planning"
+			    },
+			    "On Going":{
+			    	"symbolname":"ongoing.png",
+			    	"name":"On going"
+			    },
+			    "Completed":{
+			    	"symbolname":"completed.png",
+			    	"name":"Completed"
+			    },
+			    "Canceled":{
+			    	"symbolname":"canceled.png",
+			    	"name":"Canceled"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "School types",
+        "qtip": "School types",
+        "layer": "schooltypes",
+        "tableitem" : "v_schools",
+        "layertype": "point",
+        "sourceformat": "devdata",
+        "data":"the_geom from v_schools USING UNIQUE uuid USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"schooltype",
+        "category":{			
+			    "Primary school":{
+			    	"symbolname":"primaryschool.png",
+			    	"name":"Primary school"
+			    },
+			    "High school":{
+			    	"symbolname":"highschool.png",
+			    	"name":"High school"
+			    },
+			    "Higher secondary school":{
+			    	"symbolname":"training1.png",
+			    	"name":"Higher secondary school"
+			    },
+			    "Special education school":{
+			    	"symbolname":"user2.png",
+			    	"name":"Special education school"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Bridges progress status",
+        "qtip": "Bridges progress status",
+        "layer": "bridgesprogress",
+        "tableitem" : "v_bridges",
+        "layertype": "point",
+        "sourceformat": "devdata",
+        "data":"the_geom from v_bridges USING UNIQUE uuid USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"progstat",
+        "category":{			
+			    "Planing":{
+			    	"symbolname":"planning.png",
+			    	"name":"Planning"
+			    },
+			    "On Going":{
+			    	"symbolname":"ongoing.png",
+			    	"name":"On going"
+			    },
+			    "Completed":{
+			    	"symbolname":"completed.png",
+			    	"name":"Completed"
+			    },
+			    "Canceled":{
+			    	"symbolname":"canceled.png",
+			    	"name":"Canceled"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Bridges types",
+        "qtip": "Bridges types",
+        "layer": "bridgestypes",
+        "tableitem" : "v_bridges",
+        "layertype": "point",
+        "sourceformat": "devdata",
+        "data":"the_geom from v_bridges USING UNIQUE uuid USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"bridgefacilitytype",
+        "category":{			
+			    "Beam":{
+			    	"symbolname":"beam.png",
+			    	"name":"Beam"
+			    },
+			    "Arch":{
+			    	"symbolname":"arch.png",
+			    	"name":"Arch"
+			    },
+			    "Suspension/Cable-stayed":{
+			    	"symbolname":"cable.png",
+			    	"name":"Suspension/Cable-stayed"
+			    },
+			    "Cantilever":{
+			    	"symbolname":"cantilever.png",
+			    	"name":"Cantilever"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Health progress status",
+        "qtip": "Health progress status",
+        "layer": "healthprogress",
+        "tableitem" : "v_health",
+        "layertype": "point",
+        "sourceformat": "devdata",
+        "data":"the_geom from v_health USING UNIQUE uuid USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"progstat",
+        "category":{			
+			    "Planing":{
+			    	"symbolname":"planning.png",
+			    	"name":"Planning"
+			    },
+			    "On Going":{
+			    	"symbolname":"ongoing.png",
+			    	"name":"On going"
+			    },
+			    "Completed":{
+			    	"symbolname":"completed.png",
+			    	"name":"Completed"
+			    },
+			    "Canceled":{
+			    	"symbolname":"canceled.png",
+			    	"name":"Canceled"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Situational Awareness", 
+    "group": "Editable Layers",
+    "cls": "folder",
+    "qtip": "Situational Awareness",
+    "expanded": false,
+    "children": [{
+    	"text": "Last 24 hours incidents",
+        "qtip": "Last 24 hours incidents",
+        "layer": "incident24",
+        "tableitem" : "incidentEvents",
+        "layertype": "point",
+        "sourceformat": "incidentdata",
+        "data":"the_geom from v_incidents24 USING UNIQUE id USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"incidenttype",
+        "category":{			
+			    "Army operation":{
+			    	"symbolname":"army.png",
+			    	"name":"Army operation"
+			    },
+			    "Demonstration":{
+			    	"symbolname":"demostration.png",
+			    	"name":"Demonstration"
+			    },
+			    "Human remains find":{
+			    	"symbolname":"death.png",
+			    	"name":"Human Remain Find"
+			    },
+			    "IED explosion":{
+			    	"symbolname":"IEDexplode.png",
+			    	"name":"IED explosion"
+			    },
+			    "IED find":{
+			    	"symbolname":"IEDfind.png",
+			    	"name":"IED Find"
+			    },	
+			    "IED threat":{
+			    	"symbolname":"IEDthreat.png",
+			    	"name":"IED Threat"
+			    },	
+			    "Kidnapping":{
+			    	"symbolname":"kidnapping.png",
+			    	"name":"Kidnapping"
+			    },	
+			    "Police operation":{
+			    	"symbolname":"police.png",
+			    	"name":"Police operation"
+			    },	
+			    "Rioting":{
+			    	"symbolname":"riot.png",
+			    	"name":"Rioting"
+			    },	
+			    "Robbery":{
+			    	"symbolname":"robbery.png",
+			    	"name":"Robbery"
+			    },	
+			    "Security Forces operation":{
+			    	"symbolname":"securityforce.png",
+			    	"name":"Security Force operation"
+			    },	
+			    "Shooting":{
+			    	"symbolname":"shooting.png",
+			    	"name":"Shooting (Criminal)"
+			    },	
+			    "Shooting (insurgency)":{
+			    	"symbolname":"shootinginsurgency.png",
+			    	"name":"Shooting (insurgency)"
+			    },	
+			    "Shooting (political)":{
+			    	"symbolname":"shootingpolitic.png",
+			    	"name":"Shooting (politics)"
+			    },	
+			    "Vehicle hijacking":{
+			    	"symbolname":"vehiclehijacking.png",
+			    	"name":"Vehicle hijacking"
+			    },	
+			    "Weapons cache find":{
+			    	"symbolname":"weaponcache.png",
+			    	"name":"Weapons cache find"
+			    },	
+			    "Others":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Others"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Last 48 hours incidents",
+        "qtip": "Last 48 hours incidents",
+        "layer": "incident48",
+        "tableitem" : "incidentEvents",
+        "layertype": "point",
+        "sourceformat": "incidentdata",
+        "data":"the_geom from v_incidents48 USING UNIQUE id USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"incidenttype",
+        "category":{			
+			    "Army operation":{
+			    	"symbolname":"army.png",
+			    	"name":"Army operation"
+			    },
+			    "Demonstration":{
+			    	"symbolname":"demostration.png",
+			    	"name":"Demonstration"
+			    },
+			    "Human remains find":{
+			    	"symbolname":"death.png",
+			    	"name":"Human Remain Find"
+			    },
+			    "IED explosion":{
+			    	"symbolname":"IEDexplode.png",
+			    	"name":"IED explosion"
+			    },
+			    "IED find":{
+			    	"symbolname":"IEDfind.png",
+			    	"name":"IED Find"
+			    },	
+			    "IED threat":{
+			    	"symbolname":"IEDthreat.png",
+			    	"name":"IED Threat"
+			    },	
+			    "Kidnapping":{
+			    	"symbolname":"kidnapping.png",
+			    	"name":"Kidnapping"
+			    },	
+			    "Police operation":{
+			    	"symbolname":"police.png",
+			    	"name":"Police operation"
+			    },	
+			    "Rioting":{
+			    	"symbolname":"riot.png",
+			    	"name":"Rioting"
+			    },	
+			    "Robbery":{
+			    	"symbolname":"robbery.png",
+			    	"name":"Robbery"
+			    },	
+			    "Security Forces operation":{
+			    	"symbolname":"securityforce.png",
+			    	"name":"Security Force operation"
+			    },	
+			    "Shooting":{
+			    	"symbolname":"shooting.png",
+			    	"name":"Shooting (Criminal)"
+			    },	
+			    "Shooting (insurgency)":{
+			    	"symbolname":"shootinginsurgency.png",
+			    	"name":"Shooting (insurgency)"
+			    },	
+			    "Shooting (political)":{
+			    	"symbolname":"shootingpolitic.png",
+			    	"name":"Shooting (politics)"
+			    },	
+			    "Vehicle hijacking":{
+			    	"symbolname":"vehiclehijacking.png",
+			    	"name":"Vehicle hijacking"
+			    },	
+			    "Weapons cache find":{
+			    	"symbolname":"weaponcache.png",
+			    	"name":"Weapons cache find"
+			    },	
+			    "Others":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Others"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Last week incidents",
+        "qtip": "Last week incidents",
+        "layer": "incidentw",
+        "tableitem" : "incidentEvents",
+        "layertype": "point",
+        "sourceformat": "incidentdata",
+        "data":"the_geom from v_incidentsw USING UNIQUE id USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"incidenttype",
+        "category":{			
+			    "Army operation":{
+			    	"symbolname":"army.png",
+			    	"name":"Army operation"
+			    },
+			    "Demonstration":{
+			    	"symbolname":"demostration.png",
+			    	"name":"Demonstration"
+			    },
+			    "Human remains find":{
+			    	"symbolname":"death.png",
+			    	"name":"Human Remain Find"
+			    },
+			    "IED explosion":{
+			    	"symbolname":"IEDexplode.png",
+			    	"name":"IED explosion"
+			    },
+			    "IED find":{
+			    	"symbolname":"IEDfind.png",
+			    	"name":"IED Find"
+			    },	
+			    "IED threat":{
+			    	"symbolname":"IEDthreat.png",
+			    	"name":"IED Threat"
+			    },	
+			    "Kidnapping":{
+			    	"symbolname":"kidnapping.png",
+			    	"name":"Kidnapping"
+			    },	
+			    "Police operation":{
+			    	"symbolname":"police.png",
+			    	"name":"Police operation"
+			    },	
+			    "Rioting":{
+			    	"symbolname":"riot.png",
+			    	"name":"Rioting"
+			    },	
+			    "Robbery":{
+			    	"symbolname":"robbery.png",
+			    	"name":"Robbery"
+			    },	
+			    "Security Forces operation":{
+			    	"symbolname":"securityforce.png",
+			    	"name":"Security Force operation"
+			    },	
+			    "Shooting":{
+			    	"symbolname":"shooting.png",
+			    	"name":"Shooting (Criminal)"
+			    },	
+			    "Shooting (insurgency)":{
+			    	"symbolname":"shootinginsurgency.png",
+			    	"name":"Shooting (insurgency)"
+			    },	
+			    "Shooting (political)":{
+			    	"symbolname":"shootingpolitic.png",
+			    	"name":"Shooting (politics)"
+			    },	
+			    "Vehicle hijacking":{
+			    	"symbolname":"vehiclehijacking.png",
+			    	"name":"Vehicle hijacking"
+			    },	
+			    "Weapons cache find":{
+			    	"symbolname":"weaponcache.png",
+			    	"name":"Weapons cache find"
+			    },	
+			    "Others":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Others"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Last month incidents",
+        "qtip": "Last month incidents",
+        "layer": "incidentm",
+        "tableitem" : "incidentEvents",
+        "layertype": "point",
+        "sourceformat": "incidentdata",
+        "data":"the_geom from v_incidentsm USING UNIQUE id USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"incidenttype",
+        "category":{			
+			    "Army operation":{
+			    	"symbolname":"army.png",
+			    	"name":"Army operation"
+			    },
+			    "Demonstration":{
+			    	"symbolname":"demostration.png",
+			    	"name":"Demonstration"
+			    },
+			    "Human remains find":{
+			    	"symbolname":"death.png",
+			    	"name":"Human Remain Find"
+			    },
+			    "IED explosion":{
+			    	"symbolname":"IEDexplode.png",
+			    	"name":"IED explosion"
+			    },
+			    "IED find":{
+			    	"symbolname":"IEDfind.png",
+			    	"name":"IED Find"
+			    },	
+			    "IED threat":{
+			    	"symbolname":"IEDthreat.png",
+			    	"name":"IED Threat"
+			    },	
+			    "Kidnapping":{
+			    	"symbolname":"kidnapping.png",
+			    	"name":"Kidnapping"
+			    },	
+			    "Police operation":{
+			    	"symbolname":"police.png",
+			    	"name":"Police operation"
+			    },	
+			    "Rioting":{
+			    	"symbolname":"riot.png",
+			    	"name":"Rioting"
+			    },	
+			    "Robbery":{
+			    	"symbolname":"robbery.png",
+			    	"name":"Robbery"
+			    },	
+			    "Security Forces operation":{
+			    	"symbolname":"securityforce.png",
+			    	"name":"Security Force operation"
+			    },	
+			    "Shooting":{
+			    	"symbolname":"shooting.png",
+			    	"name":"Shooting (Criminal)"
+			    },	
+			    "Shooting (insurgency)":{
+			    	"symbolname":"shootinginsurgency.png",
+			    	"name":"Shooting (insurgency)"
+			    },	
+			    "Shooting (political)":{
+			    	"symbolname":"shootingpolitic.png",
+			    	"name":"Shooting (politics)"
+			    },	
+			    "Vehicle hijacking":{
+			    	"symbolname":"vehiclehijacking.png",
+			    	"name":"Vehicle hijacking"
+			    },	
+			    "Weapons cache find":{
+			    	"symbolname":"weaponcache.png",
+			    	"name":"Weapons cache find"
+			    },	
+			    "Others":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Others"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Last year incidents",
+        "qtip": "Last year incidents",
+        "layer": "incidenty",
+        "tableitem" : "incidentEvents",
+        "layertype": "point",
+        "sourceformat": "incidentdata",
+        "data":"the_geom from v_incidentsy USING UNIQUE id USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"incidenttype",
+        "category":{			
+			    "Army operation":{
+			    	"symbolname":"army.png",
+			    	"name":"Army operation"
+			    },
+			    "Demonstration":{
+			    	"symbolname":"demostration.png",
+			    	"name":"Demonstration"
+			    },
+			    "Human remains find":{
+			    	"symbolname":"death.png",
+			    	"name":"Human Remain Find"
+			    },
+			    "IED explosion":{
+			    	"symbolname":"IEDexplode.png",
+			    	"name":"IED explosion"
+			    },
+			    "IED find":{
+			    	"symbolname":"IEDfind.png",
+			    	"name":"IED Find"
+			    },	
+			    "IED threat":{
+			    	"symbolname":"IEDthreat.png",
+			    	"name":"IED Threat"
+			    },	
+			    "Kidnapping":{
+			    	"symbolname":"kidnapping.png",
+			    	"name":"Kidnapping"
+			    },	
+			    "Police operation":{
+			    	"symbolname":"police.png",
+			    	"name":"Police operation"
+			    },	
+			    "Rioting":{
+			    	"symbolname":"riot.png",
+			    	"name":"Rioting"
+			    },	
+			    "Robbery":{
+			    	"symbolname":"robbery.png",
+			    	"name":"Robbery"
+			    },	
+			    "Security Forces operation":{
+			    	"symbolname":"securityforce.png",
+			    	"name":"Security Force operation"
+			    },	
+			    "Shooting":{
+			    	"symbolname":"shooting.png",
+			    	"name":"Shooting (Criminal)"
+			    },	
+			    "Shooting (insurgency)":{
+			    	"symbolname":"shootinginsurgency.png",
+			    	"name":"Shooting (insurgency)"
+			    },	
+			    "Shooting (political)":{
+			    	"symbolname":"shootingpolitic.png",
+			    	"name":"Shooting (politics)"
+			    },	
+			    "Vehicle hijacking":{
+			    	"symbolname":"vehiclehijacking.png",
+			    	"name":"Vehicle hijacking"
+			    },	
+			    "Weapons cache find":{
+			    	"symbolname":"weaponcache.png",
+			    	"name":"Weapons cache find"
+			    },	
+			    "Others":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Others"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "All incidents",
+        "qtip": "All incidents",
+        "layer": "incidenta",
+        "tableitem" : "incidentEvents",
+        "layertype": "point",
+        "sourceformat": "incidentdata",
+        "data":"the_geom from \"incidentEvents\" USING UNIQUE id USING SRID=4326",
+        "link":"http://www.immap.org",
+        "source":"iMMAP",
+        "classitem":"incidenttype",
+        "category":{			
+			    "Army operation":{
+			    	"symbolname":"army.png",
+			    	"name":"Army operation"
+			    },
+			    "Demonstration":{
+			    	"symbolname":"demostration.png",
+			    	"name":"Demonstration"
+			    },
+			    "Human remains find":{
+			    	"symbolname":"death.png",
+			    	"name":"Human Remain Find"
+			    },
+			    "IED explosion":{
+			    	"symbolname":"IEDexplode.png",
+			    	"name":"IED explosion"
+			    },
+			    "IED find":{
+			    	"symbolname":"IEDfind.png",
+			    	"name":"IED Find"
+			    },	
+			    "IED threat":{
+			    	"symbolname":"IEDthreat.png",
+			    	"name":"IED Threat"
+			    },	
+			    "Kidnapping":{
+			    	"symbolname":"kidnapping.png",
+			    	"name":"Kidnapping"
+			    },	
+			    "Police operation":{
+			    	"symbolname":"police.png",
+			    	"name":"Police operation"
+			    },	
+			    "Rioting":{
+			    	"symbolname":"riot.png",
+			    	"name":"Rioting"
+			    },	
+			    "Robbery":{
+			    	"symbolname":"robbery.png",
+			    	"name":"Robbery"
+			    },	
+			    "Security Forces operation":{
+			    	"symbolname":"securityforce.png",
+			    	"name":"Security Force operation"
+			    },	
+			    "Shooting":{
+			    	"symbolname":"shooting.png",
+			    	"name":"Shooting (Criminal)"
+			    },	
+			    "Shooting (insurgency)":{
+			    	"symbolname":"shootinginsurgency.png",
+			    	"name":"Shooting (insurgency)"
+			    },	
+			    "Shooting (political)":{
+			    	"symbolname":"shootingpolitic.png",
+			    	"name":"Shooting (politics)"
+			    },	
+			    "Vehicle hijacking":{
+			    	"symbolname":"vehiclehijacking.png",
+			    	"name":"Vehicle hijacking"
+			    },	
+			    "Weapons cache find":{
+			    	"symbolname":"weaponcache.png",
+			    	"name":"Weapons cache find"
+			    },	
+			    "Others":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Others"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "World Bank Projects", 
+    "group": "Editable Layers",
+    "cls": "folder",
+    "qtip": "World Bank Projects",
+    "expanded": false,
+    "children": [{
+    	"text": "World Bank Projects [not printable]",
+        "qtip": "World Bank Projects [not printable]",
+        "layer": "wbprojects001",
+        "layertype": "custom1",
+        "sourceformat": "custom1",
+        "opacity": 100,
+        "link":"http://worldbank.org",
+        "source":"World Bank",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "NGO Presence", 
+    "group": "Editable Layers",
+    "cls": "folder",
+    "qtip": "NGO Presence all Over Pakistan",
+    "expanded": false,
+    "children": [{
+    	"text": "NGO Presence [not printable]",
+        "qtip": "NGO Presence [not printable]",
+        "layer": "ngoprojects001",
+        "layertype": "custom1",
+        "sourceformat": "custom1",
+        "opacity": 100,
+        "link":"http://worldbank.org",
+        "source":"World Bank",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "iMMAP", 
+    "group": "Base Layers",
+    "cls": "folder",
+    "qtip": "iMMAP Data",
+    "expanded": false,
+    "children": [{
+        "text": "IM Trainings [iMMAP]",
+        "qtip": "IM Trainings : iMMAP",
+        "layer": "im_immap_trainings",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"IM_Trainings.shp",
+        "link":"http://www.geopakistan.pk",
+        "source":"iMMAP",
+        "classitem":"No_partici",
+        "range":true,
+        "category":{			
+			    "-10":{
+			    	"symbolname":"user1.png",
+			    	"name":"participants <= 10"
+			    },
+			    "11-20":{
+			    	"symbolname":"user2.png",
+			    	"name":"11-20 participants"
+			    },
+			    "21-30":{
+			    	"symbolname":"user3.png",
+			    	"name":"21-30 participants"
+			    },
+			    "31-40":{
+			    	"symbolname":"user4.png",
+			    	"name":"31-40 participants"
+			    },
+			    "41-":{
+			    	"symbolname":"user5.png",
+			    	"name":"participants > 40"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "DRR Trainings [iMMAP]",
+        "qtip": "DRR Trainings : iMMAP",
+        "layer": "DRR_immap_trainings",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"DRR_trainings.shp",
+        "link":"http://www.geopakistan.pk",
+        "source":"iMMAP",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"symbolname":"training2.png",
+			    	"name":"DRR Trainings"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Available District Profile [iMMAP]",
+        "qtip": "Available District Profile : iMMAP",
+        "layer": "immap_dear_sir",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"Sindh_district_capitals.shp",
+        "link":"http://www.geopakistan.pk",
+        "source":"iMMAP",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"symbolname":"star.png",
+			    	"name":"Available District Profile"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    }]
+},{
     "text": "Administrative Boundaries", 
     "group": "Base Layers",
     "cls": "folder",
@@ -10,21 +793,52 @@
         "layer": "Districts",
         "layertype": "polygon",
         "sourceformat": "shapefile",
-        "data":"AdminLevel0.shp",
+        "data":"District_Boundary.shp",
+        "link":"http://www.geopakistan.pk/srv/en/metadata.show?id=283&currTab=simple",
+        "source":"PCO (Population census Organisation)",
         "classitem":"",
         "category":{			
 			    "0":{
 			    	"style":[{
-						    	"color":{
-						    		"R":153,
-						    		"G":179,
-						    		"B":204
-						    	}			    		
+						    	"symbolname":"circle",
+						    	"size":1,
+						    	"outlinecolor":{
+						    		"R":150,
+						    		"G":150,
+						    		"B":150
+						    	}		    		
 
 			    	}],
-			    	"name":"ADMIN"
+			    	"name":"District Boundary"
 			    }
- 		},         
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Provinces Boundary [PCO]",
+        "qtip": "Provinces in Pakistan:PCO",
+        "layer": "Provinces",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"Pak_adm1_pco_20110324.shp",
+        "link":"http://www.geopakistan.pk/srv/en/metadata.show?id=282&currTab=simple",
+        "source":"PCO (Population census Organisation)",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"size":2,
+						    	"outlinecolor":{
+						    		"R":3,
+						    		"G":3,
+						    		"B":3
+						    	}		    		
+
+			    	}],
+			    	"name":"Provinces Boundary"
+			    }
+ 		}, 
         "leaf": true,
         "checked": false
     }]
@@ -34,85 +848,527 @@
     "cls": "folder",
     "qtip": "transportation layers",
     "expanded": false,
-    "children": []
+    "children": [{
+        "text": "Aerodromes [UN SDI-T]",
+        "qtip": "Aerodromes Layer source:UN SDI-T",
+        "layer": "Aerodromes",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"v_aerodromes_PAK.shp",
+        "link":"http://www.logcluster.org/tools/mapcentre/sdit/sdit/tools/mapcentre/sdit",
+        "source":"UN SDI-T",        
+        "classitem":"adrmtpe",
+        "category":{			
+			    "0":{
+			    	"symbolname":"Unspecified.png",
+			    	"name":"Unspecified"
+			    },
+			    "1":{
+			    	"symbolname":"Airports.png",
+			    	"name":"Airport"
+			    },
+			    "2":{
+			    	"symbolname":"airfield.png",
+			    	"name":"Airfield"
+			    },
+			    "3":{
+			    	"symbolname":"Airstrip.png",
+			    	"name":"Airstrip"
+			    },
+			    "4":{
+			    	"symbolname":"Fixed HLZ.png",
+			    	"name":"Fixed HLZ"
+			    },	
+			    "5":{
+			    	"symbolname":"Improvised HLZ.png",
+			    	"name":"Improvized HLZ"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+	},{
+        "text": "Ports [UN SDI-T]",
+        "qtip": "Ports Layer source:UN SDI-T",
+        "layer": "Ports",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"ports_pak.shp",
+        "link":"http://www.logcluster.org/tools/mapcentre/sdit/sdit/tools/mapcentre/sdit",
+        "source":"UN SDI-T",   
+        "classitem":"prttype",
+        "category":{			
+			    "1":{
+			    	"symbolname":"portSea.png",
+			    	"name":"Sea port"
+			    },
+			    "2":{
+			    	"symbolname":"portRiver.png",
+			    	"name":"River port"
+			    },
+			    "3":{
+			    	"symbolname":"portLake.png",
+			    	"name":"Lake port"
+			    },
+			    "4":{
+			    	"symbolname":"portBeaching.png",
+			    	"name":"Beaching"
+			    },	
+			    "5":{
+			    	"symbolname":"portBank.png",
+			    	"name":"Bank"
+			    },	
+			    "6":{
+			    	"symbolname":"portPier.png",
+			    	"name":"Pier"
+			    },	
+			    "7":{
+			    	"symbolname":"portRamp.png",
+			    	"name":"Ramp"
+			    },	
+			    "8":{
+			    	"symbolname":"portAnchorage.png",
+			    	"name":"Anchorage"
+			    },	
+			    "0":{
+			    	"symbolname":"portUnspecified.png",
+			    	"name":"Unspecified port"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+	},{
+        "text": "Roads [UN SDI-T]",
+        "qtip": "Road data source:UNSDI-T",
+        "layer": "roads",
+        "layertype": "line",
+        "sourceformat": "shapefile",
+        "data":"road_pak",
+        "link":"http://www.logcluster.org/tools/mapcentre/sdit/sdit/tools/mapcentre/sdit",
+        "source":"UN SDI-T",
+        "classitem":"FCLASS",
+        "category":{			
+			    "1":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":2,
+						    	"color":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":0
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":242,
+						    		"B":11
+						    	}			    		
+
+			    	}],
+			    	"name":"Highway"
+			    },
+			    "2":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":2,
+						    	"color":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":0
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":210,
+						    		"G":0,
+						    		"B":0
+						    	}			    		
+
+			    	}],
+			    	"name":"Primary",
+			    	"maxscaledenom":7000000
+			    },
+			    "3":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":2,
+						    	"color":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":0
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":124,
+						    		"B":53
+						    	}			    		
+
+			    	}],
+			    	"name":"Secondary",
+			    	"maxscaledenom":3000000
+			    },
+			    "4":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":176,
+						    		"B":53
+						    	}			    		
+
+			    	}],
+			    	"name":"Tertiery",
+			    	"maxscaledenom":2100000
+			    },
+			    "5":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":228,
+						    		"B":75
+						    	}			    		
+
+			    	}],
+			    	"name":"Trail",
+			    	"maxscaledenom":2100000
+			    },
+			    "6":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":176,
+						    		"B":53
+						    	}			    		
+
+			    	}],
+			    	"name":"Private",
+			    	"maxscaledenom":2100000
+			    },
+			    "7":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,	
+						    	"color":{
+						    		"R":227,
+						    		"G":224,
+						    		"B":168
+						    	}			    		
+
+			    	}],
+			    	"name":"Local",
+			    	"maxscaledenom":300000
+			    },
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,	
+						    	"color":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}			    		
+
+			    	}],
+			    	"name":"Unspecified",
+			    	"maxscaledenom":300000
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Practicability [UN SDI-T]",
+        "qtip": "Practicability source:UNSDI-T",
+        "layer": "Practicability",
+        "layertype": "line",
+        "sourceformat": "shapefile",
+        "data":"road_pak",
+        "link":"http://www.logcluster.org/tools/mapcentre/sdit/sdit/tools/mapcentre/sdit",
+        "source":"UN SDI-T",
+        "classitem":"CURNTPRAC",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":255,
+						    		"B":255
+						    	}			    		
+
+			    	}],
+			    	"name":"Unspecified",
+			    	"maxscaledenom":300000
+			    },
+			    "1":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":210,
+						    		"G":210,
+						    		"B":255
+						    	}			    		
+
+			    	}],
+			    	"name":"Non-motorized",
+			    	"maxscaledenom":300000
+			    },
+			    "2":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":195,
+						    		"G":195,
+						    		"B":236
+						    	}			    		
+
+			    	}],
+			    	"name":"Motorbike",
+			    	"maxscaledenom":7100000
+			    },
+			    "3":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":255,
+						    		"G":176,
+						    		"B":53
+						    	}			    		
+
+			    	}],
+			    	"name":"4WD < 3.5MT",
+			    	"maxscaledenom":7100000
+			    },
+			    "4":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":159,
+						    		"G":127,
+						    		"B":159
+						    	}			    		
+
+			    	}],
+			    	"name":"Light truck < 10MT"
+			    },
+			    "5":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":159,
+						    		"G":62,
+						    		"B":159
+						    	}			    		
+
+			    	}],
+			    	"name":"Heavy truck < 20MT"
+			    },
+			    "6":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,	
+						    	"color":{
+						    		"R":102,
+						    		"G":0,
+						    		"B":102
+						    	}			    		
+
+			    	}],
+			    	"name":"Truck + Trailer > 20MT"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Bridges [UN SDI-T]",
+        "qtip": "Bridges Layer source:UNSDI-T",
+        "layer": "Bridges",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"bridges_pak.shp",
+        "link":"http://www.logcluster.org/tools/mapcentre/sdit/sdit/tools/mapcentre/sdit",
+        "source":"UN SDI-T",
+        "classitem":"OPSTATUS",
+        "category":{			
+			    "0":{
+			    	"symbolname":"bridgeUnspecified.png",
+			    	"name":"Unspecified"
+			    },
+			    "1":{
+			    	"symbolname":"bridgeOpen.png",
+			    	"name":"Open"
+			    },
+			    "2":{
+			    	"symbolname":"bridgeRestricted.png",
+			    	"name":"Restricted"
+			    },
+			    "3":{
+			    	"symbolname":"bridgeClosed.png",
+			    	"name":"Closed"
+			    },
+			    "4":{
+			    	"symbolname":"bridgeAbandoned.png",
+			    	"name":"Abandoned"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+	}, {
+        "text": "Railway [WFP]",
+        "qtip": "Railway data source:World Food Program",
+        "layer": "railway",
+        "layertype": "line",
+        "sourceformat": "shapefile",
+        "data":"Railway.shp",
+        "link":"http://www.logcluster.org/tools/mapcentre/sdit/sdit/tools/mapcentre/sdit",
+        "source":"UN SDI-T",
+        "classitem":"FCO_DESCRI",
+        "category":{			
+			    "Multiple":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":2,
+						    	"color":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":0
+						    	}						    		
+
+			    	},{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":212,
+						    		"G":0,
+						    		"B":0
+						    	}			    		
+
+			    	}],
+			    	"name":"Multiple"
+			    },
+			    "Single":{
+			    	"style":[{
+
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":212,
+						    		"G":0,
+						    		"B":0
+						    	}			    		
+
+			    	}],
+			    	"name":"Single"
+			    },
+			    "Unknown":{
+			    	"style":[{
+						    	"symbolname":"",
+						    	"width":1,
+						    	"color":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}			    		
+
+			    	}],
+			    	"name":"Unknown"
+			    }
+ 		},        
+        "leaf": true,
+        "checked": false
+	}]
 },{
     "text": "Public Facilities", 
-    "group": "WMS",
+    "group": "Base Layers",
     "cls": "folder",
     "qtip": "public facilities layers",
     "expanded": false,
-    "children": [{  	
-        "text": "dd_3WOrg_qryOfficeLocations",
-        "qtip": "dd_3WOrg_qryOfficeLocations",
-        "layer": "mssql:dd_3WOrg_qryOfficeLocations",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
+    "children": [{
+        "text": "Health Facilities [WHO]",
+        "qtip": "Health Facilities source:WHO",
+        "layer": "health",
+        "layertype": "point",
+        "sourceformat": "sqlsrvdbpak",
+        "data":"geom from health_facilities USING UNIQUE ID USING SRID=4326",
+        "link":"http://www.geopakistan.pk/srv/en/metadata.show?id=287&currTab=simple",
+        "source":"World Health Organization (WHO)",
+        "classitem":"HF_TYPE",
+		"category":{			
+			    "FIRST AID POST":{
+			    	"symbolname":"first_aid.png",
+			    	"name":"First aid post",
+			    	"maxscaledenom":800000
+			    },
+			    "HOSPITAL":{
+			    	"symbolname":"hospital.png",
+			    	"name":"Hospital"
+			    },
+			    "URBAN HEALTH CENTRE":{
+			    	"symbolname":"urban_healthcenter.png",
+			    	"name":"Urban health centre",
+			    	"maxscaledenom":7100000
+			    },
+			    "HEALTH AUX. UNIT":{
+			    	"symbolname":"health_aux.png",
+			    	"name":"Health aux unit",
+			    	"maxscaledenom":7100000
+			    },
+			    "TB CLINIC":{
+			    	"symbolname":"TB_Clinic.png",
+			    	"name":"TB Clinic",
+			    	"maxscaledenom":3100000
+			    },
+			    "RURAL HEALTH CENTRE":{
+			    	"symbolname":"rural_healthcenter.png",
+			    	"name":"Rural health centre",
+			    	"maxscaledenom":1100000
+			    },
+			    "HEALTH CENTRE":{
+			    	"symbolname":"SUB HEALTH CENTRE.png",
+			    	"name":"Health centre",
+			    	"maxscaledenom":7100000
+			    },
+			    "DISPENSARY":{
+			    	"symbolname":"despencry.png",
+			    	"name":"Dispensary",
+			    	"maxscaledenom":1100000
+			    },
+			    "BASIC HEALTH UNIT":{
+			    	"symbolname":"basichealth_unit.png",
+			    	"name":"Basic health unit",
+			    	"maxscaledenom":1100000
+			    },
+			    "SUB HEALTH CENTRE":{
+			    	"symbolname":"SUB HEALTH CENTRE.png",
+			    	"name":"Sub health centre",
+			    	"maxscaledenom":1100000
+			    },
+			    "LEPROSY CENTRE":{
+			    	"symbolname":"LEPROSY CENTRE.png",
+			    	"name":"Leprosy Centre",
+			    	"maxscaledenom":1100000
+			    }
+ 		},        
         "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_3WOrg_qryOperationalLocations",
-        "qtip": "dd_3WOrg_qryOperationalLocations",
-        "layer": "mssql:dd_3WOrg_qryOperationalLocations",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_3WOrg_qryTeamHouses",
-        "qtip": "dd_3WOrg_qryTeamHouses",
-        "layer": "mssql:dd_3WOrg_qryTeamHouses",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_3WOrg_qryWarehouseLocations",
-        "qtip": "dd_3WOrg_qryWarehouseLocations",
-        "layer": "mssql:dd_3WOrg_qryWarehouseLocations",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_Logistics_qryAirfields",
-        "qtip": "dd_Logistics_qryAirfields",
-        "layer": "mssql:dd_Logistics_qryAirfields",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_Military_qryAssets",
-        "qtip": "dd_Military_qryAssets",
-        "layer": "mssql:dd_Military_qryAssets",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_Refugee_qryBorderCrossing",
-        "qtip": "dd_Refugee_qryBorderCrossing",
-        "layer": "mssql:dd_Refugee_qryBorderCrossing",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
-    },{  	
-        "text": "dd_Refugee_qryCamp",
-        "qtip": "dd_Refugee_qryCamp",
-        "layer": "mssql:dd_Refugee_qryCamp",
-        "layertype": "WMS",
-        "sourceformat": "WMS",
-        "url":"http://windows.oasiswebservice.org:8899/geoserver/mssql/wms?",
-        "leaf": true,
-        "checked":false
+        "checked": false
     }]
 },{
     "text": "Others", 
@@ -120,7 +1376,403 @@
     "cls": "folder",
     "qtip": "unspecified group",
     "expanded": false,
-    "children": []
+    "children": [{
+        "text": "Rivers [WFP]",
+        "layer": "rivers",
+        "layertype": "line",
+        "sourceformat": "sqlsrvdbpak",
+        "data":"geom from Pak_Rivers USING UNIQUE ID USING SRID=4326",
+        "link":"http://www.geopakistan.pk/srv/en/metadata.show?id=291&currTab=simple",
+        "source":"World Food Programme (WFP)",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":153,
+						    		"G":179,
+						    		"B":204
+						    	}			    		
+
+			    	}],
+			    	"name":"Rivers"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Obstacles [Demo data]",
+        "qtip": "Obstacles Layer source:demo",
+        "layer": "Obstacles",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"obstacles_pak.shp",
+        "link":"#",
+        "source":"N/A",
+        "classitem":"TYPE",
+        "category":{			
+			    "0":{
+			    	"symbolname":"obstUnspecified.png",
+			    	"name":"Unspecified"
+			    },
+			    "1":{
+			    	"symbolname":"obstMines.png",
+			    	"name":"Mines/UXO"
+			    },
+			    "2":{
+			    	"symbolname":"obstRoadblock.png",
+			    	"name":"Roadblock"
+			    },
+			    "3":{
+			    	"symbolname":"obstCheckpointOfficial.png",
+			    	"name":"Checkpoint-official"
+			    },
+			    "4":{
+			    	"symbolname":"obstCheckpointUnofficial.png",
+			    	"name":"Checkpoint-unofficial"
+			    },	
+			    "5":{
+			    	"symbolname":"obstDebris.png",
+			    	"name":"Debris"
+			    },	
+			    "6":{
+			    	"symbolname":"obstWreckage.png",
+			    	"name":"Wreckage"
+			    },	
+			    "7":{
+			    	"symbolname":"obstAvalanche.png",
+			    	"name":"Avalanche/snow"
+			    },	
+			    "8":{
+			    	"symbolname":"obstFlood.png",
+			    	"name":"Flood"
+			    },	
+			    "9":{
+			    	"symbolname":"obstLandslide.png",
+			    	"name":"Landslide/Mudslide"
+			    },	
+			    "10":{
+			    	"symbolname":"obstFord.png",
+			    	"name":"Ford"
+			    },	
+			    "11":{
+			    	"symbolname":"obstElectric.png",
+			    	"name":"Electric lines"
+			    },	
+			    "12":{
+			    	"symbolname":"obstTree.png",
+			    	"name":"Trees"
+			    },	
+			    "13":{
+			    	"symbolname":"obstRapids.png",
+			    	"name":"Rapids/cataracts"
+			    },	
+			    "14":{
+			    	"symbolname":"obstDam.png",
+			    	"name":"Dam"
+			    },	
+			    "15":{
+			    	"symbolname":"obstSandBank.png",
+			    	"name":"Sand bank"
+			    },	
+			    "16":{
+			    	"symbolname":"obstSubRock.png",
+			    	"name":"Submerged rock"
+			    },	
+			    "17":{
+			    	"symbolname":"obstRoadDamage.png",
+			    	"name":"Road damage"
+			    },	
+			    "18":{
+			    	"symbolname":"obstRailDamage.png",
+			    	"name":"Railway damage"
+			    },	
+			    "19":{
+			    	"symbolname":"obstBridgeDamage.png",
+			    	"name":"Bridge damage"
+			    },	
+			    "20":{
+			    	"symbolname":"obstCulvertDamage.png",
+			    	"name":"Culvert damage"
+			    },	
+			    "21":{
+			    	"symbolname":"obstTrafficRestriction.png",
+			    	"name":"Traffic restriction"
+			    },	
+			    "22":{
+			    	"symbolname":"obstOverheadClearance.png",
+			    	"name":"Overhead clearance"
+			    },	
+			    "23":{
+			    	"symbolname":"obstFerry.png",
+			    	"name":"Ferry"
+			    },	
+			    "99":{
+			    	"symbolname":"obstOther.png",
+			    	"name":"Other (used for labeling)"
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+	},{
+        "text": "Settlements [Univeristy Of Georgia]",
+        "qtip": "Settlements data source:University Of Georgia",
+        "layer": "Settlements",
+        "layertype": "point",
+        "sourceformat": "sqlsrvdbpak",
+        "data":"geom from dd_Demographics_ddSettlements_FEA USING UNIQUE UID USING SRID=4326",
+        "link":"http://www.geopakistan.pk/srv/en/metadata.show?id=298&currTab=simple",
+        "source":"Univeristy Of Georgia",
+        "classitem":"CLASS",
+        "category":{			
+			    "1":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"size":6,
+						    	"color":{
+						    		"R":101,
+						    		"G":101,
+						    		"B":101
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"size":4,
+						    	"color":{
+						    		"R":255,
+						    		"G":78,
+						    		"B":78
+						    	}			    		
+
+			    	}],
+			    	"label":{
+						    	"size":6,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	},
+						    	"outlinecolor":{
+						    		"R":101,
+						    		"G":101,
+						    		"B":101
+						    	}			    		
+
+			    	},
+			    	"name":"Capital City"
+			    },
+			"2":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"size":5,
+						    	"color":{
+						    		"R":101,
+						    		"G":101,
+						    		"B":101
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"size":3,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	}			    		
+
+			    	}],
+			    	"label":{
+						    	"size":5,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	},
+						    	"outlinecolor":{
+						    		"R":141,
+						    		"G":141,
+						    		"B":141
+						    	}			    		
+
+			    	},
+			    	"name":"Major City"
+			    },
+			"3":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"size":3,
+						    	"color":{
+						    		"R":101,
+						    		"G":101,
+						    		"B":101
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"size":1,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	}			    		
+
+			    	}],
+			    	"label":{
+						    	"size":5,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	},
+						    	"outlinecolor":{
+						    		"R":141,
+						    		"G":141,
+						    		"B":141
+						    	}			    		
+
+			    	},
+			    	"name":"Semi Major City"
+			    },
+			"4":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"size":2,
+						    	"color":{
+						    		"R":101,
+						    		"G":101,
+						    		"B":101
+						    	}			    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"size":0.5,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	}			    		
+
+			    	}],
+			    	"label":{
+						    	"size":5,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	},
+						    	"outlinecolor":{
+						    		"R":141,
+						    		"G":141,
+						    		"B":141
+						    	}			    		
+
+			    	},
+			    	"name":"Small City"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    }, {
+        "text": "Headworks & Barrages [digitised by iMMAP]",
+        "qtip": "Data digitized by iMMAP from google and other minor sources",
+        "layer": "Water_Discharge",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"dam_barr_headworks.shp",
+        "link":"#",
+        "source":"N/A",
+        "classitem":"Type",
+        "category":{			
+			    "Headworks":{
+			    	"symbolname":"heardworks_icon.png",
+			    	"name":"Headworks"
+			    },
+			    "Barrage":{
+			    	"symbolname":"barrage_icon.png",
+			    	"name":"Barrage"
+			    },
+			    "Dam":{
+			    	"symbolname":"dam_icon.png",
+			    	"name":"Dam"
+			    },
+			    "Gauge Station":{
+			    	"symbolname":"gaugewater_icon.png",
+			    	"name":"GaugeStation"
+			    }
+			    
+ 		},        
+        "leaf": true,
+        "checked": false
+	},{
+    	"text": "Water bodies [SRTM]",
+        "qtip": "water bodies [SRTM]",
+        "layer": "waterbodies001",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"STRM_Waterbodies_SWBD.shp",
+        "link":"http://srtm.usgs.gov/",
+        "source":"USGS Shuttle Radar Topography Mission",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":255
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":255,
+						    		"G":255,
+						    		"B":255
+						    	}
+					}],
+			    	"name":"SRTM Water body"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+    	"text": "Protected Areas [WPDA 2010]",
+        "qtip": "Protected Areas [WPDA 2010]",
+        "layer": "WPDA_2010",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"Pakistan_WDPA2010.shp",
+        "link":"http://www.wdpa.org",
+        "source":"World Database on Protected Areas (WDPA)",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":180,
+						    		"G":180,
+						    		"B":0
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":255,
+						    		"G":255,
+						    		"B":255
+						    	}
+					}],
+			    	"name":"WPDA 2010"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    }]
 },{
     "text": "My Layers", 
     "group": "Private Layers",    
@@ -135,16 +1787,706 @@
     "cls": "folder",
     "qtip": "floods layers",
     "expanded": false,
-    "children": [] 
+    "children": [{
+        "text": "Flooded Villages [GE]",
+        "qtip": "Villages, Settlements and Rural Urban Places. source:GE",
+        "layer": "affectedvillage",
+        "layertype": "point",
+        "sourceformat": "shapefile",
+        "data":"Flood Affected Villages 2012_Sindh.shp",
+        "link":"#",
+        "source":"N/A",
+        "classitem":"KML_FOLDER",
+        "labelitem":"NAME",
+        "category":{			
+			    "Flooded Villages":{
+			    	"symbolname":"obstCheckpointUnofficial.png",
+			    	"name":"Flooded Villages",
+			    	"label":{
+						    	"size":6,
+						    	"color":{
+						    		"R":254,
+						    		"G":254,
+						    		"B":254
+						    	},
+						    	"outlinecolor":{
+						    		"R":101,
+						    		"G":101,
+						    		"B":101
+						    	}			    		
+
+			    	}
+			    }
+ 		},	
+        "leaf": true,
+        "checked":false
+	},{
+        "text": "Flood Extent 2010 [UNOSAT]",
+        "qtip": "Flood Extent 2010 source:UNOSAT",
+        "layer": "flood_2010",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"FloodExtent2010_Refined.shp",
+        "link":"http://www.unitar.org/unosat",
+        "source":"UNOSAT",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":199,
+						    		"G":226,
+						    		"B":5
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Flood Extent 2010"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flood Extent 2011 [UNOSAT]",
+        "qtip": "Flood Extent 2011 source:UNOSAT",
+        "layer": "flood_2011",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"FloodExtent2011_Refined.shp",
+        "link":"http://www.unitar.org/unosat",
+        "source":"UNOSAT",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":51,
+						    		"G":138,
+						    		"B":181
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Flood Extent 2011"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flood Extent 12-09-2012 [MODIS]",
+        "qtip": "Flood extent as at 12 September 2012:extracted from MODIS by iMMAP",
+        "layer": "flood_20120912",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"flood_2012_extent.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":225,
+						    		"G":94,
+						    		"B":98
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Flood Extent 12 Sept 2012"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flood Extent 16-09-2012 [MODIS]",
+        "qtip": "Flood extent as at 16 September 2012:extracted from MODIS by iMMAP",
+        "layer": "flood_20120916",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"water_extent_16thSept2012.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":255,
+						    		"G":0,
+						    		"B":2
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Flood Extent 16 Sept 2012"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flood Extent 24-09-2012 [MODIS]",
+        "qtip": "Flood extent as at 24 September 2012:extracted from MODIS by iMMAP",
+        "layer": "flood_20120924",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"Water_Extent_24thSept.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":7,
+						    		"G":230,
+						    		"B":255
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Flood Extent 24 Sept 2012"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flood Extent 01-10-2012 [MODIS]",
+        "qtip": "Flood extent as at 24 September 2012:extracted from MODIS by iMMAP",
+        "layer": "flood_20121001",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"flood_extent_1Oct2012.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":255,
+						    		"G":0,
+						    		"B":0
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":255,
+						    		"G":0,
+						    		"B":0
+						    	}
+					}],
+			    	"name":"Flood Extent 01 Oct 2012"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flood Extent 15-10-2012 [MODIS]",
+        "qtip": "Flood extent as at 15 October 2012:extracted from MODIS by iMMAP",
+        "layer": "flood_20121015",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"Water_Extent_289.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":255
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":0,
+						    		"G":0,
+						    		"B":255
+						    	}
+					}],
+			    	"name":"Flood Extent 15 Oct 2012"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Potential Safe Zone [MODIS]",
+        "qtip": "Potential Safe zones for flood extent as at 11 September 2012:MODIS",
+        "layer": "safezone",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"Safe_Zones.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":5,
+						    		"G":232,
+						    		"B":0
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Potential Safe zone"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    },{
+        "text": "Flash Flood Vulnerable Zone [MODIS]",
+        "qtip": "Flash Flood Vulnerable Zone 2012:extracted from MODIS by iMMAP",
+        "layer": "flashfloodzone",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"Flash Flood Vulnerabale Zone of Pakistan.shp",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":255,
+						    		"G":215,
+						    		"B":110
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":212,
+						    		"G":212,
+						    		"B":212
+						    	}
+					}],
+			    	"name":"Flash Flood Vulnerabale Zone of Pakistan"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    }] 
 },{
-    "text": "FOG", 
+    "text": "Fogs", 
     "group": "Base Layers",
     "cls": "folder",
     "qtip": "fogs layers",
     "expanded": false,   
-    "children": []
+    "children": [{
+    	"text": "Fog 2008",
+        "qtip": "Fog 2008",
+        "layer": "fog2008",
+        "layertype": "polygon",
+        "sourceformat": "shapefile",
+        "data":"fog2008.shp",
+        "link":"#",
+        "source":"N/A",
+        "opacity" : 50,
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"circle",
+						    	"color":{
+						    		"R":180,
+						    		"G":180,
+						    		"B":180
+						    	}		    		
+
+			    	},{
+						    	"symbolname":"circle",
+						    	"outlinecolor":{
+						    		"R":255,
+						    		"G":255,
+						    		"B":255
+						    	}
+					}],
+			    	"name":"FOG 2008"
+			    }
+ 		}, 
+        "leaf": true,
+        "checked": false
+    }]
      
      
+},{
+    "text": "Fires and Lightning", 
+    "group": "KML",    
+    "qtip": "Live Fire Data",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+        "text": "Wildfires 24 hours [FIRMS]",
+        "qtip": "Wildfires past 24 hours source: FIRMS",
+        "layer": "fire24",
+        "layertype": "point",
+        "sourceformat": "KML",
+        "connection":"fire24.kml",
+        "data":" Fire Points List ",
+        "link":"http://earthdata.nasa.gov/data/near-real-time-data/firms",
+        "source":"FIRMS",
+        "url" : "http://firms.modaps.eosdis.nasa.gov/active_fire/kml/South_Asia_24h.kml",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"fire.png",
+	    						"size":24
+
+			    	}],
+			    	"name":"Wildfires 24 hours [FIRMS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Wildfires 48 hours [FIRMS]",
+        "qtip": "Wildfires past 48 hours source: FIRMS",
+        "layer": "fire48",
+        "layertype": "point",
+        "sourceformat": "KML",
+        "connection":"fire48.kml",
+        "data":" Fire Points List ",
+        "link":"http://earthdata.nasa.gov/data/near-real-time-data/firms",
+        "source":"FIRMS",
+        "url" : "http://firms.modaps.eosdis.nasa.gov/active_fire/kml/South_Asia_48h.kml",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[{
+						    	"symbolname":"fire.png",
+	    						"size":24
+	    		
+
+			    	}],
+			    	"name":"Wildfires 48 hours [FIRMS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Active Lightning",
+        "qtip": "Active Lightning",
+        "layer": "lightning_src",
+        "layertype": "point",
+        "sourceformat": "KML",
+        "connection":"lightning_src",
+        "data":"WWLLN Data",
+        "link":"http://flash3.ess.washington.edu/lightning_src.kmz",
+        "source":"WWLLN",
+        "url" : "http://flash3.ess.washington.edu/lightning_src.kmz",
+        "classitem":"",
+        "category":{			
+			   "0":{
+			    	"style":[{
+						    	"symbolname":"lightning.png",
+	    						"size":24
+	    		
+
+			    	}],
+			    	"name":"Active World Lightning"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    }]
+    
+},{
+    "text": "Rainfalls", 
+    "group": "External Data",    
+    "qtip": "Rainfall data",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+        "text": "MPE (30 min) [eumetsat]",
+        "qtip": "Multi-Sensor Precipitation Estimate past 30 min source: eumetsat",
+        "layer": "flood2",
+        "layertype": "groundoverlay",
+        "sourceformat": "KML",
+        "connection":"MET0D_VP-MPE.kml",
+        "data":"Meteosat IODC MPE",
+        "link":"http://www.eumetsat.int/Home/index.htm",
+        "source":"EUMETSAT",
+        "url" : "http://oiswww.eumetsat.int/IPPS/html/GE/IODC_VP-MPE.kml",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Meteosat IODC MPE (30 min) [eumetsat]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "TRMM West Rainfall Last 3 Hours Accumulation",
+        "qtip": "TRMM rainfall accumulation for the last three hours - West side",
+        "layer": "3hrainfallleft",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"MET0D_VP-MPE.kml",
+        "data":"Meteosat IODC MPE",
+        "link":"http://trmm.gsfc.nasa.gov",
+        "source":"TRMM",
+        "url" : "trmm.gsfc.nasa.gov/trmm_rain/Events/3B42_rain_accumulation_3hr.kml",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Meteosat IODC MPE (30 min) [eumetsat]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "TRMM East Rainfall Last 3 Hours Accumulation",
+        "qtip": "World-wide rainfall accumulation for the last three hours - East side",
+        "layer": "3hrainfallright",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"MET0D_VP-MPE.kml",
+        "data":"Meteosat IODC MPE",
+        "link":"http://trmm.gsfc.nasa.gov",
+        "source":"TRMM",
+        "url" : "trmm.gsfc.nasa.gov/trmm_rain/Events/3B42_rain_accumulation_3hr.kml",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Meteosat IODC MPE (30 min) [eumetsat]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    }]
+    
+},{
+    "text": "MODIS daily satellite image for Pakistan subset", 
+    "group": "External Data",     
+    "cls": "folder",
+    "qtip": "MODIS daily satellite image for Pakistan subset",
+    "expanded": false,
+    "children": [{
+        "text": "Terra 250m Band Daily image [MODIS]",
+        "qtip": "Pakistan Subset - Current Terra 250m Bands source: MODIS",
+        "layer": "flooded",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.721.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.terra.721.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Terra 250m Band Daily image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Terra 250m NDVI image [MODIS]",
+        "qtip": "Pakistan Subset - Terra 250m NDVI source: MODIS",
+        "layer": "flooded1",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.721.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.terra.ndvi.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Terra 250m NDVI image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Terra 250m True Color image [MODIS]",
+        "qtip": "Pakistan Subset - Terra 250m True Color source: MODIS",
+        "layer": "TerraTrueColor",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.terra.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Terra 250m True Color image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Terra 250m Bands 3-6-7 image [MODIS]",
+        "qtip": "Pakistan Subset - Terra 250m Bands 3-6-7 source: MODIS",
+        "layer": "TerraBands3-6-7",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.terra.367.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Terra 250m Bands 3-6-7 image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Terra 250m Bands 7-6-2 image [MODIS]",
+        "qtip": "Pakistan Subset - Terra 250m Bands 7-6-2 source: MODIS",
+        "layer": "TerraBands7-6-2",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.terra.762.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Terra 250m Bands 7-6-2 image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Aqua 250m True Color image source: [MODIS]",
+        "qtip": "Pakistan Subset - Aqua 250m True Color source: MODIS",
+        "layer": "AquaTrueColor",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.aqua.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Aqua 250m True Color image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Aqua 250m Bands 7-2-1 image source: [MODIS]",
+        "qtip": "Pakistan Subset - Aqua 250m Bands 7-2-1 source: MODIS",
+        "layer": "AquaBands7-2-1",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.aqua.721.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Aqua 250m Bands 7-2-1 image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    },{
+        "text": "Aqua 250m NDVI image source: [MODIS]",
+        "qtip": "Pakistan Subset - Aqua 250m NDVI source: MODIS",
+        "layer": "AquaNDVI",
+        "layertype": "groundoverlay1",
+        "sourceformat": "KML",
+        "connection":"pakistanTerra.kml",
+        "data":"Pakistan.terra.250m",
+        "link":"http://modis.gsfc.nasa.gov",
+        "source":"MODIS",
+        "url" : "http://lance-modis.eosdis.nasa.gov/imagery/subsets/?project=other&subset=Pakistan.2012268.aqua.ndvi.250m.kmz",
+        "classitem":"",
+        "category":{			
+			    "0":{
+			    	"style":[],
+			    	"name":"Aqua 250m NDVI image [MODIS]"
+			    }
+ 		},
+        "leaf": true,
+        "checked":false
+    }]
 },{
     "text": "Gridded Population of the World v3", 
     "group": "WMS",    
@@ -157,7 +2499,10 @@
         "layer": "gpw-v3-population-density_1990",
         "layertype": "WMS",
         "sourceformat": "WMS",
-        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "opacity": 75,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.org/geoserver/ows",
         "leaf": true,
         "checked":false
     },{
@@ -166,7 +2511,10 @@
         "layer": "gpw-v3-population-density_1995",
         "layertype": "WMS",
         "sourceformat": "WMS",
-        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "opacity": 75,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.org/geoserver/ows",
         "leaf": true,
         "checked":false
     },{
@@ -175,7 +2523,10 @@
         "layer": "gpw-v3-population-density_2000",
         "layertype": "WMS",
         "sourceformat": "WMS",
-        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "opacity": 75,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.org/geoserver/ows",
         "leaf": true,
         "checked":false
     },{
@@ -184,7 +2535,10 @@
         "layer": "gpw-v3-population-density-future-estimates_2005",
         "layertype": "WMS",
         "sourceformat": "WMS",
-        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "opacity": 75,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.org/geoserver/ows",
         "leaf": true,
         "checked":false
     },{
@@ -193,7 +2547,10 @@
         "layer": "gpw-v3-population-density-future-estimates_2010",
         "layertype": "WMS",
         "sourceformat": "WMS",
-        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "opacity": 75,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.org/geoserver/ows",
         "leaf": true,
         "checked":false
     },{
@@ -202,8 +2559,1995 @@
         "layer": "gpw-v3-population-density-future-estimates_2015",
         "layertype": "WMS",
         "sourceformat": "WMS",
-        "url":"http://sedac.ciesin.org/geoserver/ows?",
+        "opacity": 75,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.org/geoserver/ows",
         "leaf": true,
         "checked":false
     }]    
+},{
+    "text": "Weather [OpenWeathermap]", 
+    "group": "WMS",    
+    "qtip": "Weather [OpenWeathermap]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "Clouds Cover",
+        "qtip": "Clouds Cover",
+        "layer": "clouds",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 50,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Quantity of precipitation",
+        "qtip": "Quantity of precipitation",
+        "layer": "precipitation",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 50,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Sea level pressure contour",
+        "qtip": "Sea level pressure contour",
+        "layer": "pressure_cntr",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 100,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Sea level pressure",
+        "qtip": "Sea level pressure",
+        "layer": "pressure",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 50,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Wind speed",
+        "qtip": "Wind speed",
+        "layer": "wind",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 50,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Temperature",
+        "qtip": "Temperature",
+        "layer": "temp",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 50,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Snow precipitation",
+        "qtip": "Snow precipitation",
+        "layer": "snow",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 90,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Current Weather [not printable]",
+        "qtip": "Current Weather [not printable]",
+        "layer": "Weather",
+        "layertype": "custom",
+        "sourceformat": "custom",
+        "opacity": 100,
+        "link":"http://openweathermap.org",
+        "source":"OpenWeatherMap",
+        "url":"http://tile.openweathermap.org/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Extreme Weather Forecast [ECMWF]", 
+    "group": "WMS",    
+    "qtip": "Extreme Weather Forecast [ECMWF]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "10 m wind vector [ECMWF]",
+        "qtip": "10m wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "10m_uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "100 m wind vector [ECMWF]",
+        "qtip": "100 metre wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "100m_uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10 m wind gust [ECMWF]",
+        "qtip": "Maximum 10m wind gust over an interval. The maximum wind gust is computed in the period from the forecast validation time (VT) to (VT - selected interval).",
+        "layer": "10m_fg_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10 m wind speed [ECMWF]",
+        "qtip": "10m wind speed from deterministic forecast",
+        "layer": "wind_speed",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10m wind gust extreme forecast index [ECMWF]",
+        "qtip": "Extreme forecast index (EFI) 10m wind gust.",
+        "layer": "efi_wg_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10m wind speed extreme forecast index [ECMWF]",
+        "qtip": "Extreme forecast index (EFI) 10m wind speed.",
+        "layer": "efi_ws_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2 metre dew point temperature [ECMWF]",
+        "qtip": "2 metre dew point temperature from deterministic forecast",
+        "layer": "2t_dewpoint",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2m temperature extreme forecast index [ECMWF]",
+        "qtip": "Extreme forecast index (EFI) 2m temperature.",
+        "layer": "efi_2t_data",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Convective precipitation probability [ECMWF]",
+        "qtip": "Convective precipitation probability over an interval. Convective precipitation probability is accumulated in the period from the forecast valid time (VT) to (VT - selected interval)",
+        "layer": "cp_proba_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "High cloud cover [ECMWF]",
+        "qtip": "Cloud cover derived from model level cloud cover between 450 hPa and the model top using maximum-random overlap",
+        "layer": "hcc",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Medium cloud cover [ECMWF]",
+        "qtip": "Cloud cover derived from model level cloud cover between 450 and 800 hPa using maximum-random overlap",
+        "layer": "mcc",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Low cloud cover [ECMWF]",
+        "qtip": "Cloud cover derived from model level cloud cover between surface and 800 hPa using maximum-random overlap",
+        "layer": "lcc",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Maximum 2 metre temperature [ECMWF]",
+        "qtip": "Maximum 2 metre temperature over an interval. Maximum 2 metre temperature at each time steps are used to compute the mx2t over the given interval, period being forecast valid time(VT) - selected interval.",
+        "layer": "mx2t",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean direction and height of total swell [ECMWF]",
+        "qtip": "Mean direction of total swell (mdts) is indicated by the arrows, and the arrow length is proportional to the significant height of total swell",
+        "layer": "wave_mdts",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean direction and height of wind waves [ECMWF]",
+        "qtip": "Mean direction of wind waves (mdww) is indicated by the arrows, and the arrow length is proportional to the significant height of wind waves",
+        "layer": "wave_mdww",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean sea level pressure [ECMWF]",
+        "qtip": "Mean sea level pressure",
+        "layer": "msl",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean wave direction and height [ECMWF]",
+        "qtip": "Mean wave direction (mwd) is indicated by the arrows, and the arrow length is proportional to the significant wave height",
+        "layer": "wave_mwd",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Minimum 2 metre temperature [ECMWF]",
+        "qtip": "Minimum temperature at 2 metres  over an interval.Minimum temperature at 2 metres at each time steps are used to compute the minimum 2mT over the given interval, period being forecast valid time(VT) - selected interval",
+        "layer": "mn2t",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Snow coverage as percentage of a grid box [ECMWF]",
+        "qtip": "Snow cover represented as percentage of a grid box computed from snow depth. Liquid water density is assumed 1000 kg/m3 and 10cm snow depth is assumed to cover the whole grid box.",
+        "layer": "snow_cover",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Snow depth [ECMWF]",
+        "qtip": "Snow depth in centimetres",
+        "layer": "snow_depth",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Total precipitation [ECMWF]",
+        "qtip": "Total precipitation over an interval. Total precipitation is accumulated in the period from the forecast valid time (VT) to VT - selected interval.",
+        "layer": "tp_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Total precipitation extreme forecast index [ECMWF]",
+        "qtip": "Extreme forecast index (EFI) total precipitation.",
+        "layer": "efi_tp_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Total snowfall [ECMWF]",
+        "qtip": "Total snowfall over an interval. Total snowfall is accumulated in the period from the forecast valid time (VT) to VT - selected interval.",
+        "layer": "sf_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Weather Forecast [ECMWF]", 
+    "group": "WMS",    
+    "qtip": "Weather Forecast [ECMWF]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "10m wind gusts percentile [ECMWF]",
+        "qtip": "Value of 10m wind gusts over an interval below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "gusts_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10m wind gusts probability [ECMWF]",
+        "qtip": "10m wind gusts probability from ensemble forecast. The probability value (Event threshold) can be changed in the user interface. The maximum wind gust is computed in the period from the forecast valid time (VT) to (VT - selected interval.)",
+        "layer": "gusts_prob_data",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10m wind percentile [ECMWF]",
+        "qtip": "Value of 10m wind speed below which a certain percent of the EPS members fall.",
+        "layer": "wind_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "10m wind probability [ECMWF]",
+        "qtip": "10m wind speed probability from ensemble forecast.",
+        "layer": "wind_prob_data",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "200 hPa wind [ECMWF]",
+        "qtip": "200 hPa wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "200uv_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "200 hPa wind speed [ECMWF]",
+        "qtip": "200 hPa wind speed",
+        "layer": "200_windspeed_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "300 hPa relative vorticity [ECMWF]",
+        "qtip": "300 hPa relative vorticity",
+        "layer": "300vorticity",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "300 hPa wind [ECMWF]",
+        "qtip": "300 hPa wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "300uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "300 hPa wind speed [ECMWF]",
+        "qtip": "300 hPa wind speed",
+        "layer": "300_windspeed",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "30m wind [ECMWF]",
+        "qtip": "30m wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "30m_wind_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "300 hPa wind speed [ECMWF]",
+        "qtip": "300 hPa wind speed",
+        "layer": "300_windspeed",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "500 hPa relative vorticity [ECMWF]",
+        "qtip": "500 hPa relative vorticity",
+        "layer": "500vorticity",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "500 hPa wind [ECMWF]",
+        "qtip": "500 hPa wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "500uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "500 hPa wind speed [ECMWF]",
+        "qtip": "Wind speed at 500 hPa",
+        "layer": "500ws",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa divergence [ECMWF]",
+        "qtip": "700 hPa divergence",
+        "layer": "700divergence",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa relative vorticity [ECMWF]",
+        "qtip": "700 hPa relative vorticity",
+        "layer": "700vorticity",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa wind [ECMWF]",
+        "qtip": "700 hPa wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "700uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa wind speed [ECMWF]",
+        "qtip": "Wind speed at 700 hPa",
+        "layer": "700ws",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "850 hPa relative vorticity [ECMWF]",
+        "qtip": "850 hPa relative vorticity",
+        "layer": "850vorticity",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "850 hPa wind [ECMWF]",
+        "qtip": "850 hPa wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "850uv_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "850 hPa wind speed [ECMWF]",
+        "qtip": "Wind speed at 850 hPa",
+        "layer": "850ws",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "925 hPa wind [ECMWF]",
+        "qtip": "925 hPa wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "925uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "925 hPa wind speed [ECMWF]",
+        "qtip": "Wind speed at 925 hPa",
+        "layer": "925ws",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2 metre dew point temperature percentile [ECMWF]",
+        "qtip": "Value of 2 metre dew point temperature below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "2t_dewpoint_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2 metre dew point temperature probability [ECMWF]",
+        "qtip": "2 metre dew point temperature probability from ensemble forecast (50 ensemble members and control forecast). The probability value (Event threshold) can be changed in the user interface",
+        "layer": "2t_dewpoint_prob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2m temperature [ECMWF]",
+        "qtip": "2m temperature from deterministic forecast",
+        "layer": "2t",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2m temperature percentile [ECMWF]",
+        "qtip": "Value of 2m temperature below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "2t_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "2m temperature probability [ECMWF]",
+        "qtip": "2m temperature probability from ensemble forecast (50 ensemble members and control forecast). The probability value (Event threshold) can be changed in the user interface",
+        "layer": "2tprob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "300 hPa geopotential [ECMWF]",
+        "qtip": "300 hPa geopotential",
+        "layer": "z300",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "315K (Potential tempearture level) wind [ECMWF]",
+        "qtip": "Wind vector at 315K potential temperature level. Wind direction is indicated by the arrows, and the arrow length is proportional to the wind speed",
+        "layer": "315k_uv",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "315K (potential temperature level) potential vorticity [ECMWF]",
+        "qtip": "Potential vorticity (PV) at 315 K potential temperature level",
+        "layer": "315Kpotvort",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "500 hPa geopotential [ECMWF]",
+        "qtip": "500 hPa geopotential",
+        "layer": "z500_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "500 hPa relative humidity [ECMWF]",
+        "qtip": "500 hPa relative humidity",
+        "layer": "rh500",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "500 hPa temperature [ECMWF]",
+        "qtip": "500 hPa temperature",
+        "layer": "t500",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa geopotential [ECMWF]",
+        "qtip": "700 hPa geopotential",
+        "layer": "z700",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa relative humidity [ECMWF]",
+        "qtip": "700 hPa relative humidity",
+        "layer": "rh_7h_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "700 hPa temperature [ECMWF]",
+        "qtip": "700 hPa temperature",
+        "layer": "t700",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "850 hPa geopotential [ECMWF]",
+        "qtip": "850 hPa geopotential",
+        "layer": "z850",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "850 hPa relative humidity [ECMWF]",
+        "qtip": "850 hPa relative humidity",
+        "layer": "rh_850h_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "850 hPa temperature [ECMWF]",
+        "qtip": "850 hPa temperature",
+        "layer": "t850_field",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "925 hPa geopotential [ECMWF]",
+        "qtip": "925 hPa geopotential",
+        "layer": "z925",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "925 hPa relative humidity [ECMWF]",
+        "qtip": "925 hPa relative humidity",
+        "layer": "rh925",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "925 hPa temperature [ECMWF]",
+        "qtip": "925 hPa temperature",
+        "layer": "t925",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Convective available potential energy (CAPE) [ECMWF]",
+        "qtip": "Convective available potential energy (CAPE) in j/kg",
+        "layer": "cape",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Convective available potential energy (CAPE) probability [ECMWF]",
+        "qtip": "Convective available potential energy probability (CAPE) from ensemble forecast (50 ensemble members and control forecast). The probability value (Event threshold) can be changed in the user interface",
+        "layer": "cape_prob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Convective precipitation [ECMWF]",
+        "qtip": "Convective precipitation over an interval. Convective precipitation is accumulated in the period from the forecast valid time (VT) to VT - selected interval.",
+        "layer": "cp_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Convective precipitation percentile [ECMWF]",
+        "qtip": "Value of convective precipitation over an interval below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "cp_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble mean for 300 hPa geopotential height [ECMWF]",
+        "qtip": "Ensemble mean for 300 hPa geopotential height. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "z300_mean",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble mean for 500 hPa geopotential [ECMWF]",
+        "qtip": "Ensemble mean for 500 hPa geopotential. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "z500_mean",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble mean for 850 hPa temperature [ECMWF]",
+        "qtip": "Ensemble mean for 850 hPa temperature. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "t850_mean",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble mean for 850 hPa wind speed [ECMWF]",
+        "qtip": "Ensemble mean for wind speed at 850 hPa. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "850ws_mean",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble mean for mean sea level pressure [ECMWF]",
+        "qtip": "Ensemble mean for Mean sea level pressure. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "msl_mean",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble spread for 300 hPa geopotential height [ECMWF]",
+        "qtip": "Ensemble spread for 300 hPa geopotential height. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "z300_spread",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble spread for 500 hPa geopotential [ECMWF]",
+        "qtip": "Ensemble spread for 500 hPa geopotential. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution)",
+        "layer": "z500_spread",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble spread for 850 hPa temperature [ECMWF]",
+        "qtip": "Ensemble spread for 850 hPa temperature. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution). Spread is represented as the standard deviation",
+        "layer": "t850_spread",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble spread for 850 hPa wind speed [ECMWF]",
+        "qtip": "Ensemble spread for wind speed at 850 hPa. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution). Spread is represented as the standard deviation",
+        "layer": "t850_spread",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Ensemble spread for mean sea level pressure [ECMWF]",
+        "qtip": "Ensemble spread for mean sea level pressure. Ensemble data consist of 50 ensemble members and control forecast (deterministic forecast run in a lower resolution). Spread is represented as the standard deviation",
+        "layer": "msl_spread",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Maximum 2 metre temperature probability [ECMWF]",
+        "qtip": "Maximum 2 metre temperature probability from ensemble forecast (50 ensemble members and control forecast). The probability value (Event threshold) can be changed in the user interface",
+        "layer": "mx2tprob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean period of total swell [ECMWF]",
+        "qtip": "Mean period of total swell (mpts)",
+        "layer": "wave_mpts",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean period of wind waves [ECMWF]",
+        "qtip": "Mean period of wind waves (mpww)",
+        "layer": "wave_mpww",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean wave period [ECMWF]",
+        "qtip": "Mean wave period (mwp)",
+        "layer": "wave_mwp",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean wave period percentile [ECMWF]",
+        "qtip": "Value of mean wave period below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "mwp_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Mean wave period probability [ECMWF]",
+        "qtip": "Mean wave period probability from ensemble forecast",
+        "layer": "mwp_prob_data",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Minimum 2 metre temperature [ECMWF]",
+        "qtip": "Minimum temperature at 2 metres  over an interval.Minimum temperature at 2 metres at each time steps are used to compute the minimum 2mT over the given interval, period being forecast valid time(VT) - selected interval",
+        "layer": "mn2t",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Minimum 2 metre temperature probability [ECMWF]",
+        "qtip": "Minimum 2 metre temperature probability from ensemble forecast (50 ensemble members and control forecast)",
+        "layer": "mn2tprob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Model orography  from deterministic forecast [ECMWF]",
+        "qtip": "Model orography from deterministic forecast. Orography is computed by using surface geopotential and land-sea mask.",
+        "layer": "det_orography",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Model orography  from ensemble forecast [ECMWF]",
+        "qtip": "Model orography from ensemble forecast. Orography is computed by using surface geopotential and land-sea mask.",
+        "layer": "eps_orography",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 100,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Probability of combined events of 2 metre Temperature and total precipitation [ECMWF]",
+        "qtip": "Probability of  combined events of 2 metre temperature and total preciptation from ensemble forecast. The probability is computed as the ratio of the number of the ensemble members in which both event conditions are met to the total number of ensemble members. In case of 2 metre temperature, event threshold and operator are controlled by user. In case of total preciptation, event threshold, operator and the accumulation period of total precipitation are controlled by the user.",
+        "layer": "tp_2t_combined_prob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Probability of combined events of wind gust and total snowfall [ECMWF]",
+        "qtip": "Probability of combined events of wind gust and total snowfall from ensemble forecast. The probability is computed as the ratio of the number of the ensemble members in which both event conditions are met to the total number of ensemble members. In case of wind gust, event threshold and operator are controlled by user. In case of total preciptation, event threshold, operator and the accumulation period of total snowfall are controlled by the user.",
+        "layer": "sf_wg_combined_prob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Probability of combined events of wind speed and total precipitation [ECMWF]",
+        "qtip": "Probability of combined events of wind speed and total preciptation from ensemble forecast. The probability is computed as the ratio of the number of the ensemble members in which both event conditions are met to the total number of ensemble members. In case of wind speed, event threshold and operator are controlled by user. In case of total preciptation, event threshold, operator and the accumulation period of total precipitation are controlled by the user.",
+        "layer": "tp_ws_combined_prob",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Sea ice cover as fraction of a grid box [ECMWF]",
+        "qtip": "Fraction of a grid box that is covered with sea ice. Sea ice cover is kept constant during forecast",
+        "layer": "sea_ice_cover",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Significant height of total swell[ECMWF]",
+        "qtip": "Significant height of total swell (shts)",
+        "layer": "wave_shts",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Significant height of wind waves [ECMWF]",
+        "qtip": "Significant height of wind waves (shww)",
+        "layer": "wave_shww",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Significant wave height [ECMWF]",
+        "qtip": "Significant wave height (swh)",
+        "layer": "wave_swh",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Significant wave height percentile [ECMWF]",
+        "qtip": "Value of significant wave height below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "swh_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Significant wave height probability [ECMWF]",
+        "qtip": "Significant wave height probability from ensemble forecast. ",
+        "layer": "swh_prob_data",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Stratiform precipitation [ECMWF]",
+        "qtip": "Stratiform precipitation over an interval. Stratiform precipitation is accumulated in the period from the forecast valid time (VT) to VT - selected interval.",
+        "layer": "lsp_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Stratiform precipitation percentile [ECMWF]",
+        "qtip": "Value of stratiform precipitation over an interval below which a certain percent of the EPS members fall",
+        "layer": "lsp_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Stratiform precipitation probability [ECMWF]",
+        "qtip": "Stratiform precipitation probability over an interval. Stratiform precipitation probability is accumulated in the period from the forecast valid time (VT) to (VT - selected interval).",
+        "layer": "lsp_proba_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Total precipitation percentile [ECMWF]",
+        "qtip": "Value of total precipitation over an interval below which a certain percent of the EPS members fall. This percentage can be changed in the user interface",
+        "layer": "tp_percentile",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Total precipitation probability [ECMWF]",
+        "qtip": "Total precipitation probability over an interval. Total precipitation probability is accumulated in the period from the forecast valid time (VT) to (VT - selected interval).",
+        "layer": "tp_proba_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Total snowfall probability [ECMWF]",
+        "qtip": "Total snowfall probability over an interval. Total snowfall probability is accumulated in the period from the forecast valid time (VT) to (VT - selected interval).",
+        "layer": "sf_proba_interval",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "wgs84only" : true,
+        "opacity": 50,
+        "link":"http://www.ecmwf.int/",
+        "source":"European Centre for Medium-Range Weather Forecasts",
+        "url":"http://wrep.ecmwf.int/wms/?token=MetOceanIE&",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Agriculture [Sedac]", 
+    "group": "WMS",    
+    "qtip": "Agriculture [Sedac]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "Anthropogenic Biomes v1",
+        "qtip": "Anthropogenic Biomes v1",
+        "layer": "anthromes-anthropogenic-biomes-world-v1",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Human footprint v2",
+        "qtip": "Human footprint v2",
+        "layer": "wildareas-v2-human-footprint-geographic",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Observed climate change impact",
+        "qtip": "Observed climate change impact",
+        "layer": "ipcc-ar4-observed-climate-impacts",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Climate [Sedac]", 
+    "group": "WMS",    
+    "qtip": "Climate [Sedac]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "Drought hazard frequency and distribution",
+        "qtip": "Drought hazard frequency and distribution",
+        "layer": "ndh-drought-hazard-frequency-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Drought mortality risks and distribution",
+        "qtip": "Drought mortality risks and distribution",
+        "layer": "ndh-drought-mortality-risks-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Flood total economic loss risk deciles",
+        "qtip": "Flood total economic loss risk deciles",
+        "layer": "ndh-flood-total-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Cyclon proportional economic loss risk deciles",
+        "qtip": "Cyclon proportional economic loss risk deciles",
+        "layer": "ndh-cyclone-proportional-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Drought total economic loss risk deciles",
+        "qtip": "Drought total economic loss risk deciles",
+        "layer": "ndh-drought-total-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Cyclon hazard frequency distribution",
+        "qtip": "Cyclon hazard frequency distribution",
+        "layer": "ndh-cyclone-hazard-frequency-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Cyclon mortality risk distribution",
+        "qtip": "Cyclon mortality risk distribution",
+        "layer": "ndh-cyclone-mortality-risks-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Cyclon total economic loss risk deciles",
+        "qtip": "Cyclon total economic loss risk deciles",
+        "layer": "ndh-cyclone-total-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Flood mortality risks and distribution",
+        "qtip": "Flood mortality risks and distribution",
+        "layer": "ndh-flood-mortality-risks-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Flood proportional economic loss risk deciles",
+        "qtip": "Flood proportional economic loss risk deciles",
+        "layer": "ndh-flood-proportional-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Flood hazard frequency and distribution",
+        "qtip": "Flood hazard frequency and distribution",
+        "layer": "ndh-flood-hazard-frequency-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Conservation [Sedac]", 
+    "group": "WMS",    
+    "qtip": "Conservation [Sedac]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "Last of the wild v2",
+        "qtip": "Last of the wild v2",
+        "layer": "wildareas-v2-last-of-the-wild-geographic",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Human influence index v2",
+        "qtip": "Human influence index v2",
+        "layer": "wildareas-v2-human-influence-index-geographic",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Amphibian family richness",
+        "qtip": "Amphibian family richness",
+        "layer": "species-v1-global-amphibian-family-richness",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Hazards [Sedac]", 
+    "group": "WMS",    
+    "qtip": "Hazards [Sedac]",
+    "cls": "folder",
+    "expanded": false,
+    "children": [{
+    	"text": "Earthquake hazard distribution - peak ground acceleration",
+        "qtip": "Earthquake hazard distribution - peak ground acceleration",
+        "layer": "ndh-earthquake-distribution-peak-ground-acceleration",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Earthquake hazard frequency and distribution",
+        "qtip": "Earthquake hazard frequency and distribution",
+        "layer": "ndh-earthquake-frequency-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Earthquake mortality risks and distribution",
+        "qtip": "Earthquake mortality risks and distribution",
+        "layer": "ndh-earthquake-mortality-risks-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Earthquake proportional economic loss risk deciles",
+        "qtip": "Earthquake proportional economic loss risk deciles",
+        "layer": "ndh-earthquake-proportional-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Earthquake total economic loss risk deciles",
+        "qtip": "Earthquake total economic loss risk deciles",
+        "layer": "ndh-earthquake-total-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Landslide hazard distribution",
+        "qtip": "Landslide hazard distribution",
+        "layer": "ndh-landslide-hazard-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Landslide mortality risks and distribution",
+        "qtip": "Landslide mortality risks and distribution",
+        "layer": "ndh-landslide-mortality-risks-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Landslide proportional economic loss risk deciles",
+        "qtip": "Landslide proportional economic loss risk deciles",
+        "layer": "ndh-landslide-proportional-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Landslide total economic loss risk deciles",
+        "qtip": "Landslide total economic loss risk deciles",
+        "layer": "ndh-landslide-total-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Volcano hazard frequency and distribution",
+        "qtip": "Volcano hazard frequency and distribution",
+        "layer": "ndh-volcano-hazard-frequency-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Volcano mortality risks and distribution",
+        "qtip": "Volcano mortality risks and distribution",
+        "layer": "ndh-volcano-mortality-risks-distribution",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Volcano proportional economic loss deciles",
+        "qtip": "Volcano proportional economic loss deciles",
+        "layer": "ndh-volcano-proportional-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    },{
+    	"text": "Volcano total economic loss deciles",
+        "qtip": "Volcano total economic loss deciles",
+        "layer": "ndh-volcano-total-economic-loss-risk-deciles",
+        "layertype": "WMS",
+        "sourceformat": "WMS",
+        "opacity": 80,
+        "link":"http://sedac.ciesin.org",
+        "source":"Socioeconomic Data and Applications Center (SEDAC)",
+        "url":"http://sedac.ciesin.columbia.edu/geoserver/wms",
+        "leaf": true,
+        "checked":false
+    }]
+},{
+    "text": "Aggregate Layers",
+    "qtip": "",
+    "cls": "folder",
+    "group": "Aggregate Layers",      
+    "children": [{
+        "text": "SRF Database",
+        "cls": "folder",
+        "children": [{
+            "text": "Projects",
+            "leaf": true,
+            "checked": false,
+            "link":"http://srfpakistan.pk",
+        	"source":"Single Report format (SRF))",
+            "layer" : "dataLayer",
+            "mapquery": [{
+            	"uc" : "geom from SRF_View_ProjectsByUCAndSectorAgg_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"tehsil" : "geom from SRF_View_ProjectsByTehsilAndSectorAgg_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"district" : "geom from SRF_View_ProjectsByDistrictAndSectorAgg_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"province" : "geom from SRF_View_ProjectsByProvinceAndSector_Geo USING UNIQUE Location_ID USING SRID=4326"
+            	}],
+            "gridquery" : [{
+            	"uc" : "Select * from SRF_View_ProjectsByUCAndSector",
+            	"tehsil" : "Select * from SRF_View_ProjectsByTehsilAndSector",
+            	"district" : "Select * from SRF_View_ProjectsByDistrictAndSector",
+            	"province" : "Select * from SRF_View_ProjectsByProvinceAndSector"
+            	}],
+            "classitem" : "ProjectCount",
+            "tableitem" : [{
+            	"uc":"SRF_View_ProjectsByUCAndSectorAgg_Geo" ,
+            	"tehsil":"SRF_View_ProjectsByTehsilAndSectorAgg_Geo" ,
+            	"district":"SRF_View_ProjectsByDistrictAndSectorAgg_Geo" ,
+            	"province":"SRF_View_ProjectsByProvinceAndSector_Geo" 
+            	}]
+        },{
+            "text": "IP Agencies",
+            "leaf": true,
+            "layer" : "dataLayer",            
+            "checked": false,
+            "link":"http://srfpakistan.pk",
+        	"source":"Single Report format (SRF))",
+            "mapquery": [{
+            	"uc" : "geom from SRF_View_IPbyUCProjAgg_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"tehsil" : "geom from SRF_View_IPbyTehsilProjAgg_Geom USING UNIQUE Location_ID USING SRID=4326",
+            	"district" : "geom from SRF_View_IPbyDistProjAgg_Geom USING UNIQUE Location_ID USING SRID=4326",
+            	"province" : "geom from SRF_View_IPByProvinceProjectAgg_Geo USING UNIQUE Location_ID USING SRID=4326"
+            	}],
+            "gridquery" : [{
+            	"uc" : "Select * from SRF_View_IPbyUCProj",
+            	"tehsil" : "Select * from SRF_View_IPByTehsilProject",
+            	"district" : "Select * from SRF_View_IPByDistProject",
+            	"province" : "Select * from SRF_View_IPByProvinceProject"
+            	}],
+            "classitem" : "IP_Count",
+            "tableitem" : [{
+            	"uc":"SRF_View_IPbyUCProjAgg_Geo" ,
+            	"tehsil":"SRF_View_IPbyTehsilProjAgg_Geom" ,
+            	"district":"SRF_View_IPbyDistProjAgg_Geom" ,
+            	"province":"SRF_View_IPByProvinceProjectAgg_Geo" 
+            	}]
+        },{	
+            "text": "Beneficieries",
+            "leaf": true,
+            "checked": false,
+            "link":"http://srfpakistan.pk",
+        	"source":"Single Report format (SRF))",
+            "layer" : "dataLayer",
+            "mapquery": [{
+            	"uc" : "geom from SRF_View_BenefSumByUCReport_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"tehsil" : "geom from SRF_View_BenefSumByTehsilReport_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"district" : "geom from SRF_View_BenefSumByDistrictReport_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"province" : "geom from SRF_View_BenefSumByProvinceReport_Geo USING UNIQUE Location_ID USING SRID=4326"
+            	}],
+            "gridquery" : [{
+            	"uc" : "select * from SRF_View_BenefByUCReport",
+            	"tehsil" : "select * from SRF_View_BenefByTehsilReport",
+            	"district" : "select * from SRF_View_BenefByDistrictReport",
+            	"province" : "select * from SRF_View_BenefByProvinceReport"
+            	}],
+            "classitem" : "Total_Beneficiaries",
+            "tableitem" : [{
+            	"uc":"SRF_View_BenefSumByUCReport_Geo",
+            	"tehsil":"SRF_View_BenefSumByTehsilReport_Geo" ,
+            	"district":"SRF_View_BenefSumByDistrictReport_Geo" ,
+            	"province":"SRF_View_BenefSumByProvinceReport_Geo" 
+            	}]
+        },{	
+            "text": "Costs",
+            "leaf": true,
+            "checked": false,
+            "link":"http://srfpakistan.pk",
+        	"source":"Single Report format (SRF))",
+            "layer" : "dataLayer",
+            "mapquery": [{
+            	"uc" : "geom from SRF_View_CostSumByUCReport_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"tehsil" : "geom from SRF_View_CostSumByTehsilReport_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"district" : "geom from SRF_View_CostSumByDistrictReport_Geo USING UNIQUE Location_ID USING SRID=4326",
+            	"province" : "geom from SRF_View_CostSumByProvinceReport_Geo USING UNIQUE Location_ID USING SRID=4326"
+            	}],
+            "gridquery" : [{
+            	"uc" : "select * from SRF_View_CostByUCReport",
+            	"tehsil" : "select * from SRF_View_CostByTehsilReport",
+            	"district" : "select * from SRF_View_CostByDistrictReport",
+            	"province" : "select * from SRF_View_CostByProvinceReport"
+            	}],
+            "classitem" : "TotalCosts",
+            "tableitem" : [{
+            	"uc":"SRF_View_CostSumByUCReport_Geo" ,
+            	"tehsil":"SRF_View_CostSumByTehsilReport_Geo" ,
+            	"district":"SRF_View_CostSumByDistrictReport_Geo" ,
+            	"province":"SRF_View_CostSumByProvinceReport_Geo" 
+            	}]            	
+        }]
+    }]
 }]

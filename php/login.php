@@ -4,7 +4,7 @@ $query = "select * from \"Administration\".\"OasisUsers\" where \"User_Name\" = 
 
 $dbinfo = getDB();
 
-$result=pg_query($dbinfo, $query); 
+$result=pg_query($dbinfo, $query);
 
 while ($obj = pg_fetch_array( $result)){	
 	$hasRow = true;

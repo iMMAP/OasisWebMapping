@@ -6,19 +6,22 @@
 
 /* General
 -----------------------------------------------------------------------*/
+html { margin: 7px;}
+
 body {
   background-color: #114C8D;
+  /*margin: 2px;*/
   color: #000033;
-  font-family: "verdana", "sans-serif";
+  font-family: "Trebuchet MS", Tahoma, Sans-serif;
   margin: 0px;
   padding-top: 0px;
   font-size: 1em;
 }
 
 h1 {
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: #114C8D;
-  font-style: italic;
+  font-style: bold;
 }
 
 h2 {
@@ -678,26 +681,31 @@ tr.foot td.total {
 .fax_head,
 .narrow,
 .detail {
-  border-spacing: 1px;
-  border-top: 1px solid #8B7958;
-  border-bottom: 1px solid #8B7958;
-  width: 99%;
-  padding: 3px;
+  border-spacing: 0.5px;
+  /*border-top: 1px solid #8B7958;
+  border-bottom: 1px solid #8B7958;*/
+  /*width: 99%;*/
+  padding: 1px;
   margin-bottom: 10px;
+  /*background-color: #808080;*/
 }
 
 .detail td.label {
-  width: 16%;
-  background-color: #F9F0E9;
+  width: 150px;
+  font-size : 10;
+  border-bottom: 0.5px solid white;;
+  /*background-color: #F9F0E9;*/
 }
 
 .detail td.field {
-  width: 33%;
-  text-align: center;
-  background-color: #F8F5F2;
+  /*width: 33%;*/
+  text-align: left;
+  font-size : 10;
+  border-bottom: 1px solid white;
+  /*background-color: #F8F5F2;*/
 }
 
-.detail_spacer_row td {
+/*.detail_spacer_row td {
   background-color: #BEAC8B;
   font-size: 2px;
   line-height: 2px;
@@ -751,7 +759,7 @@ tr.foot td.total {
 
 .operation {
   width: 1%;
-}
+}*/
 
 /* Wizards
 -----------------------------------------------------------------------*/
@@ -1317,8 +1325,8 @@ table.signature_table tr td {
 }
 
 .page td.label {
-  color: black;
-  background-color: white;
+  /*color: black;*/
+  /*background-color: white;*/
   width: 20%;
 }
 
@@ -1328,7 +1336,7 @@ table.signature_table tr td {
 }
 
 .page td.field {
-  background-color: white;
+  /*background-color: white;*/
   font-weight: bold;
 }
 
@@ -1498,7 +1506,7 @@ input[type=reset] {
 
 .label {
   color: black;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .sublabel {
@@ -1507,7 +1515,7 @@ input[type=reset] {
 
 .field {
   color: black;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .field_center {
@@ -1538,13 +1546,13 @@ input[type=reset] {
 }
 
 .detail td.label {
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .detail td.field_total,
 .detail td.field {
   font-weight: bold;
-  background-color: #eee;
+  /*background-color: #eee;*/
 }
 
 .detail td.field_money { 
@@ -1717,7 +1725,7 @@ body { background-color: white; }
 .detail td.field { 
   text-align: left;
   padding-left: 1em;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 /* Lists
@@ -1786,4 +1794,29 @@ td.field {
 
 td.field_money {
   font-size: 0.7em;
+}
+
+.tabHeader{
+	width: 100%;
+	
+}
+
+.tabHeader tr{
+	/*background: #999999;*/
+	/*-moz-border-radius: 20px;*/
+	
+}
+
+.tabHeader tr td{
+	margin: 5px;
+	height:50px;
+	vertical-align: bottom;
+	background-color: #F6F6F6;
+ 	border-bottom: 3px solid #999999;
+}
+
+.tabHeader tr td span{
+	font-size: 12;
+	font-weight: bold;
+	letter-spacing: 3;
 }

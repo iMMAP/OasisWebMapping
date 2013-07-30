@@ -91,7 +91,7 @@ class Boundary {
 		$this->height = $height;
 	}
 	function __toString() {
-		return "({$this->x} x {$this->y},{$this->width},{$this->height})";
+		return "({$this->x}, {$this->y},{$this->width},{$this->height})";
 	}
 }//Boundary
 ?>

@@ -1,22 +1,21 @@
 <?php
-include 'conf.php';
-// function getDB() {
-	// $serverName = $GLOBALS['serverUrl'];
-	// $connectionInfo = array( "Database"=>$GLOBALS['dbname'], "UID"=>$GLOBALS['username'], "PWD"=>$GLOBALS['password']);
-	// return sqlsrv_connect( $serverName, $connectionInfo);
-// 
-// }	
-
 function getDB() {
-	$serverName = $GLOBALS['serverUrl'];
-	$dbname = $GLOBALS['dbname'];
-	$username = $GLOBALS['username'];
-	$password = $GLOBALS['password'];
-	$port = $GLOBALS['port'];
-	return pg_connect("host=$serverName port=$port dbname=$dbname user=$username password=$password");
-}
-
+	return pg_connect("host=54.235.150.26 port=9191 dbname=oasisweb user=budi password=d34jdu2AY@4");
+}	
 function getSindhDB() {
 	return pg_connect("host=210.56.24.186 port=5432 dbname=incidents user=postgres password=password");
 }
+function getDevDB() {
+	return pg_connect("host=210.56.8.107 port=5432 dbname=odk_DIFD user=postgres password=!MM@P2011");
+}
+function getKDB() {
+	return pg_connect("host=54.235.150.26 port=9191 dbname=oasisweb user=budi password=d34jdu2AY@4");
+}
+
+$GLOBALS['connectionstring'] = array(
+    'incidentdata'  => "host=localhost user=postgres password=12345 dbname=incidents port=5432",
+    'devdata'  => "host=210.56.8.107 user=postgres password=!MM@P2011 dbname=odk_DIFD port=5432"
+);
+
+
 ?>

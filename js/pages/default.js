@@ -22,8 +22,10 @@ var top_bgclr  = '#C53737';
 var bclr  = '2px solid #D82719';
 
 // bordercolor for the website
-var bbclr  = '2px solid #BFBFBF';
+var bbclr  = '1px solid #FFCC00';
 
+// bordercolor for the website
+var bbnone  = '';
 // bordercolor for the website
 var redclr  = '2px solid #FF0000';
 

@@ -10,16 +10,16 @@
 </head>
 
 <body>
-<form id="login" action='php/registration.php' id="frmLogin" method='post'>
+<form id="login" action='php/registration.php' id="frmLogin" method='post' onsubmit="return validateForm()">
     <h1>Registration</h1>
     <fieldset id="inputs">
 	<div id="err" class="error" style="display:none"></div>
 	<div id="success" class="success" style="display:none"></div>
         Name:<input name="name" id="name" type="text" class="sign_inp" placeholder="Name">
         Email:<input name="email" id="email" type="text" class="sign_inp"  placeholder="Email">
-        <!-- Designation:<input name="designation" id="designation" class="sign_inp"  type="text" placeholder="Designation"> -->
-        <!-- Organization:<input name="organization" id="organization" class="sign_inp"  type="text" placeholder="Organization" > -->
-        <!-- Mobile:<input name="mobile" id="mobile" type="text" class="sign_inp"  placeholder="03423451245 "> -->
+        Designation:<input name="designation" id="designation" class="sign_inp"  type="text" placeholder="Designation">
+        Organization:<input name="organization" id="organization" class="sign_inp"  type="text" placeholder="Organization" >
+        Mobile:<input name="mobile" id="mobile" type="text" class="sign_inp"  placeholder="03423451245 ">
     </fieldset>
     <fieldset id="actions">
         <input type="submit" id="submit" value="Register">

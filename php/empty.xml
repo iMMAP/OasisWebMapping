@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss 
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:eq="http://earthquake.usgs.gov/eqcenter/catalogs/eq"
+	version="2.0">
+<channel>
+	<title>USGS M5+ Earthquake CAP Alerts</title>
+	<description>Real-time, worldwide Earthquake CAP Alerts for the past 7 days</description>
+	<link>http://earthquake.usgs.gov/eqcenter/catalogs/</link>
+	<dc:publisher>U.S. Geological Survey</dc:publisher>
+	<pubDate>Tue, 29 Sep 2009 17:48:15 UTC</pubDate>
+	<atom:link xmlns:atom="http://purl.org/atom/ns#" rel="self" href="http://earthquake.usgs.gov/eqcenter/catalogs/caprss7days5.xml" type="application/rss+xml"/>
+</channel>
+</rss>

@@ -46,12 +46,12 @@ session_start();
 $userid = $_SESSION['user'];
 
 include 'dbconnect.php';	
-$query = "insert into \"Administration\".layerconf (id, conf, userid) VALUES ('".$_REQUEST['name']."', '".json_encode($res_arr)."', '$userid')";
-// $params = array($_REQUEST['name'], json_encode($res_arr), $userid);
+$query = "insert into OASIS_v3_2.dbo.layerconf (id, conf, userid) VALUES (?, ?, ?)";
+$params = array($_REQUEST['name'], json_encode($res_arr), $userid);
 
 $dbinfo = getDB();
-pg_query( $dbinfo, $query);
-pg_close( $dbinfo );
+sqlsrv_query( $dbinfo, $query, $params);
+sqlsrv_close( $dbinfo );
 
 
 echo '{"success":true, "result":'.json_encode($res_arr).'}';

@@ -27,9 +27,10 @@ PRINT = function() {
 				
 				var activeLayers = [];
 				for (var i = 0; i<APP.map.layers.length; i++){
-					if((APP.map.layers[i].getVisibility()) && (APP.map.layers[i].CLASS_NAME = "OpenLayers.Layer.WMS") && (APP.map.layers[i].name != "Print Layer") && (APP.map.layers[i].name != "vector") && (APP.map.layers[i].name != "Highlighted") && (APP.map.layers[i].name != "Markers") && (APP.map.layers[i].name != "Draw Area") && (APP.map.layers[i].name != "fire24") && (APP.map.layers[i].name != "fire48") && (APP.map.layers[i].name != "flood1") && (APP.map.layers[i].name != "flood1") && (APP.map.layers[i].name.substr(0,6) != "Terra_") && (APP.map.layers[i].id.substr(0,23) !=  "OpenLayers.Layer.GeoRSS") && (!APP.map.layers[i].isBaseLayer)){
-						// console.log(APP.map.layers[i].id.substr(0,23));
-						activeLayers.push(APP.map.layers[i].params.LAYERS);						
+					// console.log(APP.map.layers[i]);
+					if((APP.map.layers[i].getVisibility()) && (APP.map.layers[i].CLASS_NAME = "OpenLayers.Layer.WMS") && (APP.map.layers[i].name != "Print Layer") && (APP.map.layers[i].name != "vector") && (APP.map.layers[i].name != "Highlighted") && (APP.map.layers[i].name != "Markers") && (APP.map.layers[i].name != "Draw Area") && (APP.map.layers[i].name != "fire24") && (APP.map.layers[i].name != "fire48") && (APP.map.layers[i].name != "flood1") && (APP.map.layers[i].name != "wbprojects001") && (APP.map.layers[i].name != "Weather") && (APP.map.layers[i].name.substr(0,6) != "Terra_") && (APP.map.layers[i].id.substr(0,23) !=  "OpenLayers.Layer.GeoRSS") && (!APP.map.layers[i].isBaseLayer)){
+						if (typeof APP.map.layers[i].params != "undefined") 
+							activeLayers.push(APP.map.layers[i].params.LAYERS);						
 					} else if ((APP.map.layers[i].getVisibility()) && ((APP.map.layers[i].name == "fire24") || (APP.map.layers[i].name == "fire48"))){
 						// activeLayers.push('wildfire'); 
 						activeLayers.push(APP.map.layers[i].name);
@@ -48,18 +49,25 @@ PRINT = function() {
 		getActiveLayersGroup : function(){
 				var activeLayers = [];
 				for (var i = 0; i<APP.map.layers.length; i++){
-					if((APP.map.layers[i].getVisibility()) && (APP.map.layers[i].CLASS_NAME = "OpenLayers.Layer.WMS") && (APP.map.layers[i].name != "Print Layer") && (APP.map.layers[i].name != "vector") && (APP.map.layers[i].name != "Highlighted") && (APP.map.layers[i].name != "Markers") && (APP.map.layers[i].name != "Draw Area") && (APP.map.layers[i].name != "fire24") && (APP.map.layers[i].name != "fire48") && (APP.map.layers[i].name != "flood1") && (APP.map.layers[i].name != "flood1") && (APP.map.layers[i].name.substr(0,6) != "Terra_") && (APP.map.layers[i].id.substr(0,23) !=  "OpenLayers.Layer.GeoRSS") && (!APP.map.layers[i].isBaseLayer)){
-						activeLayers.push({name : APP.map.layers[i].name, text:APP.map.layers[i].params.TEXT});
+					var legendParentUrl = '';
+					var opacity = APP.map.layers[i].opacity;
+					if (typeof APP.map.layers[i].url == 'string'){
+						legendParentUrl = APP.map.layers[i].url;
+					}
+					if((APP.map.layers[i].getVisibility()) && (APP.map.layers[i].CLASS_NAME = "OpenLayers.Layer.WMS") && (APP.map.layers[i].name != "Print Layer") && (APP.map.layers[i].name != "vector") && (APP.map.layers[i].name != "Highlighted") && (APP.map.layers[i].name != "Markers") && (APP.map.layers[i].name != "Draw Area") && (APP.map.layers[i].name != "fire24") && (APP.map.layers[i].name != "fire48") && (APP.map.layers[i].name != "flood1") && (APP.map.layers[i].name != "wbprojects001") && (APP.map.layers[i].name != "Weather") && (APP.map.layers[i].name.substr(0,6) != "Terra_") && (APP.map.layers[i].id.substr(0,23) !=  "OpenLayers.Layer.GeoRSS") && (!APP.map.layers[i].isBaseLayer)){
+						// console.log(typeof APP.map.layers[i].url);
+						if (typeof APP.map.layers[i].params != "undefined")
+							activeLayers.push({name : APP.map.layers[i].name, text:APP.map.layers[i].params.TEXT, url:legendParentUrl, opacity:opacity, sld:APP.map.layers[i].params.SLD});
 					} else if ((APP.map.layers[i].getVisibility()) && ((APP.map.layers[i].name == "fire24") || (APP.map.layers[i].name == "fire48"))){
 						// activeLayers.push('wildfire');	
-						activeLayers.push({name : APP.map.layers[i].name, text:APP.map.layers[i].params.TEXT});
+						activeLayers.push({name : APP.map.layers[i].name, text:APP.map.layers[i].params.TEXT, url:legendParentUrl, opacity:opacity});
 					} else if (APP.map.layers[i].id.substr(0,23) ==  "OpenLayers.Layer.GeoRSS"){
 						APP.map.layers[i].CLASS_NAME = APP.map.layers[i].id.substr(0,23);	
 					}
 				}
 				if (PRINT.georssUrl != null){							
 					// activeLayers.push('georss');
-					activeLayers.push({name : 'georss', text:PRINT.georsstext});
+					activeLayers.push({name : 'georss', text:PRINT.georsstext, url:legendParentUrl, opacity:opacity});
 				}
 				return activeLayers;
 		},		
@@ -85,7 +93,7 @@ PRINT = function() {
 			} else if (APP.activeBaseLayer=='ArcGIS Imagery'){
 				sendActiveBaseLayer = 'World Imagery';												
 			} else {
-				sendActiveBaseLayer = 'Hybrid';
+				sendActiveBaseLayer = 'naqsha';
 			}
 			PRINT.printLoad.msg = 'Prepare tiles';
 			// console.log(TREE.layerFilter);
@@ -103,10 +111,12 @@ PRINT = function() {
 			}
 			// console.log( Ext.encode(json));
 			var sentJSON = Ext.encode(json);
+			var x = Ext.encode(PRINT.getActiveLayersGroup());
 			Ext.Ajax.request(
 					{   
 				  		///waitMsg: 'Please wait...',
 				  		url: 'php/print.create.mapimg.php?activelayer='+PRINT.getActiveLayersName()+"&sentJSON="+sentJSON,
+				  		timeout : 200000,
 				  		params: 
 						{
 				     		X			:center.lon,
@@ -120,12 +130,13 @@ PRINT = function() {
 							tableitem	:APP.dataLayer.params.TABLEITEM,
 							kmlUrl 		:PRINT.kmlUrl,
 							georssUrl 	:PRINT.georssUrl,
-							filterShape :filterShape
+							filterShape :filterShape,
+							layerdesc	: x
 				  		}, 
 				  		success: function(response)
 						{
 							if (mode == 'map') {
-								PRINT.printLoad.msg = 'generate pdf...';
+								PRINT.printLoad.msg = 'This process will take a while, Please wait for generating pdf...';
 								var printBody = Ext.getBody();
 								var printFrame = printBody.createChild({ 
 									tag:'iframe',
@@ -154,7 +165,7 @@ PRINT = function() {
 								PRINT.printLoad.hide();		
 								//console.log(Ext.getCmp('comments').getValue());	
 							} else if (mode == 'stat') {
-								PRINT.printLoad.msg = 'generate pdf...';
+								PRINT.printLoad.msg = 'This process will take a while, Please wait for generating pdf...';
 								var x = encodeURIComponent(Ext.encode(PRINT.getActiveLayersGroup()));
 								Ext.Ajax.request(
 								{   
@@ -202,7 +213,8 @@ PRINT = function() {
 							
 				   		},
 						failure: function() {
-
+							UTILS.showHelpTip('Generate PDF Failed', 'Please try again...', 7200);
+							PRINT.printLoad.hide();	
 						}				
 					});			
 		},
@@ -351,13 +363,21 @@ PRINT = function() {
 			var styleMap = new OpenLayers.StyleMap({
 	         	"default": OpenLayers.Util.applyDefaults({ pointRadius: 10, strokeWidth:2}, OpenLayers.Feature.Vector.style["default"])
 	         });	
-			this.printLayer = new OpenLayers.Layer.Vector("Print Layer", {"styleMap":styleMap, visibility : false});						
+			this.printLayer = new OpenLayers.Layer.Vector(
+				"Print Layer", 
+				{
+					"styleMap":styleMap, 
+					rendererOptions: { zIndexing: true },
+					visibility : false
+				}
+			);						
 			this.feature = new OpenLayers.Feature.Vector(OpenLayers.Geometry.fromWKT("POLYGON((-1 -1,1 -1,1 1,-1 1,-1 -1))"));
 			this.feature.geometry.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
 			this.printLayer.addFeatures(this.feature);
 			APP.map.addLayer(this.printLayer);
 			this.ctrlDragFeature = new OpenLayers.Control.DragFeature(this.printLayer);
 			APP.map.addControl(this.ctrlDragFeature);
+			APP.map.getLayersByName('Print Layer')[0].setZIndex(2500);
 		    this.ctrlDragFeature.activate();
 		
 			var scaleData = [{"name":"1:3,125","value":"3125"},{"name":"1:6,250","value":"6250"},{"name":"1:12,500","value":"12500"},{"name":"1:25,000","value":"25000"},{"name":"1:50,000","value":"50000"},{"name":"1:100,000","value":"100000"},{"name":"1:200,000","value":"200000"},{"name":"1:400,000","value":"400000"},{"name":"1:800,000","value":"800000"},{"name":"1:1,600,000","value":"1600000"},{"name":"1:3,200,000","value":"3200000"},{"name":"1:6,400,000","value":"6400000"},{"name":"1:12,800,000","value":"12800000"},{"name":"1:25,600,000","value":"25600000"},{"name":"1:51,200,000","value":"51200000"},{"name":"1:102,400,000","value":"102400000"},{"name":"1:204,800,000","value":"204800000"},{"name":"1:409,600,000","value":"409600000"}];
@@ -496,16 +516,21 @@ PRINT = function() {
 						'expand': function(a, b){
 							PRINT.showPrintExtent();
 							UTILS.showHelpTip('Generate PDF', 'Move the rectangle to area of interest, choose the scale and paper layout.', 7200);
-							// console.log(Ext.decode(Ext.encode(PRINT.getActiveLayersGroup())));						
+							// console.log(Ext.decode(Ext.encode(PRINT.getActiveLayersGroup())));
+							// APP.weatherSelectControl.deactivate(); 
+							PRINT.ctrlDragFeature.activate();	
+							APP.map.getLayersByName('Print Layer')[0].setZIndex(99999);					
 						},
 						'collapse': function(a, b){
 							PRINT.hidePrintExtent();
+							PRINT.ctrlDragFeature.deactivate(); 
+							// APP.weatherSelectControl.activate();	
 						}
 					}
 			});		
-			
+
 			this.printLoad = Ext.create('Ext.LoadMask', Ext.getBody(), {
-				msg: 'Preview PDF...'
+				msg: 'This process will take a while, Please wait for generating pdf...'
 			});	
 			this.printLoad.hide();	
 			

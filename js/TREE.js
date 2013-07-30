@@ -9,7 +9,7 @@ TREE = function() {
 		layerFilter : new Array(),
 		userList : [],
 		redrawLayer : function (layer){
-			APP.map.getLayersByName(layer)[0].redraw();
+			APP.map.getLayersByName(layer)[0].redraw(true);
 		},
 		sentSharedUser : function (users, layer){
 			//console.log(users);
@@ -59,9 +59,11 @@ TREE = function() {
 		        },
 		
 		        fields: [
-		            {name: 'User_ID', mapping: 'User_ID'},
-		            {name: 'User_Name', mapping: 'User_Name'},
-		            {name: 'User_Email', mapping: 'User_Email'}
+		            {name: 'id', mapping: 'id'},
+		            {name: 'email', mapping: 'email'},
+		            {name: 'name', mapping: 'name'},
+		            {name: 'designation', mapping: 'designation'},
+		            {name: 'organization', mapping: 'organization'}
 		        ]
 		    });
 		
@@ -91,9 +93,9 @@ TREE = function() {
 		
 		                // Custom rendering template for each item
 		                getInnerTpl: function() {
-		                    return '<a class="search-item" href="#" onClick="TREE.addUserList(\'{User_Name}\',\'{User_Email}\');TREE.setUserlist();">' +
-		                        '<h3><span><br />{User_Name}</span>{title}</h3>' +
-		                        '{User_Email}' +
+		                    return '<a class="search-item" href="#" onClick="TREE.addUserList(\'{name}\',\'{email}\');TREE.setUserlist();">' +
+		                        '<h3><span><br />{name}</span>{title}</h3>' +
+		                        '{organization}' +
 		                    '</a>';
 		                }
 		            },
@@ -309,7 +311,141 @@ TREE = function() {
 							            }).show();
 		                			}
 		                		}
+		                	},{
+		                		text: 'Raise this Layer',
+		                		iconCls: 'iconRaise',
+		                		listeners : {
+		                			'click': function(){
+										var selectedLayer = APP.map.getLayersByName(record.raw.layer)[0];
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+										APP.map.raiseLayer(selectedLayer, 100);
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+		                			}
+		                		}
+		                	},{
+		                		text: 'Chart Statistics',
+		                		iconCls: 'charts',
+		                		listeners : {
+		                			'click': function(){
+										var selectedLayer = APP.map.getLayersByName(record.raw.layer)[0];
+										var fieldplus = new Array();
+										var field = new Array();
+										var realfield = new Array();
+										fieldplus.push('provinces');
+										for (var key in record.raw.category) {
+											var manageword = key.toLowerCase();
+											manageword = manageword.replace(/\ /g,"");
+											fieldplus.push(manageword);
+											field.push(manageword);
+											realfield.push(key);
+										}
+										// console.log(fieldplus);
+										var store = Ext.create('Ext.data.JsonStore', {
+									        fields: fieldplus,
+									        proxy: {
+										        type: 'ajax',
+										        url : 'php/getDevCharts.php?field='+field+'&realfield='+realfield+'&table='+record.raw.tableitem+'&class='+record.raw.classitem,
+										        reader: {
+										            type: 'json',
+										            root: 'data'
+										        }
+										    },
+										    autoLoad : true
+									    });
+
+									    var chart = Ext.create('Ext.chart.Chart',{
+									            animate: true,
+									            shadow: true,
+									            store: store,
+									            legend: {
+									                position: 'right'
+									            },
+									            axes: [{
+									                type: 'Numeric',
+									                position: 'bottom',
+									                fields: field,
+									                title: false,
+									                grid: true,
+									                label: {
+									                    renderer: function(v) {
+									                        return String(v);
+									                    }
+									                }
+									            }, {
+									                type: 'Category',
+									                position: 'left',
+									                fields: ['provinces'],
+									                title: false
+									            }],
+									            series: [{
+									                type: 'bar',
+									                axis: 'bottom',
+									                gutter: 80,
+									                xField: 'provinces',
+									                yField: field,
+									                stacked: true,
+									                tips: {
+									                    trackMouse: true,
+									                    width: 65,
+									                    height: 28,
+									                    renderer: function(storeItem, item) {
+									                        this.setTitle(String(item.value[1]));
+									                    }
+									                }
+									            }]
+									        });
+										
+										
+										var win = Ext.create('widget.window', {
+							                title: record.raw.layer + ' chart window',
+							                closable: true,
+							                modal : true,
+							                closeAction: 'destroy',
+							                width: 600,
+							                minWidth: 200,
+							                height: 400,
+							                layout: {
+							                    type: 'border',
+							                    padding: 5
+							                },
+							                items : [{
+							                    region: 'center',
+							                    title: '',
+							                    width: 580,
+							                    split: true,
+							                    border : false,
+							                    collapsible: false,
+							                    floatable: false,
+							                    items: [chart]	,
+							                     layout: {
+								                    type: 'fit',
+								                    padding: 5
+								                },
+							                }],
+									        tbar: [{
+									            text: 'Reload',
+									            handler: function() {
+									            	store.load();
+									                // Ext.MessageBox.confirm('Confirm Download', 'Would you like to download the chart as an image?', function(choice){
+									                    // if(choice == 'yes'){
+									                        // chart.save({
+									                            // type: 'image/png'
+									                        // });
+									                    // }
+									                // });
+									            }
+									        }]
+							            }).show();
+									   
+		                			}
+		                		}
 		                	}];	
+		                	
+		                	if (record.parentNode.data.text != 'DFID Projects'){
+		                		pre.splice(3, 1);
+		                	}	
+		                	
+		                	// console.log(record);
 		                } else if (e=='External Data'){
 		                	var pre = [{
 		                		text: 'Redraw',
@@ -344,7 +480,39 @@ TREE = function() {
 						        	var val = thumb.value/60;
 						        	return Ext.String.format('<b>'+(-val)+' hour(s) ago</b>', thumb.value);
 						        }
-						    })];	
+						    }),{
+		                		text: 'Raise this Layer',
+		                		iconCls: 'iconRaise',
+		                		listeners : {
+		                			'click': function(){
+										var selectedLayer = APP.map.getLayersByName(record.raw.layer)[0];
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+										APP.map.raiseLayer(selectedLayer, 100);
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+		                			}
+		                		}
+		                	}];	
+						} else if (e=='KML'){
+		                	var pre = [{
+		                		text: 'Redraw',
+		                		iconCls: 'refresh',
+		                		listeners : {
+		                			'click': function(){
+										TREE.redrawLayer(record.raw.layer);
+		                			}
+		                		}
+		                	},{
+		                		text: 'Raise this Layer',
+		                		iconCls: 'iconRaise',
+		                		listeners : {
+		                			'click': function(){
+										var selectedLayer = APP.map.getLayersByName(record.raw.layer)[0];
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+										APP.map.raiseLayer(selectedLayer, 100);
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+		                			}
+		                		}
+		                	}];    
 		                } else if (e=='WMS_PD'){	
 		                	var pre = [{
 		                		text: 'Redraw',
@@ -370,6 +538,17 @@ TREE = function() {
 										    	TREE.redrawLayer(record.raw.layer);										
 										    }
 										})
+		                	},{
+		                		text: 'Raise this Layer',
+		                		iconCls: 'iconRaise',
+		                		listeners : {
+		                			'click': function(){
+										var selectedLayer = APP.map.getLayersByName(record.raw.layer)[0];
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+										APP.map.raiseLayer(selectedLayer, 100);
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+		                			}
+		                		}
 		                	}];
 		                } else {
 							var pre = [{
@@ -568,6 +747,17 @@ TREE = function() {
 		                		listeners : {
 		                			'click': function(){alert('sorry, under construction');}
 		                		}
+		                	},{
+		                		text: 'Raise this Layer',
+		                		iconCls: 'iconRaise',
+		                		listeners : {
+		                			'click': function(){
+										var selectedLayer = APP.map.getLayersByName(record.raw.layer)[0];
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+										APP.map.raiseLayer(selectedLayer, 100);
+										// console.log(APP.map.getLayerIndex(	selectedLayer	));
+		                			}
+		                		}
 		                	}];	
 		                					                	
 		                }
@@ -627,51 +817,207 @@ TREE = function() {
 			}	
 		},
 		getClassRow : function(node, send){
+			APP.map.getLayersByName('Print Layer')[0].setZIndex(2500);
+			// console.log(APP.map.getLayersByName('Print Layer')[0].getZIndex());
+			// console.log(APP.map.getLayersByName('ndh-earthquake-distribution-peak-ground-acceleration')[0].getZIndex());
+			// console.log(node);
+			var flag = 0;
 			if (node.raw.layertype == 'WMS'){
-				var classUrl = 'http://sedac.ciesin.columbia.edu/geoserver/wms?width=15&height=15&legend_options=border:false;mx:0.05;my:0.02;dx:0.2;dy:0.07;fontSize:11;bandInfo:false;&';
+				if (node.raw.layer =='clouds'){
+					var classUrl = 'http://openweathermap.org/img/a/NT.png';
+					flag=1;
+				} else if(node.raw.layer =='precipitation'){	
+					var classUrl = 'http://openweathermap.org/img/a/PR.png';
+					flag=1;
+				} else if(node.raw.layer =='pressure'){	
+					var classUrl = 'http://openweathermap.org/img/a/PN.png';
+					flag=1;
+				} else if(node.raw.layer =='wind'){	
+					var classUrl = 'http://openweathermap.org/img/a/UV.png';
+					flag=1;
+				} else if(node.raw.layer =='temp'){	
+					var classUrl = 'http://openweathermap.org/img/a/TT.png';
+					flag=1;			
+				} else if(node.raw.layer =='snow'){	
+					var classUrl = 'http://openweathermap.org/img/a/SN.png';
+					flag=1;				
+				} else {
+					var classUrl = 'http://sedac.ciesin.columbia.edu/geoserver/wms?width=15&height=15&legend_options=border:false;mx:0.05;my:0.02;dx:0.2;dy:0.07;fontSize:11;bandInfo:false;&';					
+					flag = 3;
+					if (node.raw.wgs84only){
+						flag = 2;
+						var classUrl = node.raw.url;
+					}
+				}	
+			} else if (node.raw.layer =='wbprojects001'){
+				var classUrl = 'image/wbLegend.png';
+				flag=1;
 			} else {
 				var classUrl = 'php/getmap.php?';
 			}
 			var tempcode = new Array();
 			tempcode.push(node.raw);
-			OpenLayers.Request.GET({
-		        url: classUrl,
-		        params: {
-		            service: "WMS",
-		            version: "1.1.1",
-		            request: "GetStyles",
-		            LAYERS: node.raw.layer.replace(" ", "_"),
-		            LAYER : node.raw.layer.replace(" ", "_"),
-		            mapquery : APP.dataLayer.params.MAPQUERY,
-		            classitem : APP.dataLayer.params.CLASSITEM,
-					tableitem : APP.dataLayer.params.TABLEITEM,
-					GROUP : node.parentNode.raw.text
-		        },
-		        callback: function(response) {
-		        	var tempcode = new Array();
-					tempcode.push(node.raw);
-		            var sld = new OpenLayers.Format.SLD().read(response.responseText);
-		            var layer = node.raw.layer.replace(" ", "_");
-		            var styleRow = sld.namedLayers[layer].userStyles[0];
-		            console.log(styleRow.rules);
-		            if (node.raw.layertype == 'WMS'){
-		            	var height = 120;
-		            } else {
-		            	var height = styleRow.rules.length * 17.5;
-		            }
-		            var style = document.createElement('style');
-					style.type = 'text/css';
-					style.media="all";
-					if (layer!="dataLayer"){
-						// style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('php/getmap.php?SENTPARAMS="+Ext.encode(tempcode)+"&LAYER="+layer+"&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic') !important; height:"+height+"px; background-repeat:no-repeat;background-position:43px 0px;}";
-						style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('"+classUrl+"GROUP="+node.parentNode.raw.text+"&LAYER="+layer+"&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic') !important; height:"+height+"px; background-repeat:no-repeat;background-position:43px 0px;}";
-					} else {
-						style.innerHTML = send + "height:"+height+"px; background-repeat:no-repeat;background-position:60px 0px;}";
-					}
-					document.getElementsByTagName('head')[0].appendChild(style);
-					node.expand();
-		        }
-		   });
+			var parentUrl = window.location.href;
+			parentUrl = parentUrl.substring( 0, parentUrl.lastIndexOf( "/" ) + 1);
+			if (flag==0){
+				OpenLayers.Request.GET({
+			        url: parentUrl + "sld/"+node.raw.category,
+			        params: {
+			            // service: "WMS",
+			            // version: "1.1.1",
+			            // request: "GetStyles",
+			            // SLD : "http://localhost/oasisweb_pre/sld/"+node.raw.category,
+			            // LAYERS: node.raw.layer.replace(" ", "_"),
+			            // LAYER : node.raw.layer.replace(" ", "_"),
+			            // mapquery : APP.dataLayer.params.MAPQUERY,
+			            // classitem : APP.dataLayer.params.CLASSITEM,
+						// tableitem : APP.dataLayer.params.TABLEITEM,
+						// GROUP : node.parentNode.raw.text
+			        },
+			        callback: function(response) {
+			        	var tempcode = new Array();
+						tempcode.push(node.raw);
+						var parentUrl = window.location.href;
+						parentUrl = parentUrl.substring( 0, parentUrl.lastIndexOf( "/" ) + 1);
+			            var sld = new OpenLayers.Format.SLD().read(response.responseText);
+			            var layer = node.raw.layer.replace(" ", "_");
+			            var height = 0;
+			            // console.log(node);
+			            var mess = "Source : ";
+			            mess += "<a href='"+node.raw.link+"' target='_blank'>"+node.raw.source+"</a><br/>";			            
+			            if (sld.namedLayers[layer]){
+				            var styleRow = sld.namedLayers[layer].userStyles[0];
+				            
+				            if (styleRow.description != null)
+				            	mess += styleRow.description;
+				            
+				            if (node.raw.layertype == 'WMS'){				            	
+				            	if (styleRow.rules.length > 1){
+				            		var height = styleRow.rules.length * 17.5;	
+				            	} else {
+				            		var height = styleRow.rules[0].symbolizer.Raster.colorMap.length * 17.5;
+				            	}	
+				            } else {
+				            	var height = styleRow.rules.length * 17.5;
+				            }
+				            
+				        }    
+				        UTILS.showHelpTip("Layer "+node.raw.text, mess, 150000);    
+			            var style = document.createElement('style');
+						style.type = 'text/css';
+						style.media="all";
+						if (layer!="dataLayer"){
+							// style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('php/getmap.php?SENTPARAMS="+Ext.encode(tempcode)+"&LAYER="+layer+"&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic') !important; height:"+height+"px; background-repeat:no-repeat;background-position:43px 0px;}";
+							style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('"+classUrl+"GROUP="+node.parentNode.raw.text+"&SLD="+parentUrl+"sld/"+node.raw.category+"&LAYER="+layer+"&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic') !important; height:"+height+"px; background-repeat:no-repeat;background-position:43px 0px;}";
+						} else {
+							style.innerHTML = send + "height:"+height+"px; background-repeat:no-repeat;background-position:60px 0px;}";
+						}
+						document.getElementsByTagName('head')[0].appendChild(style);
+						node.expand();
+			        }
+			   });
+			} else if (flag == 1) {
+				var mess = "Source : ";
+			    mess += "<a href='"+node.raw.link+"' target='_blank'>"+node.raw.source+"</a><br/>";
+			    UTILS.showHelpTip("Layer "+node.raw.text, mess, 150000);
+				var style = document.createElement('style');
+				style.type = 'text/css';
+				style.media="all";
+				style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('"+classUrl+"') !important; height:275px; background-repeat:no-repeat;background-position:43px 0px;}";
+				document.getElementsByTagName('head')[0].appendChild(style);
+				node.expand();
+			} else if (flag == 1) {
+				
+				OpenLayers.Request.GET({
+			        url: classUrl,
+			        params: {
+			            service: "WMS",
+			            version: "1.1.1",
+			            request: "GetCapabilities",
+			            LAYERS: node.raw.layer.replace(" ", "_"),
+			            LAYER : node.raw.layer.replace(" ", "_")
+			        },
+			        callback: function(response) {
+			        	var mess = "Source : ";
+						mess += "<a href='"+node.raw.link+"' target='_blank'>"+node.raw.source+"</a><br/>";
+					    var format = new OpenLayers.Format.WMSCapabilities();
+					    var capabilities = format.read(response.responseXML);
+					    for (var i=0, len=capabilities.capability.layers.length; i<len; i++) {
+					    	if (capabilities.capability.layers[i].name == node.raw.layer){ 	 	
+					    		console.log(capabilities.capability.layers[i]);
+					    		mess += "Abstract : "+capabilities.capability.layers[i].abstract+"<br/><br/>";
+					    		mess += "Forecast time : <br/>";
+					    		for (var t=0, tlen=capabilities.capability.layers[i].dimensions.time.values.length;t<tlen;t++){
+					    			mess += capabilities.capability.layers[i].dimensions.time.values[t]+"<br/>";
+					    		}
+					    	}	
+						}						
+						UTILS.showHelpTip("Layer "+node.raw.text, mess, 150000);							
+			        }
+			   });
+			   	var mess = "Source : ";
+				mess += "<a href='"+node.raw.link+"' target='_blank'>"+node.raw.source+"</a><br/><br/>";
+				mess += "get metadata ... <br/>";
+				UTILS.showHelpTip("Layer "+node.raw.text, mess, 150000);	
+				var style = document.createElement('style');
+				style.type = 'text/css';
+				style.media="all";
+				style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('"+classUrl+"&request=GetLegend&layers="+node.raw.layer+"') !important; height:50px; background-repeat:no-repeat;background-position:15px 0px;}";
+				document.getElementsByTagName('head')[0].appendChild(style);
+				node.expand();	
+			} else if (flag == 3) {	
+				OpenLayers.Request.GET({
+			        url: classUrl,
+			        params: {
+			            service: "WMS",
+			            version: "1.1.1",
+			            request: "GetStyles",
+			            LAYERS: node.raw.layer.replace(" ", "_"),
+			            LAYER : node.raw.layer.replace(" ", "_"),
+						GROUP : node.parentNode.raw.text
+			        },
+			        callback: function(response) {
+			        	var tempcode = new Array();
+						tempcode.push(node.raw);
+						
+			            var sld = new OpenLayers.Format.SLD().read(response.responseText);
+			            var layer = node.raw.layer.replace(" ", "_");
+			            var height = 0;
+			            // console.log(node);
+			            var mess = "Source : ";
+			            mess += "<a href='"+node.raw.link+"' target='_blank'>"+node.raw.source+"</a><br/>";			            
+			            if (sld.namedLayers[layer]){
+				            var styleRow = sld.namedLayers[layer].userStyles[0];
+				            
+				            if (styleRow.description != null)
+				            	mess += styleRow.description;
+				            
+				            if (node.raw.layertype == 'WMS'){				            	
+				            	if (styleRow.rules.length > 1){
+				            		var height = styleRow.rules.length * 17.5;	
+				            	} else {
+				            		var height = styleRow.rules[0].symbolizer.Raster.colorMap.length * 17.5;
+				            	}	
+				            } else {
+				            	var height = styleRow.rules.length * 17.5;
+				            }
+				            
+				        }    
+				        UTILS.showHelpTip("Layer "+node.raw.text, mess, 150000);    
+			            var style = document.createElement('style');
+						style.type = 'text/css';
+						style.media="all";
+						if (layer!="dataLayer"){
+							// style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('php/getmap.php?SENTPARAMS="+Ext.encode(tempcode)+"&LAYER="+layer+"&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic') !important; height:"+height+"px; background-repeat:no-repeat;background-position:43px 0px;}";
+							style.innerHTML = "."+node.lastChild.internalId+" { background-image:url('"+classUrl+"GROUP="+node.parentNode.raw.text+"&LAYER="+layer+"&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic') !important; height:"+height+"px; background-repeat:no-repeat;background-position:43px 0px;}";
+						} else {
+							style.innerHTML = send + "height:"+height+"px; background-repeat:no-repeat;background-position:60px 0px;}";
+						}
+						document.getElementsByTagName('head')[0].appendChild(style);
+						node.expand();
+			        }
+			   });
+			}	   
 		},
 		modifywmsgetfeatureparams : function (){
 			for(var key in APP.map.controls){
@@ -745,9 +1091,22 @@ TREE = function() {
 			this.store = Ext.create('Ext.data.TreeStore', {
 		        proxy: {
 		            type: 'ajax',
-		            url: 'check-nodes.json'
+		            url: 'php/getJSON4tree.php'
+		        },
+		        listeners: {
+		        	load: function(sender, node, records) {
+			            Ext.each(records, function(record, index){
+			                if (record.data.text == 'Situational Awareness' || record.data.text == 'DFID Projects'){
+				                if (incidentFlag!=1){
+				                	record.remove(true);
+	    							TREE.store.sync();
+    							// console.log(incidentFlag);
+    							}
+			                }
+			            }, this);
+			        }
 		        }
-		    });
+		    });    
 		    		    
 			this.treePanel = Ext.create('Ext.tree.Panel', {
 		        store: this.store,
@@ -755,53 +1114,54 @@ TREE = function() {
 		        loaded: true,
 		        border : false,
 		        flex: 6,
+		        scroll : false,
 		        // useArrows: true,
 		        viewConfig      : {
-				    style           : { overflow: 'auto', overflowX: 'hidden', overflowY: 'hidden' }
+				    style           : { overflow: 'auto', overflowX: 'hidden' }
 				  },
 		        multiSelect: false,
   				singleSelect: true,
 		        frame: false,
 		        autoWidth : true,
 		        //height: 300,
-		        lines : true//,
-		        // dockedItems: [{
-		            // xtype: 'toolbar',
-		            // items: [{
-								// xtype: 'tbfill'
-						// },{
-		                // text: 'Show : ',
-		                // xtype: 'tbtext'
-		            // },
-		            	// new Ext.form.ComboBox({
-							// store: new Ext.data.ArrayStore({
-						        // data   : [
-							        // ['Province'],
-							        // ['District'],
-							        // ['Tehsil'],
-							        // ['UC']
-							    // ],
-						        // fields : ['name']
-						    // }),
-							// displayField: 'name',
-							// width : 100,
-							// valueField: 'name',
-							// typeAhead: true,
-							// mode: 'local',
-							// triggerAction: 'all',
-							// emptyText: 'UC',
-							// selectOnFocus: true,
-							// listeners: {
-								// select: function(){
-									// TREE.selectedShowCB = this.value;
-									// if (TREE.selectedDataLayerNode!=null){
-										// TREE.refreshDataLayer(TREE.selectedDataLayerNode);
-									// }
-								// }
-							// }
-						// })
-		            // ]
-		        // }]
+		        lines : true,
+		        dockedItems: [{
+		            xtype: 'toolbar',
+		            items: [{
+								xtype: 'tbfill'
+						},{
+		                text: 'Show : ',
+		                xtype: 'tbtext'
+		            },
+		            	new Ext.form.ComboBox({
+							store: new Ext.data.ArrayStore({
+						        data   : [
+							        ['Province'],
+							        ['District'],
+							        ['Tehsil'],
+							        ['UC']
+							    ],
+						        fields : ['name']
+						    }),
+							displayField: 'name',
+							width : 100,
+							valueField: 'name',
+							typeAhead: true,
+							mode: 'local',
+							triggerAction: 'all',
+							emptyText: 'UC',
+							selectOnFocus: true,
+							listeners: {
+								select: function(){
+									TREE.selectedShowCB = this.value;
+									if (TREE.selectedDataLayerNode!=null){
+										TREE.refreshDataLayer(TREE.selectedDataLayerNode);
+									}
+								}
+							}
+						})
+		            ]
+		        }]
 		    });
 		   
 		   this.treePanel.on('itemclick', function(view, record, item, index, event){	   		
@@ -858,7 +1218,8 @@ TREE = function() {
 														record.appendChild(data);
 														// console.log(data);
 														APP.map.addLayer(new OpenLayers.Layer.WMS(data.layer,
-									                    	"php/getmap.php",
+									                    	["php/getmap.php"],
+									                    	// "php/getmap.php",
 									                    	{
 									                    		layers: data.layer,	
 									                    		transparent: true,
@@ -921,12 +1282,26 @@ TREE = function() {
 		            }
 		            if ((node.raw.layer != 'fire24') && (node.raw.layer != 'fire48') && (node.raw.layer != 'flood1') && (node.raw.layer != 'flood2')){		         	            			
 						TREE.getClassRow(node);
+					} else {
+						var mess = "Source : ";
+					    mess += "<a href='"+node.raw.link+"' target='_blank'>"+node.raw.source+"</a><br/>";
+					    UTILS.showHelpTip("Layer "+node.raw.text, mess, 150000);
 					}
 					
 					if (node.raw.layer == 'flood2'){
 						var doc = document.getElementById('legendDiv');
 						doc.innerHTML = '<img src="mapfile/legend/legend-MPE.png" />';
 					}
+					
+					if ((node.raw.layer == '3hrainfallleft') || (node.raw.layer == '3hrainfallright')){
+						var doc = document.getElementById('legendDiv2');
+						doc.innerHTML = '<img style="height: 60px;" src="http://trmm.gsfc.nasa.gov/trmm_rain/Events/tafd_3hr_rain_dump_google_wedge.png" />';
+						
+					}
+						
+					if (node.raw.layer == 'wbprojects001' || node.raw.layer == 'ngoprojects001'){
+						APP.weatherSelectControl.deactivate(); 
+					}	
 							
 		            // console.log(APP.map.getLayersByName(node.raw.layer)[0]);			
 					// console.log(APP.map);
@@ -941,6 +1316,13 @@ TREE = function() {
             } else { //this is for all the layers, base and data/project layers
             	if (node.raw.layer == 'flood2'){
 					var doc = document.getElementById('legendDiv');
+					doc.innerHTML = '';
+				}
+				if (node.raw.layer == 'wbprojects001' || node.raw.layer == 'ngoprojects001'){
+					APP.weatherSelectControl.activate(); 
+				}
+				if ((node.raw.layer == '3hrainfallleft') || (node.raw.layer == '3hrainfallright')){
+					var doc = document.getElementById('legendDiv2');
 					doc.innerHTML = '';
 				}
             	if (node.data.depth!=2){

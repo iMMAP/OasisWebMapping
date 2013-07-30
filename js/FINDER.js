@@ -36,7 +36,9 @@ FINDER = function() {
 			// console.log(response[0].data);
 			// console.log(response[0].attributes);
 			// console.log(JSON.stringify(response[0].attributes));
-			var tempData = {"Cell Count":response[0].attributes.COUNT, "Min":response[0].attributes.MIN, "Max":response[0].attributes.MAX, "Range":response[0].attributes.RANGE, "Mean":response[0].attributes.MEAN, "Standard Deviation":response[0].attributes.STD, "Land Area km2":response[0].attributes.LANDAREA, "Mean Unit Area km2":response[0].attributes.MEANUNITAREA, "Population 2005":response[0].attributes.POPULATION05};
+			var exp = new Number(response[0].attributes.POPULATION05);
+			// console.log(exp.toFixed(2));
+			var tempData = {"Cell Count":UTILS.addCommas(response[0].attributes.COUNT), "Min":UTILS.addCommas(response[0].attributes.MIN), "Max":UTILS.addCommas(response[0].attributes.MAX), "Range":UTILS.addCommas(response[0].attributes.RANGE), "Mean":UTILS.addCommas(response[0].attributes.MEAN), "Standard Deviation":UTILS.addCommas(response[0].attributes.STD), "Land Area km2":UTILS.addCommas(response[0].attributes.LANDAREA), "Mean Unit Area km2":UTILS.addCommas(response[0].attributes.MEANUNITAREA), "Population 2005":UTILS.addCommas(exp.toFixed(2))};
 			FINDER.popData = tempData;
 			// var tempData = {"Cell_Count":"", "Min":"", "Max":"", "Range":"", "Mean":"", "Standard_Deviation":"", "Land_Area_km2":"", "Mean_Unit_Area_km2":"", "Population_2005":""};
 			// console.log(tempData);
@@ -425,6 +427,9 @@ FINDER = function() {
 				listeners: {
 					'expand': function(a, b){
 						UTILS.showHelpTip('Resource Finder', 'Choose radius/free form geoscope, draw on the map then click proceed to get available resources from active layers.', 7200);
+						CONTROL.featureInfo.deactivate();
+						// APP.weatherSelectControl.deactivate(); 
+						// APP.fpControl.deactivate(); 
 					},
 					'collapse': function(a, b){
 						FINDER.polygonLayer.destroyFeatures();
@@ -432,6 +437,9 @@ FINDER = function() {
 						FINDER.polygonTool = false;	
 						FINDER.radiusTool = false;
 						FINDER.modifyFeatureControl.deactivate();
+						CONTROL.featureInfo.activate();
+						// APP.weatherSelectControl.activate(); 
+						// APP.fpControl.activate();
 					}
 				}
 			});

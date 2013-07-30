@@ -30,7 +30,14 @@ DATA = function() {
 				disabledCls: 'x-props-grid x-grid3-td-name x-grid3-cell-inner disabled',
 				source: {},
 				propertyNames: {},
-				customEditors: {}
+				customEditors: {},
+				 listeners: {
+			      'beforeedit':{
+			         fn:function(){
+			            return false;
+			         }
+			      }// end beforeedit
+			   }//end listeners
 			});
 			var locaccuracy = Ext.create('Ext.data.Store', {
 					fields: ['locaccuracy'],
@@ -81,8 +88,34 @@ DATA = function() {
 						{"incidenttype":"15", "incidentname":"Vehicle hijacking"},
 						{"incidenttype":"16", "incidentname":"Weapons cache find"}
 						]
-			});	        
+			});	    
+			DATA.dataEditor.customRenderers = {
+				URL : function( v ) {
+							var res = "<a href='"+v+"' target='_blank'>"+v+"</a>";		
+				            return res;
+				            
+				       },
+				picture : function( v ) {
+							// var res = "<a href='php/getMDCPhoto.php?key="+v+"' target='_blank'>link</a>";
+							var url = 	"php/getMDCPhoto.php?key="+v;	
+							var res = "<a href='#' onclick=UTILS.createImageViewer('"+url+"');>link</a>";
+				            return res;
+				            
+				       }       
+			};
+			    
 			DATA.dataEditor.customEditors = {
+					// URL : Ext.create('Ext.Button', {
+									    // text: 'Link to the document',  
+									    // // iconCls : 'wb_button',    
+									    // // enableToggle : true,
+									    // // hidden : true,
+									    // handler: function() {
+// 									       
+									       // /// here
+// 											
+									    // }
+									// }),
 					incidenttyppe : Ext.create('Ext.form.ComboBox', {                       
 						store: incident,
 						queryMode: 'local',

@@ -1,20 +1,56 @@
 Ext.ns('UTILS');
 UTILS = function() {
 	return {
+		msg : null,
+		imageWinPopup : null, 
+		addCommas : function (nStr)
+		{
+			nStr += '';
+			x = nStr.split('.');
+			x1 = x[0];
+			x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+			return x1 + x2;
+		},
+		createImageViewer : function(url){
+			
+			var comp = Ext.create('ImageViewer', {
+			    src: url
+			});
+			
+			this.imageWinPopup =  new Ext.Window(
+						    {
+						        layout: 'fit',
+						        width: 400,
+						        height: 300,
+						        modal: false,
+						        closeAction: 'destroy',
+						        items: [comp]
+						    }).show();
+						    
+		},
 		showHelpTip : function(title,text, time){
-			var msg = new Ext.Tip({
+			
+			if (this.msg){
+				this.msg.destroy();
+			}	
+			
+			this.msg = new Ext.Tip({
 			 	html:text,
 			 	title:title,
-			 	width:250,
+			 	width:300,
 			 	autoHeight: true,
 			 	closable: true,
 			 	frame:true,
 			 	renderTo: Ext.get('mapDiv')
 			});
-			msg.show();
-			msg.showAt(1,1);
+			this.msg.show();
+			this.msg.showAt(1,1);
 			setTimeout(function(){
-		       msg.destroy();
+		       // this.msg.destroy();
 		    }, time);
 		},
 		getDateCode: function(currentDate){

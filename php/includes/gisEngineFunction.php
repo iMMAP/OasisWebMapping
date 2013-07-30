@@ -1,6 +1,5 @@
 <?php
 
-
 function prepare(){
 	$GLOBALS['request']=ms_newowsrequestobj();
 	$GLOBALS['map']=ms_newMapObj($GLOBALS['map_path']."ol_base.map" );
@@ -54,10 +53,9 @@ function defineLayer(){
 	$new_layer[$layerName]->setMetaData('wfs_enable_request', '*');		
 	$new_layer[$layerName]->setMetaData('gml_featureid', 'Location_ID');
 	$new_layer[$layerName]->setMetaData('gml_include_items', 'all');	
-	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
-	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "FreeTDS");
+	$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
 	$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-	$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);	
+	$new_layer[$layerName]->set("connection", "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false");	
 	$new_layer[$layerName]->set("data", "$mapquery");	
 	$new_layer[$layerName]->set("status", MS_ON);	
 	$new_layer[$layerName]->set("dump", true);
@@ -199,10 +197,9 @@ function defineCosmeticsLayer(){
 	$new_layer[$layerName]->setMetaData('wfs_enable_request', '*');		
 	$new_layer[$layerName]->setMetaData('gml_featureid', 'Location_ID');
 	$new_layer[$layerName]->setMetaData('gml_include_items', 'all');	
-	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
-	//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "FreeTDS");
+	$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
 	$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-	$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);	
+	$new_layer[$layerName]->set("connection", "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false");	
 	$new_layer[$layerName]->set("data", "geom from (select 1 as Location_ID, geometry::STGeomFromText('".$_REQUEST['filterShape']."', 4326) as geom) as new_table USING UNIQUE Location_ID USING SRID=4326");	
 	$new_layer[$layerName]->set("status", MS_ON);	
 	$new_layer[$layerName]->set("dump", true);
@@ -221,12 +218,15 @@ function generateBaselayers ($sentparams){
 	*/	
 	$sentJSON=json_decode($_REQUEST['sentJSON'],true);
 	
-	foreach ($sentparams as $key => $layerObj){
-		if (($layerObj['group']=="Base Layers") || ($layerObj['group']=="Editable Layers")){
-			$obj = $layerObj['children'];
-			// generate layers
-			foreach ($obj as $key => $objret) {
+	foreach ($sentparams as $key => $layerObj){	
+		$obj = $layerObj['children'];
+		
+		// generate layers
+		foreach ($obj as $key => $objret) {
+			if($objret['sourceformat']!="WMS"){
 				$layerName = $objret['layer'];
+				if ($layerName == 'wbprojects001') continue;
+				if ($layerName == 'ngoprojects001') continue;
 				$criteria = "";	
 				if ($sentJSON!=null){
 					foreach ($sentJSON as $sj => $jsonobj){
@@ -255,36 +255,22 @@ function generateBaselayers ($sentparams){
 				$new_layer[$layerName]->setMetaData('wfs_enable_request', '*');		
 				$new_layer[$layerName]->setMetaData('gml_featureid', 'gid');
 				$new_layer[$layerName]->setMetaData('gml_include_items', 'all');
+				$new_layer[$layerName]->setMetaData('sld_enabled','1');
+				
 				if ($objret['sourceformat']=="shapefile"){
 					$new_layer[$layerName]->set("data", "shapefiles/".$objret['data']);
 				} else if ($objret['sourceformat']=="sqlsrvdbpak"){
 					$new_layer[$layerName]->set("data", $objret['data']);
-					//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
-					//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "FreeTDS");
-					$new_layer[$layerName]->setConnectionType(MS_OGR);
+					$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
 					$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-					$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);		
-				} else if ($objret['sourceformat']=="incidentdata"){
+					$new_layer[$layerName]->set("connection", "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false");		
+				} else {
 					$new_layer[$layerName]->setConnectionType(MS_POSTGIS);
 					$new_layer[$layerName]->set("data", $objret['data']);
 					$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-					$hostUrl = $GLOBALS['serverUrl'];
-					$dbName = $GLOBALS['dbname'];
-					$userName = $GLOBALS['username'];
-					$passwd = $GLOBALS['password'];
-					$port = $GLOBALS['port'];
-					$new_layer[$layerName]->set("connection", "host=$hostUrl user=$userName password=$passwd dbname=$dbName port=$port");		
-				} else if ($objret['sourceformat']=="postgis2"){
-					$new_layer[$layerName]->setConnectionType(MS_POSTGIS);
-					$new_layer[$layerName]->set("data", $objret['data']);
-					$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-					$hostUrl = $GLOBALS['serverUrl2'];
-					$dbName = $GLOBALS['dbname2'];
-					$userName = $GLOBALS['username2'];
-					$passwd = $GLOBALS['password2'];
-					$port = $GLOBALS['port2'];
-					$new_layer[$layerName]->set("connection", "host=$hostUrl user=$userName password=$passwd dbname=$dbName port=$port");		
-				}
+					$new_layer[$layerName]->set("connection", $GLOBALS['connectionstring'][$objret['sourceformat']]);		
+				} 
+				
 				$new_layer[$layerName]->set("status", MS_ON);	
 				$new_layer[$layerName]->set("dump", true);
 				if(!empty($objret['opacity']))
@@ -292,103 +278,19 @@ function generateBaselayers ($sentparams){
 				
 				if(!empty($objret['labelitem']))
 					$new_layer[$layerName]->set('labelitem',$objret['labelitem']);
-			
-				foreach ($objret['category'] as $i => $value) {
-					// var_dump($i);	
-					$new_class[$i] = ms_newClassObj($new_layer[$layerName]);
-					$new_class[$i]->set("name", $objret['category'][$i]['name']);		
-					if ($objret['classitem']!=''){	
-						$new_class[$i]->setExpression("(('[".$objret['classitem']."]' = '".$i."')".$_REQUEST['CRITERIA'].$criteria.")");
-					}
-					
-					if(!empty($objret['category'][$i]['maxscaledenom']))
-						$new_class[$i]->set("maxscaledenom",$objret['category'][$i]['maxscaledenom']);	
-					if(!empty($objret['category'][$i]['minscaledenom']))
-						$new_class[$i]->set("minscaledenom",$objret['category'][$i]['minscaledenom']);	
-					
-					$new_class[$i]->label->set("position", MS_AUTO);
-					$new_class[$i]->label->set("font","verdana");
-					$new_class[$i]->label->set("size",MS_GIANT);
-					$new_class[$i]->label->color->setRGB(0,0,0);
-					$new_class[$i]->label->outlinecolor->setRGB(255,255,255);	
-						
-					if ($objret['layertype']=='point'){
+				
+				if ($objret['layertype']=='point'){
 						$new_layer[$layerName]->set("type", MS_LAYER_POINT);
-						if (empty($objret['category'][$i]['style'])){					
-							$new_style = ms_newStyleObj($new_class[$i]);
-							if ($objret['category'][$i]['symbolname']!='')	
-								$new_style->set("symbolname", "../mapfile/image/".$objret['category'][$i]['symbolname']);
-						} else {
-							foreach ($objret['category'][$i]['style'] as $x => $value_x) {
-								$new_style = ms_newStyleObj($new_class[$i]);
-								if ($objret['category'][$i]['style'][$x]['symbolname']!='')
-									$new_style->set("symbolname", $objret['category'][$i]['style'][$x]['symbolname']);
-								if(!empty($objret['category'][$i]['style'][$x]['outlinecolor']))
-									$new_style->outlinecolor->setRGB($objret['category'][$i]['style'][$x]['outlinecolor']['R'],$objret['category'][$i]['style'][$x]['outlinecolor']['G'],$objret['category'][$i]['style'][$x]['outlinecolor']['B']);
-								if(!empty($objret['category'][$i]['style'][$x]['color']))
-									$new_style->color->setRGB($objret['category'][$i]['style'][$x]['color']['R'],$objret['category'][$i]['style'][$x]['color']['G'],$objret['category'][$i]['style'][$x]['color']['B']);
-								if(!empty($objret['category'][$i]['style'][$x]['size']))
-									$new_style->set("size",$objret['category'][$i]['style'][$x]['size']);		
-												
-							}	
-						}
-						
-					} else if ($objret['layertype']=='line'){
+				} else if ($objret['layertype']=='line'){
 						$new_layer[$layerName]->set("type", MS_LAYER_LINE);
-		
-						if(!empty($objret['category'][$i]['style']))
-							foreach ($objret['category'][$i]['style'] as $x => $value_x) {
-								$new_style = ms_newStyleObj($new_class[$i]);
-								if ($objret['category'][$i]['style'][$x]['symbolname']!='')
-									$new_style->set("symbolname", $objret['category'][$i]['style'][$x]['symbolname']);
-								if(!empty($objret['category'][$i]['style'][$x]['outlinecolor']))
-									$new_style->outlinecolor->setRGB($objret['category'][$i]['style'][$x]['outlinecolor']['R'],$objret['category'][$i]['style'][$x]['outlinecolor']['G'],$objret['category'][$i]['style'][$x]['outlinecolor']['B']);
-								if(!empty($objret['category'][$i]['style'][$x]['color']))
-									$new_style->color->setRGB($objret['category'][$i]['style'][$x]['color']['R'],$objret['category'][$i]['style'][$x]['color']['G'],$objret['category'][$i]['style'][$x]['color']['B']);
-								if(!empty($objret['category'][$i]['style'][$x]['width']))
-									$new_style->set("width",$objret['category'][$i]['style'][$x]['width']);
-							}
-					} else if ($objret['layertype']=='polygon'){
+				} else if ($objret['layertype']=='polygon'){
 						$new_layer[$layerName]->set("type", MS_LAYER_POLYGON);
-					
-						if(!empty($objret['category'][$i]['style']))
-							foreach ($objret['category'][$i]['style'] as $x => $value_x) {
-								$new_style = ms_newStyleObj($new_class[$i]);
-								if ($objret['category'][$i]['style'][$x]['symbolname']!='')
-									$new_style->set("symbolname", $objret['category'][$i]['style'][$x]['symbolname']);
-								if(!empty($objret['category'][$i]['style'][$x]['outlinecolor']))
-									$new_style->outlinecolor->setRGB($objret['category'][$i]['style'][$x]['outlinecolor']['R'],$objret['category'][$i]['style'][$x]['outlinecolor']['G'],$objret['category'][$i]['style'][$x]['outlinecolor']['B']);
-								if(!empty($objret['category'][$i]['style'][$x]['color']))
-									$new_style->color->setRGB($objret['category'][$i]['style'][$x]['color']['R'],$objret['category'][$i]['style'][$x]['color']['G'],$objret['category'][$i]['style'][$x]['color']['B']);
-								if(!empty($objret['category'][$i]['style'][$x]['width']))
-									$new_style->set("width",$objret['category'][$i]['style'][$x]['width']);
-							}										
-					}		
-				} // end of foreach
-			} // end of for each				
-		} else if ($layerObj['group']=="WMS"){
-			$obj = $layerObj['children'];
-			foreach ($obj as $key => $objret) {
-				$layerName = $objret['layer'];
-				$new_layer[$layerName] = ms_newLayerObj($GLOBALS['map']);	
-				$new_layer[$layerName]->set("template", "blank"); 
-				$new_layer[$layerName]->set("name", $layerName);
-				$new_layer[$layerName]->setConnectionType(MS_WMS);
-				$new_layer[$layerName]->set("connection", $objret['url']);
-				$new_layer[$layerName]->set("status", MS_ON);	
-				$new_layer[$layerName]->set("opacity", 50);	
-				$new_layer[$layerName]->set("type", MS_RASTER);
-				$new_layer[$layerName]->setProjection('init=epsg:4326');
-				$new_layer[$layerName]->setMetaData('wms_name', $layerName);
-				$new_layer[$layerName]->setMetaData('wms_srs', 'epsg:900913 epsg:4326');
-				$new_layer[$layerName]->setMetaData('wms_feature_info_mime_type', 'text/xml');
-				$new_layer[$layerName]->setMetaData('wms_onlineresource', 'http://oasispakistan.pk/php/getmap.php');
-				$new_layer[$layerName]->setMetaData('wms_include_items', 'all');
-				$new_layer[$layerName]->setMetaData('wms_server_version', '1.1.0');
-				$new_layer[$layerName]->setMetaData('wms_formatlist', 'image/gif,image/png,image/jpeg,image/wbmp');
-				$new_layer[$layerName]->setMetaData('wms_format', 'image/png');
-			}
-		}
+				}	
+			} /// ens of IF check if not WMS					
+
+		} // end of for each				
+
+		
 	}
 }
 
@@ -404,11 +306,11 @@ function generateUserlayers (){
 		$userid=$_REQUEST['userid'];
 	}
 	
-	$query = "Select * from \"Administration\".layerconf where userid = '$userid'";
+	$query = "Select * from OASIS_v3_2.dbo.layerconf where userid = '$userid'";
 	$dbinfo = getDB();
-	$result = pg_query( $dbinfo, $query);
+	$result = sqlsrv_query( $dbinfo, $query);
 	
-	while ($obj = pg_fetch_array( $result)){
+	while ($obj = sqlsrv_fetch_array( $result)){
 		$res[] = $obj['conf']; 
 	}
 	
@@ -445,18 +347,18 @@ function generateUserlayers (){
 			$new_layer[$layerName]->setMetaData('gml_featureid', 'gid');
 			$new_layer[$layerName]->setMetaData('gml_include_items', 'all');
 			if ($objret->sourceformat=="shapefile"){
-				$new_layer[$layerName]->set("data", "shapefiles/".$objret->data);
+				$new_layer[$layerName]->set("data", "shapefiles/users/".$objret->data);
 			} else if ($objret->sourceformat=="sqlsrvdbpak"){
 				$new_layer[$layerName]->set("data", $objret->data);
-				//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
-				//$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "FreeTDS");
+				$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
 				$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-				$new_layer[$layerName]->set("connection", $GLOBALS['MSSQLServerConn']);		
+				$new_layer[$layerName]->set("connection", "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false");		
 			}
 			$new_layer[$layerName]->set("status", MS_ON);	
 			$new_layer[$layerName]->set("dump", true);
-			if(!empty($objret->opacity))
-				$new_layer[$layerName]->set('opacity',$objret->opacity); 
+			// if(!empty($objret->opacity))
+				// $new_layer[$layerName]->set('opacity',$objret->opacity);
+				$new_layer[$layerName]->set('opacity',75); 
 			
 			
 			foreach ($objret->category as $i => $value) {
@@ -560,7 +462,7 @@ function defineFloodedOverlay($sentparams){
 
 }
 
-function defineKML($layer, $sentparams){
+function defineKML($layer, $sentparams, $data, $symbol){
 	foreach ($sentparams as $key => $layerObj){
 		if ($layerObj['group']=="KML"){
 			$obj = $layerObj['children'];
@@ -579,19 +481,19 @@ function defineKML($layer, $sentparams){
 	// }	
 	$layerName = $layer;
 	
-	if (file_exists('../mapfile/'.$layerName.'.kml')) {
-	    $filetime = filemtime('../mapfile/'.$layerName.'.kml');
-		$timedifftemp = time()-$filetime;
-		$timediff = $timedifftemp/60;
-		if ($timediff>1440){		
-			downloadfile ($url,$layerName.'.kml');
-			// disini	
-			fixDownloadedFile('../mapfile/'.$layerName.'.kml');			
-		}		
-	} else {
-		downloadfile ($url,$layerName.'.kml');	
-		fixDownloadedFile('../mapfile/'.$layerName.'.kml');
-	}
+	// if (file_exists('../mapfile/'.$layerName.'.kml')) {
+	    // $filetime = filemtime('../mapfile/'.$layerName.'.kml');
+		// $timedifftemp = time()-$filetime;
+		// $timediff = $timedifftemp/60;
+		// if ($timediff>1440){		
+			// downloadfile ($url,$layerName.'.kml');
+			// // disini	
+			// fixDownloadedFile('../mapfile/'.$layerName.'.kml');			
+		// }		
+	// } else {
+		// downloadfile ($url,$layerName.'.kml');	
+		// fixDownloadedFile('../mapfile/'.$layerName.'.kml');
+	// }
 	
 	
 	$new_layer[$layerName] = ms_newLayerObj($GLOBALS['map']);	
@@ -614,7 +516,7 @@ function defineKML($layer, $sentparams){
 	$new_layer[$layerName]->setConnectionType(MS_OGR);
 	$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');		
 	$new_layer[$layerName]->set("connection", $layerName.'.kml');
-	$new_layer[$layerName]->set("data", " Fire Points List ");	
+	$new_layer[$layerName]->set("data", $data);	
 	$new_layer[$layerName]->set("status", MS_ON);	
 	$new_layer[$layerName]->set("dump", true);
 	$new_layer[$layerName]->set("type", MS_LAYER_POINT);
@@ -622,7 +524,7 @@ function defineKML($layer, $sentparams){
 	$new_class = ms_newClassObj($new_layer[$layerName]);
 	$new_class->set("name", $layerName);
 	$new_style = ms_newStyleObj($new_class);
-	$new_style->set("symbolname", "../mapfile/image/fire.png");
+	$new_style->set("symbolname", "../mapfile/image/".$symbol);
 	$new_style->set("size", 24);	
 }
 

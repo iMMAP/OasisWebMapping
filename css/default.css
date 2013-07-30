@@ -42,6 +42,7 @@ background-repeat:repeat;
 	background-image:url('../image/pdf_icon.png')!important;
 }
 
+
 .iconClear{
 	background-size: 100%; 
 	background-image:url('../image/clear-icon.png')!important;
@@ -99,6 +100,27 @@ background-repeat:repeat;
 .refresh{
 	background-size: 100%;
 	background-image:url('../image/arrow_refresh.png')!important;
+}
+
+.charts{
+	background-size: 100%;
+	background-image:url('../image/charts.png')!important;
+}
+
+.wb_button{
+	background-size: 100%;
+	background-image:url('../image/wb_button.png')!important;
+}
+
+
+.iconDesc{
+	background-size: 100%; 
+	background-image:url('../image/desc.png')!important;
+}
+
+.iconRaise{
+	background-size: 100%; 
+	background-image:url('../image/Raise.png')!important;
 }
 
 #form {
@@ -193,6 +215,15 @@ background-repeat:repeat;
     border: 1px solid #99BBE8;*/
     right: 0.25em;
 	top: 4.0em;
+    padding: 0.25em;
+    z-index: 20002;
+}
+
+#legendDiv2{
+	position: absolute;
+	font: bold 0.56em verdana, arial, helvetica;  
+    right: 0.25em;
+	top: 12.0em;
     padding: 0.25em;
     z-index: 20002;
 }
@@ -338,3 +369,76 @@ background-repeat:repeat;
 .success a {color:#264409;}
 
 /********************Error Display End*****************************/
+
+
+.olPopupCloseBox {
+    background: url("http://openweathermap.org/img/glyphicons-halflings.png") no-repeat scroll 0% 0% transparent !important;
+    background-position: -48px -96px !important;
+}
+
+.olPopup {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	border-radius: 8px;
+	padding: 4px;
+	z-index: 99999 !important;
+}
+
+#FramedCloud_GroupDiv {}
+
+p.weather_title {
+	font-size: medium; font-weight: bold; color:black;
+}
+
+weather_title_link {
+	text-decoration: underline; color: red; !important;
+}
+ 
+div.weather_block{
+	float: left; 
+}
+
+div.small_temp_block {
+	display: block; width: 30px; overflow: visible;
+}
+
+div.big_temp {
+	display: block; font-size: 30px;  padding-top: 6px;
+}
+
+div.small_temp, div.small_temp_grey {
+	float: left; 	text-align: center; font-size: small; 
+}
+
+div.small_val, div.small_val_grey {
+	display: block; clear: left; font-size: x-small; 
+/*padding: 0pt 3pt;*/
+}
+
+div.small_temp_grey, div.small_val_grey { color: gray; }
+
+img.weather_image {
+	float: left; border: medium none; width: 50px; height: 45px; repeat scroll 0% 0% transparent;}
+
+img.station_image {
+	float: left; border: medium none; width: 25px; height: 25px; scroll 0% 0% transparent;
+	padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 8px
+}
+
+div.cur_weather_block, div.temp_block {float: left;}
+
+
+.vote-plus {
+  width: 11px;
+  height: 15px;
+  float: left;
+  background: url("/img/icons_vote_posts.gif")  no-repeat ;
+  background-position: 0px 0px; 
+}
+
+.vote-minus {
+  width: 11px;
+  height: 15px;
+  float: left;
+  background: url("/img/icons_vote_posts.gif")  no-repeat;
+  background-position: -12px 0px;
+}

@@ -1,0 +1,129 @@
+html { 
+	margin: 7px;
+}
+
+body {
+  font-family: Verdana, Tahoma, Sans-serif;
+  margin: 0px;
+  padding-top: 0px;
+  font-size: 1em;
+}
+
+.tabHeader{
+	width: 100%;
+	
+}
+
+.tabHeader tr{
+	/*background: #999999;*/
+	/*-moz-border-radius: 20px;*/
+	
+}
+
+.tabHeader tr td{
+	margin: 5px;
+	height:50px;
+	vertical-align: bottom;
+	background-color: #F6F6F6;
+ 	border-bottom: 3px solid #999999;
+}
+
+.tabHeader tr td span{
+	font-size: 12;
+	font-weight: bold;
+	letter-spacing: 3;
+}
+
+.detail {
+  /*border-top: 1px solid black;*/
+  /*border-bottom: 1px solid black;*/
+}
+
+
+.detail td.label {
+  /*background-color: white;*/
+	color: #8B7958;
+	background-color: #F8F5F2;
+	padding: 3px;
+	font-size: 0.75em;
+}
+
+.detail td.field_total,
+.detail td.field {
+  font-weight: bold;
+  color: #000033;
+  background-color: #F9F0E9;
+  padding: 3px;
+  font-size: 0.75em;
+}
+
+
+.list {
+  /*border-collapse: collapse;*/
+  border-spacing: 3px;
+  /*border-top: 1px solid #8B7958;
+  border-bottom: 1px solid #8B7958;*/
+  width: 99%;
+  margin-top: 3px;
+  padding: 3px;
+}
+
+.list tr.head td {
+  font-size: 1em;
+  white-space: nowrap;
+  color: #000033;
+  background-color: #F9F0E9;
+  /*padding: 3px;*/
+}
+
+.list table.sub_head td {
+  border: none;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+.list tr.foot td {
+  border-top: 1px solid #8B7958;
+  font-size: 0.7em;
+}
+
+tr.list_row>td {
+  color: #8B7958;
+	background-color: #F8F5F2;
+  /*border-bottom: 1px dotted #8B7958;*/
+  font-size: 0.65em;
+  padding: 3px;
+}
+
+tr.list_row:hover td {
+  background-color: #F8EEE4;
+}
+
+tr.problem_row>td {
+  background-color: #FDCCCC;
+  border-bottom: 1px dotted #8B7958;
+  font-size: 0.65em;
+  padding: 3px;
+}
+
+tr.problem_row:hover td {
+  background-color: #F8EEE4;
+}
+
+.row_form td {
+  font-size: 0.7em;
+  padding: 3px;
+  white-space: nowrap;
+/*  text-align: center; */
+}
+
+.row_form td.label {
+  text-align: left;
+  white-space: normal;
+}
+
+.inline_header td {
+  color: #8B7958;
+  font-size: 0.6em;
+  white-space: nowrap;
+  text-align: center;
