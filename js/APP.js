@@ -1168,9 +1168,13 @@ APP = function() {
 			// selectfire48.activate();
 			//this.map.zoomTo(3);
 			
-			var initCenter = new OpenLayers.LonLat(APP.defLng, APP.defLat);
-			initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
-			this.map.setCenter(initCenter, APP.defZoom);	
+			//var initCenter = new OpenLayers.LonLat(APP.defLng, APP.defLat);
+			//initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+			//this.map.setCenter(initCenter, APP.defZoom);
+			
+			var initCenter = new OpenLayers.LonLat(41, 34.5);
+                        initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+                        this.map.setCenter(initCenter, 7);
 			
 			this.map.events.register('click', this.map, function(ev){
 				FINDER.polygonLayer.destroyFeatures();
