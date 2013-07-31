@@ -1,6 +1,6 @@
 <div class="headerinner">
   <div class="oaisislogo"><a href="#"><img src="OASIS/images/oasislogo.png" width="220" height="80"></a></div>
-  <div class="topbar"> <a href="#">Help Desk :</a> 021-35837242  <a href="#">Feedback :</a> oasispk@immap.org</div>
+  <div class="topbar"></div>
   <div class="menu">
   <div id='cssmenu'>
 <?php 
