@@ -70,7 +70,7 @@
 </table>
 </form>
   <div class="loginBottom">
-    <div class="lgh3">If you are new to OASIS, please fill the below form to register.</div>
+    <div class="lgh3"> </div>
   </div>
 
   </div>
