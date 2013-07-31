@@ -1,3 +1,3 @@
 <?php
-$baseUrl = "http://localhost/oasisweb_pre"; 
+$baseUrl = "http://maps.oasiswebservice.org"; 
 ?>
