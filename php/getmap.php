@@ -2,12 +2,12 @@
 ini_set('max_execution_time', 120);
 include 'dbconnect.php';
 include 'includes/gisEngineFunction.php';
-$GLOBALS['map_path']="c:/ms4w/apache/htdocs/oasisweb/mapfile/";
+$GLOBALS['map_path']="/var/www/oasiswebmapping/mapfile/";
 prepare();
 loadParams();
 
 // $sentparams = file_get_contents("../check-nodes.json");
-$sentparams = file_get_contents("http://localhost/oasisweb_pre/php/getJSON4tree.php", true);
+$sentparams = file_get_contents("http://maps.oasiswebservice.org/php/getJSON4tree.php", true);
 $sentparams=json_decode($sentparams,true);
 
 $arrLayers = explode(',',$_REQUEST['LAYERS']);

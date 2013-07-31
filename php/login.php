@@ -20,5 +20,6 @@ if ($hasRow){
 	header("Location: ../oasismap.php");
 } else {
 	header("Location: ../login.php?q=false");	
+	echo $query;
 }	
 ?>
