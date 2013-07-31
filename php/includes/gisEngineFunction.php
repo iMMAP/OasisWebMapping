@@ -197,10 +197,10 @@ function defineCosmeticsLayer(){
 	$new_layer[$layerName]->setMetaData('wfs_enable_request', '*');		
 	$new_layer[$layerName]->setMetaData('gml_featureid', 'Location_ID');
 	$new_layer[$layerName]->setMetaData('gml_include_items', 'all');	
-	$new_layer[$layerName]->setConnectionType(MS_PLUGIN, "C:/ms4w/Apache/specialplugins/msplugin_mssql2008.dll");
+	$new_layer[$layerName]->setConnectionType(MS_POSTGIS);
 	$new_layer[$layerName]->setProcessing('CLOSE_CONNECTION=DEFER');	
-	$new_layer[$layerName]->set("connection", "server=210.56.8.104;uid=ndma;pwd=srf_ndma_2011;database=OASIS_v3_2;Integrated Security=false");	
-	$new_layer[$layerName]->set("data", "geom from (select 1 as Location_ID, geometry::STGeomFromText('".$_REQUEST['filterShape']."', 4326) as geom) as new_table USING UNIQUE Location_ID USING SRID=4326");	
+	$new_layer[$layerName]->set("connection", $GLOBALS['connectionstring']['devdata']);	
+	$new_layer[$layerName]->set("data", "geom from (select 1 as loc, ST_GeomFromText('".$_REQUEST['filterShape']."', 4326) as geom) as new_table USING UNIQUE loc USING SRID=4326");	
 	$new_layer[$layerName]->set("status", MS_ON);	
 	$new_layer[$layerName]->set("dump", true);
 	$new_layer[$layerName]->set("type", MS_LAYER_POLYGON);	
