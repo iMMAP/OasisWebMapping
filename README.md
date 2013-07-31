@@ -66,6 +66,10 @@ Set your layer config
 Default extent
 
     variables in APP.JS file defLng, defLat, defZoom
+    
+Set logo
+
+    image/logo.png
 
 Restart apache
 
