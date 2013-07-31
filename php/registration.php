@@ -41,7 +41,7 @@ if ($result){
 	Welcome to the release of iMMAP’s OASIS Web 1.0.
 	
 Your user name is: ".$_REQUEST[email]."
-Your password is: ".$password."
+Your password is: ".$randomPassword."
 
 	You can change your password once you have logged in and you can also reset your password if you have forgotten it.
 	
