@@ -439,7 +439,7 @@ APP = function() {
 					                    	}, {
 					                    		isBaseLayer : false,
 					                   			visibility : false,
-						                   		singleTile : false,
+						                   		singleTile : true,
 						                   		transitionEffect:'resize',
 						                   		opacity: layerFolders[ix].opacity / 100
 					                     }));
