@@ -17,9 +17,9 @@ Install postgresql client
 
     sudo apt-get install postgresql-client 
     
-Install apache, php, pear, gd, mapscript, and more..
+Install apache, php, pear, gd, mapscript, pdfprint, and more..
 
-    sudo apt-get install apache2 php5 libapache2-mod-php5 php-pear php5-gd php5-mapscript php5-pgsql
+    sudo apt-get install apache2 php5 libapache2-mod-php5 php-pear php5-gd php5-mapscript php5-pgsql pdftk
     
 Install SMTP server and support
 
@@ -53,6 +53,7 @@ Get the code
 Set your postgis server connection string here   
 
     sudo vi /var/www/OasisMapping/php/conf.php
+    sudo vi /var/www/OasisMapping/php/dbconnect.php
     
 Set the base url here 
 
@@ -61,6 +62,10 @@ Set the base url here
 Set your layer config
 
     sudo vi /var/www/OasisMapping/check_nodes.json
+    
+Default extent
+
+    variables in APP.JS file defLng, defLat, defZoom
 
 Restart apache
 
