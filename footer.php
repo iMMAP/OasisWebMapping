@@ -3,27 +3,7 @@
     <table width="980" border="0" align="left" cellpadding="0" cellspacing="0" class="partners">
       <tbody>
         <tr>
-          <td width="410" height="193" valign="top" style="width: 410px; height: 156px;">
-          <table width="428" border="0" align="left" cellpadding="0" cellspacing="0">
-            <tbody>
-              <tr>
-                <td width="95" align="center" valign="top" style="width: 95px; height: 80px;">
-                <img alt="" src="OASIS/images/usaidlowlogo.png" width="95" height="76" /></td>
-                <td width="333" valign="top" style="width: 315px; height: 80px;"><div style="font-family: Century Gothic; font-weight: bold; font-size: 13px; color: #666666; margin: 0px 0px 0px 15px; width: 300px; float: left;">USAID </div>
-                  <div style="font-family: Century Gothic; font-size: 12px; color: #666666; margin: 8px 0px 0px 15px; width: 150px; float: left;"><span class="style1">United States Agency for International Development</span></div></td>
-              </tr>
-              <tr>
-                <td colspan="2" style="border-top-width: 2px; border-top-color: #cccccc; border-top-style: solid;"><p style="font-family: Century Gothic; font-size: 12px; font-weight: normal; font-style: italic; color: #666666; padding: 10px 5px 0px; text-align: justify;"> The United States Agency for International Development (USAID) is the United
-                  States federal government agency primarily responsible for administering
-                  civilian foreign aid. President John F. Kennedy created USAID in 1961 by
-                  executive order to implement development assistance programs,in the areas
-                  authorized by the Congress.
-                  &nbsp; <a href="http://www.usaid.gov/pk/" target="_blank">Read more.</a></p></td>
-              </tr>
-            </tbody>
-          </table></td>
-          <td width="60" valign="top" style="width:">&nbsp;</td>
-          <td width="479" align="right" valign="top" style="width: 410px;">
+          <td width="900" align="right" valign="top" style="width: 410px;">
           <table width="100" border="0" align="right" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>
