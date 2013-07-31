@@ -1,6 +1,6 @@
 <?php
 include 'dbconnect.php';	
-$query = "select * from \"Administration\".\"OasisUsers\" where \"User_Name\" = '".$_REQUEST['username']."' and \"User_Password\"=md5('".$_REQUEST['password']."')";
+$query = "select * from \"Administration\".\"OasisUsers\" where \"User_Email\" = '".$_REQUEST['username']."' and \"User_Password\"=md5('".$_REQUEST['password']."')";
 
 $dbinfo = getDB();
 
