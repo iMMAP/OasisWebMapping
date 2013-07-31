@@ -3,7 +3,7 @@
     <table width="980" border="0" align="left" cellpadding="0" cellspacing="0" class="partners">
       <tbody>
         <tr>
-          <td width="900" align="right" valign="top" style="width: 410px;">
+          <td width="900" align="right" valign="top" style="width: 900px;">
           <table width="100" border="0" align="right" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>
