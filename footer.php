@@ -4,7 +4,7 @@
       <tbody>
         <tr>
           <td width="900" align="right" valign="top" style="width: 900px;">
-          <table width="100" border="0" align="right" cellpadding="0" cellspacing="0">
+          <table width="900" border="0" align="right" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>
                 <td valign="top" style="width: 385px; height: 80px;">
