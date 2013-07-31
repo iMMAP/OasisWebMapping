@@ -24,10 +24,6 @@ MAP
 		  METADATA
 		    "wms_title"           "WMS Oasis Base layers"
 		    "wms_onlineresource"  "http://maps.oasiswebservice.org/php/getmap.php?"
-<<<<<<< HEAD
-=======
-		    "wfs_onlineresource"  "http://maps.oasiswebservice.org/php/getmap.php?" ## Recommended
->>>>>>> 2144f8b0f8a6451276ea7760a53c99fb5876d027
 		    "wms_srs"             "epsg:900913 epsg:4326" #specify the corect projection to make sure can be overlays to google projection
 			"ows_enable_request"   "*"
 		  END
