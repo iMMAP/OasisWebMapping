@@ -5,10 +5,13 @@ include 'includes/gisEngineFunction.php';
 $GLOBALS['map_path']="/var/www/oasiswebmapping/mapfile/";
 prepare();
 loadParams();
+$parts = explode("/",ltrim($_SERVER['SCRIPT_NAME'],"/"));
+$parentUrl = $_SERVER['HTTP_HOST'] . "/" . $parts[0];
 
 // $sentparams = file_get_contents("../check-nodes.json");
-$sentparams = file_get_contents("http://maps.oasiswebservice.org/php/getJSON4tree.php", true);
+$sentparams = file_get_contents("http://".$parentUrl."/php/getJSON4tree.php", true);
 $sentparams=json_decode($sentparams,true);
+
 
 $arrLayers = explode(',',$_REQUEST['LAYERS']);
 $arrLayer = explode(',',$_REQUEST['LAYER']);
