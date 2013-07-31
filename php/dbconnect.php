@@ -3,7 +3,7 @@ function getDB() {
 	return pg_connect("host=54.235.150.26 port=9191 dbname=oasisweb user=budi password=dw#\$df2dy@!Fs35S@");
 }	
 function getSindhDB() {
-	return pg_connect("host=210.56.24.186 port=5432 dbname=incidents user=postgres password=xxxxx");
+	return pg_connect("host=210.56.24.186 port=5432 dbname=incidents user=postgres password=xxxxXXXXX");
 }
 function getDevDB() {
 	return pg_connect("host=210.56.8.107 port=5432 dbname=odk_DIFD user=postgres password=xxxxx");
