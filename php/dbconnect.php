@@ -1,20 +1,20 @@
 <?php
 function getDB() {
-	return pg_connect("host=54.235.150.26 port=9191 dbname=oasisweb user=budi password=dw#\$df2dy@!Fs35S@");
+	return pg_connect("host=xxxxx port=xxxxx dbname=xxxxx user=xxxxx password=xxxxx");
 }	
 function getSindhDB() {
-	return pg_connect("host=210.56.24.186 port=5432 dbname=incidents user=postgres password=xxxxXXXXX");
+	return pg_connect("host=xxxxx port=xxxxx dbname=xxxxx user=xxxxx password=xxxxx");
 }
 function getDevDB() {
-	return pg_connect("host=210.56.8.107 port=5432 dbname=odk_DIFD user=postgres password=xxxxx");
+	return pg_connect("host=xxxxx port=xxxxx dbname=xxxxx user=xxxxx password=xxxxx");
 }
 function getKDB() {
-	return pg_connect("host=54.235.150.26 port=9191 dbname=oasisweb user=budi password=dw#\$df2dy@!Fs35S@");
+	return pg_connect("host=xxxxx port=xxxxx dbname=xxxxx user=xxxxx password=xxxxx");
 }
 
 $GLOBALS['connectionstring'] = array(
-    'incidentdata'  => "host=localhost user=postgres password=xxxx dbname=incidents port=5432",
-    'devdata'  => "host=210.56.8.107 user=postgres password=xxxxxx dbname=odk_DIFD port=5432"
+    'incidentdata'  => "host=xxxxx user=xxxxx password=xxxxx dbname=xxxxx port=xxxxx",
+    'devdata'  => "host=xxxxx user=xxxxx password=xxxxx dbname=xxxxx port=xxxxx"
 );
 
 
