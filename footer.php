@@ -7,8 +7,8 @@
           <table width="900" border="0" align="right" cellpadding="0" cellspacing="0">
             <tbody>
               <tr>
-                <td valign="top" style="width: 385px; height: 80px;">
-                <div style="font-family: Century Gothic; font-weight: bold; font-size: 13px; color: #666666; margin: 0px 30px 0px 0px; width: 300px; float: right; text-align: right;">iMMAP PAKISTAN </div>
+                <td valign="top" style="width: 200px; height: 80px;">
+                <div style="font-family: Century Gothic; font-weight: bold; font-size: 13px; color: #666666; margin: 0px 30px 0px 0px; width: 150px; float: right; text-align: right;">iMMAP PAKISTAN </div>
                   <div style="font-family: Century Gothic; font-size: 12px; color: #666666; margin: 8px 0px 0px; width: 150px; float: right; text-align: left;"> Implementing Common Operating Picture for Disaster Response </div></td>
                 <td align="right" valign="top" style="width: 95px; height: 80px;"><img alt="" src="OASIS/images/immaplogo.png" width="102" height="88" /></td>
               </tr>
