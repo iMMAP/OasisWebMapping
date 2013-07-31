@@ -10,7 +10,7 @@ loadParams();
 
 
 // $sentparams = file_get_contents("../check-nodes.json");
-$sentparams = file_get_contents("http://".$parentUrl."/php/getJSON4tree.php", true);
+$sentparams = file_get_contents("http://".$parentUrl."/getJSON4tree.php", true);
 $sentparams=json_decode($sentparams,true);
 
 
