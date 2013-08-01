@@ -318,7 +318,7 @@ margin:0px 0px 0px 0px; font-family:Arial, Helvetica, sans-serif; color:#FFF; te
 { width:1000px; margin:0 auto; height:230px;  padding:20px 0px 0px 0px; }
 
 .ce
-{ font-family:Century Gothic; font-size:11px; color:#666666; padding:0px 5px 5px 5px; text-align:center; width:1000px; margin:0 auto; height:20px; border-top:1px #999999 solid; }
+{ font-family:Century Gothic; font-size:11px; color:#666666; padding:0px 5px 5px 5px; text-align:center; width:1000px; margin:0 auto; height:20px; }
 
 .ce a
 { text-decoration:none; color:#FFF; background:#069; padding:3px; }
