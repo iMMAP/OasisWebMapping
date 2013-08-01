@@ -5,9 +5,9 @@ Ext.ns('APP');
 
 APP = function() {
 	return {
-		defLng : 78.88,
-		defLat : 30.64,
-		devZoom: 5,
+		defLng : 41,
+		defLat : 34.5,
+		defZoom: 5,
 		layersObject : null,
 		fpControl : null,
 		activeBaseLayer : null,
@@ -1168,13 +1168,13 @@ APP = function() {
 			// selectfire48.activate();
 			//this.map.zoomTo(3);
 			
-			//var initCenter = new OpenLayers.LonLat(APP.defLng, APP.defLat);
-			//initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
-			//this.map.setCenter(initCenter, APP.defZoom);
+			var initCenter = new OpenLayers.LonLat(APP.defLng, APP.defLat);
+			initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+			this.map.setCenter(initCenter, APP.defZoom);
 			
-			var initCenter = new OpenLayers.LonLat(41, 34.5);
-                        initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
-                        this.map.setCenter(initCenter, 7);
+			//var initCenter = new OpenLayers.LonLat(41, 34.5);
+                        //initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+                        ///this.map.setCenter(initCenter, 7);
 			
 			this.map.events.register('click', this.map, function(ev){
 				FINDER.polygonLayer.destroyFeatures();
