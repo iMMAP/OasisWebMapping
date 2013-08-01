@@ -131,13 +131,13 @@
   bottom: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #009966;
+  border-bottom: 10px solid #535353;
   margin-left: -10px;
 }
 #cssmenu > ul > li:first-child > a {
   border-radius: 5px 0 0 15px;
   -moz-border-radius: 5px 0 0 15px;
-  -webkit-border-radius: 5px 0 0 15px;
+  -webkit-border-radius: 5px 0 0 10px;
 }
 #cssmenu > ul > li:last-child > a {
   border-radius: 0 5px 0 0;
@@ -200,16 +200,16 @@
 }
 
 .banner
-{ width:100%; height:392px;  background:#5aa179; float:left;  } 
+{ width:100%; height:392px;  background:#a62330; float:left;  } 
 
 .bannerinner
-{ width:1000px; height:392px; margin:0 auto;  }
+{ width:1000px; height:392px; margin:0 auto; background:url(images/watermarkglobal.png) no-repeat; }
 
 .loginarea
 { width:236px; float:left; height:392px;
-background:#428b60; }
+background:#89222c; }
 .memberlogin
-{ font-family:'Century Gothic'; font-size:24px; color:#a6ebbd; padding:25px 5px 5px 5px; }
+{ font-family:'Century Gothic'; font-size:24px; color:#da606c; padding:25px 5px 5px 5px; }
 
 .lgh1
 { font-family:'Century Gothic'; font-size:18px; color:#FFFFFF; padding:3px 5px 0px 5px; }
@@ -223,7 +223,7 @@ background:#428b60; }
 { text-decoration:underline; color:#FFFFFF; }
 
 .lgh3
-{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#FFFFFF; padding:15px 20px 5px 20px; font-style:italic; }
+{ font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#FFFFFF; padding:10px 20px 5px 20px; font-style:italic; }
 
 
 
@@ -291,7 +291,7 @@ margin:0px 0px 0px 0px; font-family:Arial, Helvetica, sans-serif; color:#FFF; te
 
 
 .caption
-{ font-family:'Century Gothic'; font-size:12px; color:#009966; padding:25px 5px 5px 5px; text-align:left; float:left;  }
+{ font-family:'Century Gothic'; font-size:12px; color:#333333; padding:25px 5px 5px 5px; text-align:left; float:left;  }
 	
 
 .form1
@@ -304,10 +304,10 @@ margin:0px 0px 0px 0px; font-family:Arial, Helvetica, sans-serif; color:#FFF; te
 { font-family:'Century Gothic'; font-size:40px; color:#000000; padding:5px 5px 5px 0px; float:left; width:160px; }
 
 .RegisterH2
-{ font-family:'Century Gothic'; font-size:20px; color:#000000;  }
+{ font-family:'Century Gothic'; font-size:20px; color:#89222c;  }
 
 .registerF
-{ background:#cfcfcf; padding:5px; border:1px #FFCC00 solid; width:270px; }
+{ background:#cfcfcf; padding:5px; border:1px #e09ca3 solid; width:270px; }
 
 
 
