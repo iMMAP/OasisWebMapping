@@ -7,7 +7,7 @@ APP = function() {
 	return {
 		defLng : 41,
 		defLat : 34.5,
-		defZoom: 5,
+		defZoom: 8,
 		layersObject : null,
 		fpControl : null,
 		activeBaseLayer : null,
