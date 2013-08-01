@@ -1170,19 +1170,12 @@ APP = function() {
 			
 			var initCenter = new OpenLayers.LonLat(this.defLng, this.defLat);
 			initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
-<<<<<<< HEAD
-=======
-
->>>>>>> 08a2e33044febfc5935db9fba80427fc3d82d29a
 			this.map.setCenter(initCenter, APP.defZoom);
 			
 			//var initCenter = new OpenLayers.LonLat(41, 34.5);
                         //initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
                         ///this.map.setCenter(initCenter, 7);
-<<<<<<< HEAD
 
-=======
->>>>>>> 08a2e33044febfc5935db9fba80427fc3d82d29a
 			
 			this.map.events.register('click', this.map, function(ev){
 				FINDER.polygonLayer.destroyFeatures();
