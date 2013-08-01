@@ -57,9 +57,7 @@
   </tr>
 </table>
 </form>
-  <div class="loginBottom">
-    <div class="lgh3"> </div>
-  </div>
+
 
   </div>
   
