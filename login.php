@@ -91,7 +91,7 @@
     
 </div>
 </div>
-<div class="form1" style="display: none;">
+<div class="form1">
   <div class="form1inner">
     <div class="form1inner">
       <form name="frmSignup" id ="frmSignup" method="post" action="php/registration.php" onsubmit="return validateForm()">
