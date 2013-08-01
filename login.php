@@ -18,19 +18,7 @@
   <script type="text/javascript" src="js/pages/registration.js"></script>
   <script src="OASIS/Js/responsiveslides.min.js"></script>
    
-  <script>
-    // You can also use "$(window).load(function() {"
-    jQuery(function () {
-
-      // Slideshow 1
-      jQuery("#slider1").responsiveSlides({
-        maxwidth: 700,
-        speed: 500
-      });
-
-     
-    });
-  </script>
+  
 </head>
 <body>
 <div class="header">
@@ -74,20 +62,8 @@
   </div>
 
   </div>
-  <div class="slideshow">
-    <!-- Slideshow 1 -->
-<ul class="rslides" id="slider1">
-      <li><img src="OASIS/images/1.jpg" alt=""></li>
-      <li><img src="OASIS/images/2.jpg" alt=""></li>
-      <li><img src="OASIS/images/3.jpg" alt=""></li>
-      <li><img src="OASIS/images/4.jpg" alt=""></li>
-      <li><img src="OASIS/images/5.jpg" alt=""></li>
-      <li><img src="OASIS/images/6.jpg" alt=""></li>
-      <li><img src="OASIS/images/7.jpg" alt=""></li>
-      <li><img src="OASIS/images/8.jpg" alt=""></li>
-    </ul>
-    </div>
-    <div class="highlights"><strong></strong></div>
+  
+    
     
 </div>
 </div>
