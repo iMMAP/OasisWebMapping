@@ -5,9 +5,15 @@ Ext.ns('APP');
 
 APP = function() {
 	return {
+<<<<<<< HEAD
 		defLng : 78.88,
 		defLat : 30.64,
 		devZoom: 8,
+=======
+		defLng : 41,
+		defLat : 34.5,
+		defZoom: 5,
+>>>>>>> b8e4507580b15406ec8f6ddad64719a0c05cc96e
 		layersObject : null,
 		fpControl : null,
 		activeBaseLayer : null,
@@ -1170,7 +1176,15 @@ APP = function() {
 			
 			var initCenter = new OpenLayers.LonLat(41, 34.5);
 			initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+<<<<<<< HEAD
 			this.map.setCenter(initCenter, 7);	
+=======
+			this.map.setCenter(initCenter, APP.defZoom);
+			
+			//var initCenter = new OpenLayers.LonLat(41, 34.5);
+                        //initCenter.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+                        ///this.map.setCenter(initCenter, 7);
+>>>>>>> b8e4507580b15406ec8f6ddad64719a0c05cc96e
 			
 			this.map.events.register('click', this.map, function(ev){
 				FINDER.polygonLayer.destroyFeatures();
