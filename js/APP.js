@@ -5,9 +5,9 @@ Ext.ns('APP');
 
 APP = function() {
 	return {
-		defLng : 41,
-		defLat : 34.5,
-		defZoom: 7,
+		defLng : 42,
+		defLat : 33,
+		defZoom: 6,
 		layersObject : null,
 		fpControl : null,
 		activeBaseLayer : null,
