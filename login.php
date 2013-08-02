@@ -47,7 +47,7 @@
   <tr>
     <td><input name="password" type="password" class="lgtfield" id="password"></td>
   </tr>
-  <tr>
+  <tr style="position: absolute">
     <td><div class="lgh2"><a href="#forget" rel="mybox"><strong>Forgot Password ?</strong></a></div></td>
   </tr>
   <tr>
@@ -65,7 +65,7 @@
     
 </div>
 </div>
-<div class="form1">
+<div class="form1" style="display:none;">
   <div class="form1inner">
     <div class="form1inner">
       <form name="frmSignup" id ="frmSignup" method="post" action="php/registration.php" onsubmit="return validateForm()">
