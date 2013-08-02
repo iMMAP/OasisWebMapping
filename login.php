@@ -47,9 +47,9 @@
   <tr>
     <td><input name="password" type="password" class="lgtfield" id="password"></td>
   </tr>
-  <tr style="position: absolute">
+ <!--  <tr>
     <td><div class="lgh2"><a href="#forget" rel="mybox"><strong>Forgot Password ?</strong></a></div></td>
-  </tr>
+  </tr>-->
   <tr>
     <td height="49">
       <input name="button" type="submit" class="loginB1" id="button" value="Login">
