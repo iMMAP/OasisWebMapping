@@ -5,7 +5,7 @@ Ext.ns('APP');
 
 APP = function() {
 	return {
-		defLng : 44,
+		defLng : 46,
 		defLat : 33,
 		defZoom: 6,
 		layersObject : null,
