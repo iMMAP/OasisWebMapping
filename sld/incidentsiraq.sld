@@ -5,7 +5,7 @@
   <NamedLayer>
     <Name>Incidents</Name>
     <UserStyle>
-      <Name>Incidents</Name>
+      <Name>data_iraq.dd_Sec_Event_Type_Full_Geo_WKT</Name>
       <Title>SecurityIncidentType</Title>
       <FeatureTypeStyle>
       <Rule>
